@@ -1,0 +1,23 @@
+{
+  "name": "generator",
+  "main": "index.js",
+  "authors": [
+    "wenyd <340181553@qq.com>"
+  ],
+  "description": "",
+  "moduleType": [],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^2.2.1",
+    "text": "^2.0.14",
+    "requirejs": "^2.1.22"
+  }
+}
