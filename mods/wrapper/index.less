@@ -1,0 +1,20 @@
+@import "../../../node_modules/less-plugin-est/src/all";
+.kstate-debug {
+  a {
+    background-color: rgba(0, 0, 0, .3);
+    &.kstate-hover, &:hover{ background-color: rgba(0, 0, 0, .4); }
+  }
+}
+/* 状态-begin */
+.kstate-hover{ }
+.kstate-fixed{ position: fixed; }
+/* 状态-end */
+
+.kmods { overflow: hidden; background: #efefef; }
+.kmod { background: no-repeat center top; }
+.kmod-bd { .clearfix(); position: relative; width: 1000px; margin: 0 auto; }
+.kmod-link, .kmod-plink, .kmod-blink { float: left; }
+.kmod-hash { }
+.kmod-target { display: block; position: relative; visibility: hidden; }
+
+/* ${value} */
