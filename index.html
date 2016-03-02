@@ -8,23 +8,23 @@
 <body>
 <fieldset>
     <legend>params</legend>
-    <div>
-        <label><input class="wrapper-toggle" type="checkbox" data-mod="comment"/>BASE</label>
-        <label><input class="wrapper-toggle" type="checkbox" data-mod="comment"/>BASE</label>
-        <label><input class="wrapper-toggle" type="checkbox" data-mod="comment"/>BASE</label>
-        <label><input class="comment-toggle" type="checkbox" data-mod="comment"/>注释</label>
+    <div class="controls">
+        <label><input class="control" type="checkbox" data-control="ACT" data-group="type"/>ACT</label>
+        <label><input class="control" type="checkbox" data-control="B2C" data-group="type"/>B2C</label>
+        <label><input class="control" type="checkbox" data-control="Comment"/>Comment</label>
+        <label><input class="control" type="checkbox" data-control="Min"/>Min</label>
     </div>
-    <div>
-        <label><input type="checkbox" data-mod="header"/>页头</label>
-        <label><input type="checkbox" data-mod="nav"/>导航</label>
-        <label><input type="checkbox" data-mod="pingou-coupon"/>Coupon</label>
-        <label><input type="checkbox" data-mod="footer"/>页脚</label>
+    <div class="mods">
+        <label><input class="mod" type="checkbox" data-mod="header"/>页头</label>
+        <label><input class="mod" type="checkbox" data-mod="nav"/>导航</label>
+        <label><input class="mod" type="checkbox" data-mod="pingou-coupon"/>Coupon</label>
+        <label><input class="mod" type="checkbox" data-mod="footer"/>页脚</label>
     </div>
 </fieldset>
 <fieldset>
     <legend>preview</legend>
     <!--<div class="code-preview"></div>-->
-    <textarea class="code-output" style="width: 960px;height: 640px;"></textarea>
+    <textarea class="code-output" style="width: 960px;height: 480px;"></textarea>
 </fieldset>
 <script data-main="index" src="libs/requirejs/require.js"></script>
 </body>
