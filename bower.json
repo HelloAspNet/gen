@@ -19,6 +19,7 @@
     "jquery": "^2.2.1",
     "text": "^2.0.14",
     "requirejs": "^2.1.22",
-    "ionic": "^1.2.4"
+    "ionic": "^1.2.4",
+    "artTemplate": "^3.0.1"
   }
 }

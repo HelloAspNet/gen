@@ -6,7 +6,8 @@ requirejs.config({
   paths: {
     mods: './mods',
     text: './libs/text/text',
-    jquery: './libs/jquery/dist/jquery'
+    jquery: './libs/jquery/dist/jquery',
+    template: './libs/artTemplate/dist/template'
   },
   shim: {}
 });
@@ -29,7 +30,7 @@ Mod.parse = function (obj) {
  *  mod植入，把modChild嵌入ModParent里。
  *  返回新的Mod实例
  */
-Mod.implant = function(modParent, modChild){
+Mod.implant = function (modParent, modChild) {
   var strValue = '/*${value}*/';
   var reValue = /\/\*\s*\$\{\s*value\s*}\s*\*\//g;
   var mod = {
@@ -72,21 +73,31 @@ Mod.prototype.getCode = function () {
   }).replace(Mod.RE_BLANK_LINE, '\n');
 };
 
-requirejs(['jquery'], function ($) {
+requirejs(['jquery', 'template', 'text!index.json'], function ($, template, APP_CONFIG) {
+  try {
+    APP_CONFIG = Function('return ' + APP_CONFIG)();
+  }
+  catch (e) {
+    return console.error('配置文件 index.json 出错');
+  }
 
   // 重写定制require方法
   var require = function (deps, callback, errback, optional) {
     var depsNew = [].slice.call(deps);
     var len = depsNew.length;
     var map = {};
+
+    // 筛选出自定义模块，并请求其对应资源
     while (len--) {
       var dep = depsNew[len];
-      var promises = [];
-      promises.push(req('text!' + dep + '/index.html'));
-      promises.push(req('text!' + dep + '/index.css'));
-      promises.push(req('text!' + dep + '/index.js'));
-      map[dep] = promises;
-      depsNew.splice(len, 1);
+      if (Mod.RE_NAME.test(dep)) {
+        var promises = [];
+        promises.push(req('text!' + dep + '/index.html'));
+        promises.push(req('text!' + dep + '/index.css'));
+        promises.push(req('text!' + dep + '/index.js'));
+        map[dep] = promises;
+        depsNew.splice(len, 1);
+      }
     }
 
     function req(dep) {
@@ -94,21 +105,19 @@ requirejs(['jquery'], function ($) {
       requirejs([dep], function (text) {
         defer.resolve(text);
       }, function (err) {
-        var re = /mods\/([^/]+)\/index\.([^? ]+)/;
-        var match = re.exec(err);
-        console.error('加载 mods/' + match[1] + '/index.' + match[2] + ' 失败');
+        //var re = /mods\/([^/]+)\/index\.([^? ]+)/;
+        //var match = re.exec(err);
+        //console.error('加载 mods/' + match[1] + '/index.' + match[2] + ' 失败');
         defer.resolve();
       });
       return defer.promise();
     }
 
+    // 最后请求非自定义模块
     return requirejs(depsNew, function () {
       var args = arguments;
-      depsNew.forEach(function (dep, i) {
-        map[dep] = args[i];
-      });
 
-      var temp = [];
+      var promisesTemp = [];
       $.each(map, function (dep, promises) {
         var defer = $.Deferred();
         $.when.apply($, promises).then(function () {
@@ -121,34 +130,49 @@ requirejs(['jquery'], function ($) {
           map[dep] = Mod.parse(mod);
           defer.resolve();
         });
-        temp.push(defer.promise());
+        promisesTemp.push(defer.promise());
       });
 
-      $.when.apply($, temp).then(function () {
+      $.when.apply($, promisesTemp).then(function () {
         var argsNew = [];
-        deps.forEach(function (dep, i) {
+
+        $.each(depsNew, function (i, dep) {
+          map[dep] = args[i];
+        });
+
+        // 按原有依赖顺序构造参数
+        $.each(deps, function (i, dep) {
           argsNew[i] = map[dep];
         });
+
         callback.apply(null, argsNew);
       });
     }, errback, optional);
   };
 
-  require(['mods/base-wrapper', 'mods/base-act', 'mods/base-b2c'], function (baseWrapper, baseACT, baseB2C) {
+  var CONTROLS_MAP = {};
+  var MOD = null;
 
-    var MOD_CONFIG = {
-      mod: null,
-      isComment: false,
-      isMin: true,
-      isACT: false,
-      isB2C: false
-    };
+  // 装载配置
+  loadConfig();
 
-    // 初始化配置
-    $('.control').each(function () {
-      var $this = $(this);
-      var control = $this.data('control');
-      $this.prop('checked', MOD_CONFIG['is' + control]);
+  $.each(APP_CONFIG.controls, function (i, control) {
+    CONTROLS_MAP[control.id] = control;
+    APP_CONFIG['is' + control.id] = !!control.isChecked;
+  });
+
+
+  var controlsFilter = APP_CONFIG.controls.filter(function (control) {
+    return !!control.map;
+  });
+
+  var depsFormat = $.map(controlsFilter, function (control) {
+    return 'mods/' + control.map;
+  });
+  require(depsFormat, function () {
+    var args = arguments;
+    $.each(controlsFilter, function (i, control) {
+      CONTROLS_MAP[control.id].instance = args[i];
     });
 
     // 绑定事件
@@ -159,7 +183,7 @@ requirejs(['jquery'], function ($) {
           $('.mod').each(function () {
             var $this = $(this);
             if ($this.is(':checked')) {
-              mods.push('mods/' + $this.data('mod'));
+              mods.push('mods/' + $this.data('map'));
             }
           });
           require(mods, function () {
@@ -180,21 +204,17 @@ requirejs(['jquery'], function ($) {
               js: scripts.join('\n')
             };
 
-            MOD_CONFIG.mod = Mod.implant(baseWrapper, mod);
+            MOD = Mod.implant(CONTROLS_MAP['Wrapper'].instance, mod);
 
-            updateCode(MOD_CONFIG);
+            updateCode(APP_CONFIG);
 
-          }, function (err) {
-            var re = /mods\/([^/]+)\/index\.([^? ]+)/;
-            var match = re.exec(err);
-            console.error('加载 mods/' + match[1] + '/index.' + match[2] + ' 失败');
           });
         }
       })
       .delegate('.control', {
         'click': function () {
           var $this = $(this);
-          var control = $this.data('control');
+          var id = $this.data('id');
           var group = $this.data('group');
           var isChecked = $this.is(':checked');
 
@@ -204,28 +224,29 @@ requirejs(['jquery'], function ($) {
             var $others = $group.not($this);
             $others.each(function (i, other) {
               var $this = $(this);
-              var control = $this.data('control');
+              var id = $this.data('id');
               $this.prop('checked', false);
-              MOD_CONFIG['is' + control] = false;
+              APP_CONFIG['is' + id] = false;
             })
           }
 
-          MOD_CONFIG['is' + control] = isChecked;
-          updateCode(MOD_CONFIG);
+          APP_CONFIG['is' +id] = isChecked;
+          updateCode(APP_CONFIG);
         }
       })
     ;
 
-    // 更新视图
+
+    // 更新代码视图
     function updateCode(config) {
 
-      config = config || MOD_CONFIG;
+      config = config || APP_CONFIG;
 
-      var mod = config.mod = config.mod || Mod.implant(baseWrapper, new Mod);
+      var mod = MOD = MOD || Mod.implant(CONTROLS_MAP['Wrapper'].instance, new Mod);
 
-      if (config.isACT) mod = Mod.implant(baseACT, mod);
+      if (config.isACT) mod = Mod.implant(CONTROLS_MAP['ACT'].instance, mod);
 
-      if (config.isB2C) mod = Mod.implant(baseB2C, mod);
+      if (config.isB2C) mod = Mod.implant(CONTROLS_MAP['B2C'].instance, mod);
 
       if (config.isMin) {
         mod = Mod.parse(mod);
@@ -240,4 +261,12 @@ requirejs(['jquery'], function ($) {
 
     }
   });
+
+
+  // 加载配置，并更新对应视图
+  function loadConfig() {
+    $('.controls').html(template('controls_tpl', APP_CONFIG));
+    $('.mods').html(template('mods_tpl', APP_CONFIG));
+  }
+
 });

@@ -1,0 +1,15 @@
+{
+  "controls": [
+    { "id": "Wrapper", "name": "Wrapper", "map": "base-wrapper", "isChecked": true, "isHidden": true },
+    { "id": "ACT", "name": "ACT", "map": "base-act", "group": "G_1" },
+    { "id": "B2C", "name": "B2C", "map": "base-b2c", "group": "G_1" },
+    { "id": "Comment", "name": "Comment" },
+    { "id": "Min", "name": "Min", "isChecked": true }
+  ],
+  "mods": [
+    { "id" : "Header", "name": "页头", "map": "header" },
+    { "id" : "Nav", "name": "导航", "map": "nav" },
+    { "id" : "Footer", "name": "页脚", "map": "footer" },
+    { "id" : "PG_Coupon", "name": "品购红包", "map": "pingou-coupon" }
+  ]
+}

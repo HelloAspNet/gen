@@ -4,26 +4,41 @@
     <meta charset="UTF-8">
     <title></title>
     <link rel="stylesheet" href="index.css"/>
+    <style>
+        .code-preview{
+            display: block;
+        }
+        .hide{
+            display: none;
+        }
+    </style>
 </head>
 <body>
 <fieldset>
     <legend>params</legend>
-    <div class="controls">
-        <label><input class="control" type="checkbox" data-control="ACT" data-group="type"/>ACT</label>
-        <label><input class="control" type="checkbox" data-control="B2C" data-group="type"/>B2C</label>
-        <label><input class="control" type="checkbox" data-control="Comment"/>Comment</label>
-        <label><input class="control" type="checkbox" data-control="Min"/>Min</label>
+    <div class="controls" id="controls_html">
+        <script type="text/html" id="controls_tpl">
+            {{each controls as control}}
+            {{if !control.isHidden}}
+            <label><input class="control" type="checkbox" {{control.isChecked ? 'checked' : '' }} data-id="{{control.id}}" data-group="{{control.group}}"/>{{control.name}}</label>
+            {{/if}}
+            {{/each}}
+        </script>
     </div>
-    <div class="mods">
-        <label><input class="mod" type="checkbox" data-mod="header"/>页头</label>
-        <label><input class="mod" type="checkbox" data-mod="nav"/>导航</label>
-        <label><input class="mod" type="checkbox" data-mod="pingou-coupon"/>Coupon</label>
-        <label><input class="mod" type="checkbox" data-mod="footer"/>页脚</label>
+    <div class="mods" id="mods_html">
+        <script type="text/html" id="mods_tpl">
+            {{each mods as mod}}
+            <label><input class="mod" type="checkbox" {{mod.isChecked ? 'checked' : '' }} data-id="{{mod.id}}" data-map="{{mod.map}}"/>{{mod.name}}</label>
+            {{/each}}
+        </script>
     </div>
 </fieldset>
 <fieldset>
     <legend>preview</legend>
     <!--<div class="code-preview"></div>-->
+    <!--<script type="text/html" class="code-preview">-->
+        <!--<legend>preview</legend>-->
+    <!--</script>-->
     <textarea class="code-output" style="width: 960px;height: 480px;"></textarea>
 </fieldset>
 <script data-main="index" src="libs/requirejs/require.js"></script>
