@@ -1,7 +1,10 @@
 /**
  * Created by yidong.wen on 2016/3/3.
  */
-define([], function(){
+define(['template'], function(template){
+
+  template.config('openTag', '/*{{');
+  template.config('closeTag', '}}*/');
 
   var reDeps = /\/\*\s*\$\{\s*@(\S+)\s*}\s*\*\//g;
 

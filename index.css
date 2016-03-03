@@ -1,4 +1,16 @@
 html {
   font-family: "Microsoft Yahei", Consolas;
 }
-/*# sourceMappingURL=index.css.map */
+.code-preview {
+  display: block;
+}
+.hide {
+  display: none;
+}
+.ace_editor {
+  height: 400px;
+  -webkit-user-select: auto;
+  -moz-user-select: auto;
+  -ms-user-select: auto;
+  user-select: auto;
+}

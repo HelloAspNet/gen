@@ -5,8 +5,8 @@
     <title></title>
 </head>
 <body>
-    /*{{ @pingou_header }}*/
-    /*{{ @pingou_body }}*/
-    /*{{ @pingou_footer }}*/
+    <ng-include src="'mods/pingou_header/index.html'"></ng-include>
+    <!--<ng-include src="'mods/pingou_header/index.html'"></ng-include>-->
+    <div ng-repeat="obj in CONFIG.controls" ng-bind="obj.name"></div>
 </body>
 </html>
