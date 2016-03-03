@@ -1,0 +1,27 @@
+<!--模块导航-begin-->
+<div class="kmod kmod-nav-wrap">
+    <div class="kmod-bd">
+        {{each navigators}}
+        <!--导航{{$index | kToIndex}}-begin-->
+        <div class="kmod-nav kmod-nav1">
+            <div class="kmod-nav-hd">
+                {{if coupons}}
+                <div class="kmod-nav-coupon"><a href="javascript:;" class="kmod-nav-coupon-btn"></a></div>
+                {{/if}}
+            </div>
+            <div class="kmod-nav-bd">
+                {{if brands}}
+                {{each brands as $v $i}}
+                <a class="kmod-hash kmod-hash{{$i | kToIndex}}" href="#kmod_hash{{$i | kToIndex}}" data-id="kmod_hash{{$i | kToIndex}}" target="_self"></a>
+                {{/each}}
+                {{/if}}
+            </div>
+            <div class="kmod-nav-ft">
+                <a class="kmod-hash" href="#" target="_self"></a>
+            </div>
+        </div>
+        <!--导航{{$index | kToIndex}}-end-->
+        {{/each}}
+    </div>
+</div>
+<!--模块导航-end-->

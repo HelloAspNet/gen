@@ -1,0 +1,41 @@
+/* 导航-begin */
+.kmod-nav-wrap {
+  height: 0;
+}
+.kmod-nav {
+  position: relative;
+  top: 0;
+  width: 100%;
+  margin: 0 auto;
+  padding-top: 80px;
+  background: #ccc;
+  z-index: 200;
+}
+.kmod-nav.kstate-fixed {
+  position: fixed;
+}
+.kmod-nav1 {
+  width: 120px;
+  height: 550px;
+  margin-left: -140px;
+  background: url('/*${@IMAGE_URL}*/nav-a.png') no-repeat center 80px;
+}
+.kmod-nav1 .kmod-nav-hd {
+  height: 170px;
+}
+.kmod-nav1 .kmod-nav-bd {
+  margin: 0px;
+}
+.kmod-nav1 .kmod-nav-ft {
+  height: 40px;
+}
+.kmod-nav1 .kmod-nav-ft .kmod-hash {
+  height: 35px;
+}
+.kmod-nav1 .kmod-hash {
+  display: block;
+  width: 100%;
+  height: 115px;
+}
+/* 导航-end */
+/*# sourceMappingURL=index.css.map */

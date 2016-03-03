@@ -12,73 +12,17 @@ requirejs.config({
   shim: {}
 });
 
-function Mod(html, css, js) {
-  this.html = html || '';
-  this.css = css || '';
-  this.js = js || '';
-}
-Mod.RE_NAME = /^mods\/[^/]+$/;
-Mod.RE_HTML_JS_COMMENT = /<!--[\s\S]*?-->/gm;
-Mod.RE_CSS_JS_COMMENT = /\/\*[\s\S]*?\*\//gm;
-Mod.RE_JS_COMMENT = /\/\/.*/g;
-Mod.RE_BLANK_LINE = /[\r\n]([\r\n\s]*)?[\r\n]/gm;
-Mod.RE_CSS_MIN = /([{;])[\r\n\s]+|[\r\n\s]+([}])/g;
-Mod.parse = function (obj) {
-  return new Mod(obj.html, obj.css, obj.js);
-};
-/**
- *  mod植入，把modChild嵌入ModParent里。
- *  返回新的Mod实例
- */
-Mod.implant = function (modParent, modChild) {
-  var strValue = '/*${value}*/';
-  var reValue = /\/\*\s*\$\{\s*value\s*}\s*\*\//g;
-  var mod = {
-    html: (modParent.html || strValue).replace(reValue, modChild.html),
-    css: (modParent.css || strValue).replace(reValue, modChild.css),
-    js: (modParent.js || strValue).replace(reValue, modChild.js)
-  };
-  return Mod.parse(mod);
-};
-Mod.prototype.getHtmlWithComment = function () {
-  return this.html;
-};
-Mod.prototype.getCssWithComment = function () {
-  return this.css;
-};
-Mod.prototype.getJsWithComment = function () {
-  return this.js;
-};
-Mod.prototype.getCodeWithComment = function () {
-  return [
-    '<style>', this.css, '</style>',
-    this.html,
-    '<script>', '(function(){', this.js, '})();', '</script>'
-  ].join('\n');
-};
-Mod.prototype.getHtml = function () {
-  return this.getHtmlWithComment().replace(Mod.RE_HTML_JS_COMMENT, '');
-};
-Mod.prototype.getCss = function () {
-  return this.getCssWithComment().replace(Mod.RE_CSS_JS_COMMENT, '');
-};
-Mod.prototype.getJs = function () {
-  return this.getJsWithComment().replace(Mod.RE_HTML_JS_COMMENT, '').replace(Mod.RE_CSS_JS_COMMENT, '').replace(Mod.RE_JS_COMMENT, '');
-};
-Mod.prototype.getCode = function () {
-  return this.getCodeWithComment.call({
-    html: this.getHtml(),
-    css: this.getCss(),
-    js: this.getJs()
-  }).replace(Mod.RE_BLANK_LINE, '\n');
-};
-
-requirejs(['jquery', 'template', 'text!index.json'], function ($, template, APP_CONFIG) {
+requirejs(['jquery', 'template', 'classes/Mod', 'classes/Config', 'classes/Option', 'text!index.json'], function ($, template, Mod, Config, Option, APP_CONFIG) {
   try {
     APP_CONFIG = Function('return ' + APP_CONFIG)();
+    APP_CONFIG = Config.parse(APP_CONFIG);
+
+    // 更新配置视图
+    $('.controls').html(template('controls_tpl', APP_CONFIG));
+    $('.mods').html(template('mods_tpl', APP_CONFIG));
   }
   catch (e) {
-    return console.error('配置文件 index.json 出错');
+    return console.error('加载配置文件 index.json 失败');
   }
 
   // 重写定制require方法
@@ -150,29 +94,20 @@ requirejs(['jquery', 'template', 'text!index.json'], function ($, template, APP_
     }, errback, optional);
   };
 
-  var CONTROLS_MAP = {};
-  var MOD = null;
-
-  // 装载配置
-  loadConfig();
-
-  $.each(APP_CONFIG.controls, function (i, control) {
-    CONTROLS_MAP[control.id] = control;
-    APP_CONFIG['is' + control.id] = !!control.isChecked;
-  });
-
-
+  // 过滤依赖的模块
   var controlsFilter = APP_CONFIG.controls.filter(function (control) {
     return !!control.map;
   });
-
+  // 转换成【requirejs依赖数组】格式
   var depsFormat = $.map(controlsFilter, function (control) {
     return 'mods/' + control.map;
   });
+
   require(depsFormat, function () {
     var args = arguments;
+    // 保存对应实例到配置上
     $.each(controlsFilter, function (i, control) {
-      CONTROLS_MAP[control.id].instance = args[i];
+      control.instance = args[i];
     });
 
     // 绑定事件
@@ -204,7 +139,7 @@ requirejs(['jquery', 'template', 'text!index.json'], function ($, template, APP_
               js: scripts.join('\n')
             };
 
-            MOD = Mod.implant(CONTROLS_MAP['Wrapper'].instance, mod);
+            APP_CONFIG.MOD = Mod.implant(Option.get('Wrapper').instance, Mod.parse(mod));
 
             updateCode(APP_CONFIG);
 
@@ -230,43 +165,37 @@ requirejs(['jquery', 'template', 'text!index.json'], function ($, template, APP_
             })
           }
 
-          APP_CONFIG['is' +id] = isChecked;
+          APP_CONFIG['is' + id] = isChecked;
           updateCode(APP_CONFIG);
         }
       })
     ;
 
 
-    // 更新代码视图
-    function updateCode(config) {
-
-      config = config || APP_CONFIG;
-
-      var mod = MOD = MOD || Mod.implant(CONTROLS_MAP['Wrapper'].instance, new Mod);
-
-      if (config.isACT) mod = Mod.implant(CONTROLS_MAP['ACT'].instance, mod);
-
-      if (config.isB2C) mod = Mod.implant(CONTROLS_MAP['B2C'].instance, mod);
-
-      if (config.isMin) {
-        mod = Mod.parse(mod);
-        mod.css = mod.getCssWithComment().replace(Mod.RE_CSS_MIN, '$1 $2');
-      }
-
-      var code = config.isComment ? mod.getCodeWithComment() : mod.getCode();
-
-
-      $('.code-preview').html(code);
-      $('.code-output').val(code);
-
-    }
   });
 
 
-  // 加载配置，并更新对应视图
-  function loadConfig() {
-    $('.controls').html(template('controls_tpl', APP_CONFIG));
-    $('.mods').html(template('mods_tpl', APP_CONFIG));
-  }
+  // 更新代码视图
+  function updateCode(APP_CONFIG) {
 
+    var mod = APP_CONFIG.MOD = APP_CONFIG.MOD || Mod.implant(Option.get('Wrapper').instance, new Mod);
+
+    if (APP_CONFIG.isACT) mod = Mod.implant(Option.get('ACT').instance, mod);
+
+    if (APP_CONFIG.isB2C) mod = Mod.implant(Option.get('B2C').instance, mod);
+
+
+    if (APP_CONFIG.isFormat) {
+      mod = Mod.parse(mod);
+      mod.css = mod.getCssWithComment().replace(Mod.RE_CSS_FORMAT, '$1 $2');
+    }
+
+
+    var code = APP_CONFIG.isMin ? mod.getCodeInWrapper() : mod.getCodeWithCommentInWrapper();
+
+
+    $('.code-preview').html(code);
+    $('.code-output').val(code);
+
+  }
 });

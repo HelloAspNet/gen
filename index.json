@@ -1,15 +1,18 @@
 {
   "controls": [
-    { "id": "Wrapper", "name": "Wrapper", "map": "base-wrapper", "isChecked": true, "isHidden": true },
-    { "id": "ACT", "name": "ACT", "map": "base-act", "group": "G_1" },
-    { "id": "B2C", "name": "B2C", "map": "base-b2c", "group": "G_1" },
-    { "id": "Comment", "name": "Comment" },
-    { "id": "Min", "name": "Min", "isChecked": true }
+    { "id": "Wrapper", "name": "Wrapper", "map": "base_wrapper", "isChecked": true, "isHidden": true },
+    /*{ "id": "ACT", "name": "ACT", "map": "base_act", "group": "G_1" },*/
+    /*{ "id": "B2C", "name": "B2C", "map": "base_b2c", "group": "G_1" },*/
+    { "id": "Min", "name": "Min", "isChecked": true },
+    { "id": "Format", "name": "Format", "isChecked": true }
   ],
   "mods": [
-    { "id" : "Header", "name": "页头", "map": "header" },
-    { "id" : "Nav", "name": "导航", "map": "nav" },
-    { "id" : "Footer", "name": "页脚", "map": "footer" },
-    { "id" : "PG_Coupon", "name": "品购红包", "map": "pingou-coupon" }
+    { "id" : "PG_Header", "name": "页头", "map": "pingou_header" },
+    { "id" : "PG_Body", "name": "主体", "map": "pingou_body" },
+    { "id" : "PG_Nav", "name": "导航", "map": "pingou_nav" },
+    { "id" : "PG_Footer", "name": "页脚", "map": "pingou_footer" },
+    { "id" : "PG_PLinks", "name": "品购产品链接", "map": "pingou_plinks" },
+    { "id" : "PG_BLinks", "name": "品购档期链接", "map": "pingou_blinks" },
+    { "id" : "PG_Coupon", "name": "品购红包", "map": "pingou_coupon", "map": "mods/pingou_coupon" }
   ]
 }
