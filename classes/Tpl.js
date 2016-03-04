@@ -3,8 +3,8 @@
  */
 define(['template'], function(template){
 
-  template.config('openTag', '/*{{');
-  template.config('closeTag', '}}*/');
+  //template.config('openTag', '/*{{');
+  //template.config('closeTag', '}}*/');
 
   var reDeps = /\/\*\s*\$\{\s*@(\S+)\s*}\s*\*\//g;
 

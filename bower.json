@@ -22,6 +22,7 @@
     "ionic": "^1.2.4",
     "artTemplate": "^3.0.1",
     "angular": "angularjs#^1.5.0",
-    "angular-ui-ace": "^0.2.3"
+    "angular-ui-ace": "^0.2.3",
+    "underscore": "^1.8.3"
   }
 }

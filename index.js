@@ -16,7 +16,7 @@ requirejs(['jquery', 'template', 'classes/Mod', 'classes/Config', 'classes/Optio
   try {
     APP_CONFIG = Function('return ' + APP_CONFIG)();
     APP_CONFIG = Config.parse(APP_CONFIG);
-
+    console.log(APP_CONFIG)
     // 更新配置视图
     $('.controls').html(template('controls_tpl', APP_CONFIG));
     $('.mods').html(template('mods_tpl', APP_CONFIG));

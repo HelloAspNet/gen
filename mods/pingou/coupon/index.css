@@ -13,28 +13,11 @@
   top: 39px;
   left: 231px;
 }
-.kmod-nav-coupon {
-  position: relative;
-  height: 173px;
-}
-.kmod-nav-coupon-btn {
-  position: absolute;
-  top: 143px;
-  left: 7px;
-  width: 106px;
-  height: 25px;
-}
 .kstate-coupon-get .kmod-coupon {
   background-image: url("/*${IMAGE_URL}*/coupon-b.png");
 }
-.kstate-coupon-get .kmod-nav1 {
-  background-image: url("/*${IMAGE_URL}*/nav-b.png");
-}
 .kstate-coupon-success .kmod-coupon {
   background-image: url("/*${IMAGE_URL}*/coupon-c.png");
-}
-.kstate-coupon-success .kmod-nav1 {
-  background-image: url("/*${IMAGE_URL}*/nav-c.png");
 }
 /* 红包-end */
 /*# sourceMappingURL=index.css.map */

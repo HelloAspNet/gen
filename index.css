@@ -1,16 +1,39 @@
+html,
+body,
+.code-options,
+.code-preview {
+  height: 100%;
+}
 html {
   font-family: "Microsoft Yahei", Consolas;
 }
-.code-preview {
-  display: block;
+body {
+  overflow: hidden;
+}
+fieldset {
+  margin: 0;
+  border: 0;
+  padding: 0;
+}
+legend {
+  width: initial;
+  border: 0;
+  padding: 8px;
+  line-height: 1;
+}
+.code-options {
+  float: left;
+  width: 400px;
+  padding: 20px;
 }
 .hide {
   display: none;
 }
 .ace_editor {
-  height: 400px;
+  height: 100%;
   -webkit-user-select: auto;
   -moz-user-select: auto;
   -ms-user-select: auto;
   user-select: auto;
 }
+/*# sourceMappingURL=index.css.map */

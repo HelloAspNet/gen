@@ -1,19 +1,43 @@
 @import "../node_modules/less-plugin-est/src/all";
+
 @use-autoprefixer: false;
-html{
+html, body, .code-options, .code-preview {
+  height: 100%;
+}
+
+html {
   font-family: "Microsoft Yahei", Consolas;
 }
-.code-preview{
-  display: block;
+
+body{
+  overflow: hidden;
 }
-.hide{
+
+fieldset {
+  margin: 0;
+  border: 0;
+  padding: 0;
+}
+
+legend {
+  width: initial;
+  border: 0;
+  padding: 8px;
+  line-height: 1;
+}
+
+.code-options {
+  float: left;
+  width: 400px;
+  padding: 20px;
+}
+
+.hide {
   display: none;
 }
-html {
-}
 
-.ace_editor  {
-  height : 400px;
+.ace_editor {
+  height: 100%;
   .user-select(auto);
-
 }
+

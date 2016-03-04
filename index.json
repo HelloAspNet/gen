@@ -6,6 +6,10 @@
     { "id": "Min", "name": "Min", "isChecked": true },
     { "id": "Format", "name": "Format", "isChecked": true }
   ],
+  "layouts": [
+    { "id": "PG", "name": "品购", "dir": "mods/layouts/pingou" },
+    { "id": "Other", "name": "其他", "dir": "mods/layouts/other" }
+  ],
   "mods": [
     { "id" : "PG_Header", "name": "页头", "map": "pingou_header" },
     { "id" : "PG_Body", "name": "主体", "map": "pingou_body" },
@@ -13,6 +17,6 @@
     { "id" : "PG_Footer", "name": "页脚", "map": "pingou_footer" },
     { "id" : "PG_PLinks", "name": "品购产品链接", "map": "pingou_plinks" },
     { "id" : "PG_BLinks", "name": "品购档期链接", "map": "pingou_blinks" },
-    { "id" : "PG_Coupon", "name": "品购红包", "map": "pingou_coupon", "map": "mods/pingou_coupon" }
+    { "id" : "PG_Coupon", "name": "品购红包", "dir": "mods/pingou_coupon", "map": "pingou_coupon" }
   ]
 }

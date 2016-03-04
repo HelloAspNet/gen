@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" ng-app="app">
+<html lang="en" ng-app="app">
 <head>
     <meta charset="UTF-8">
     <title></title>
@@ -7,27 +8,34 @@
     <link rel="stylesheet" href="index.css"/>
 </head>
 <body ng-controller="MainCtrl">
-<fieldset>
+<fieldset class="code-options">
     <legend>Options</legend>
     <div class="controls">
         <label ng-repeat="obj in CONFIG.controls" ng-if="!obj.isHidden">
-            <input class="control" type="checkbox" ng-checked="obj.isChecked"/>
+            <input class="control" type="checkbox" ng-model="obj.isChecked"/>
+            <span ng-bind="obj.name"></span>
+        </label>
+    </div>
+    <div class="layouts">
+        <label ng-repeat="obj in CONFIG.layouts" ng-click="updateCode()" ng-if="!obj.isHidden">
+            <input class="layout" type="checkbox" ng-model="obj.isChecked"/>
             <span ng-bind="obj.name"></span>
         </label>
     </div>
     <div class="mods">
-        <label ng-repeat="obj in CONFIG.mods" ng-click="getMod(obj)" ng-if="!obj.isHidden">
-            <input class="control" type="checkbox" ng-checked="obj.isChecked"/>
+        <label ng-repeat="obj in CONFIG.mods" ng-click="updateCode()" ng-if="!obj.isHidden">
+            <input class="control" type="checkbox" ng-model="obj.isChecked"/>
             <span ng-bind="obj.name"></span>
         </label>
     </div>
 </fieldset>
-<fieldset>
-    <legend>preview</legend>
+<fieldset class="code-preview">
+    <legend>Preview</legend>
 
     <div ui-ace="{theme:'chrome', mode: 'html'}" ng-model="CODE"></div>
 </fieldset>
 <script src="libs/underscore/underscore.js"></script>
+<script src="libs/artTemplate/dist/template.js"></script>
 <script src="libs/ionic/release/js/ionic.bundle.js"></script>
 <script src="libs/ace-builds/src-min-noconflict/ace.js"></script>
 <script src="libs/angular-ui-ace/ui-ace.js"></script>

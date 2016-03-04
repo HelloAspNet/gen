@@ -4,84 +4,89 @@
 angular.module('app', ['ui.ace'])
   .controller('MainCtrl', ['$scope', '$http', '$rootScope', '$q', function ($scope, $http, $rootScope, $q) {
 
+    var MOD_MAPS = $rootScope.MOD_MAPS = {};
 
-    $http.get('./index.json').success(function (res) {
+    $http.get('./ng_index.json').success(function (res) {
 
       $rootScope.CONFIG = res;
 
-      _.forEach(res.mods, function(mod, i){
-        mod.index = i;
+      var promises = [];
+
+      var values = _.values(res);
+
+      var flatten = _.flatten(values);
+
+      _.forEach(flatten, function (mod) {
+
+        if (mod.dir) {
+          var id = mod.id.toLocaleUpperCase();
+
+          MOD_MAPS[id] = mod;
+
+          var reqs = [
+            req(mod, 'html'),
+            req(mod, 'css'),
+            req(mod, 'js')
+          ];
+
+          promises.push(reqs);
+        }
       });
+
+      $q.all(promises).then(function () {
+        console.log('init over', MOD_MAPS);
+      });
+
+      function req(mod, suffixName) {
+        console.log(mod, suffixName)
+        return $http.get(mod.dir + '/index.' + suffixName)
+          .success(function (res) {
+            console.log('res', res);
+            mod[suffixName] = res;
+          })
+          .error(function () {
+            mod[suffixName] = '';
+          });
+      }
 
     });
 
-    var CODE = {
-      htmlMaps: {},
-      cssMaps: {},
-      jsMaps: {},
-      update: function(){
-        $rootScope.CODE = _.values(this.htmlMaps).sort(function(a, b){
-          return a.index - b.index;
-        }).map(function(obj){
-          return obj.html;
-        }).join('\n');
+
+    $rootScope.updateCode = function () {
+
+      var values = _.values(MOD_MAPS);
+
+      console.log('values', values);
+
+      var filter = _.filter(values, function (mod) {
+        return mod.dir && mod.isChecked;
+      });
+      console.log('filter', filter);
+
+      var map = _.map(filter, function (mod) {
+        return mod.html;
+      });
+      console.log('map', map);
+
+      var code = map.join('\n');
+
+      console.log('code', code);
+
+      var re = /\{\{#.+?}}/;
+
+      // 渲染嵌套模版
+      while(re.test(code)){
+
+        var render = template.compile(code);
+
+        code = render({MOD_MAPS: MOD_MAPS});
+
       }
+
+      console.log('render code', code);
+
+      $rootScope.CODE = code;
     };
-
-
-    $rootScope.getMod = function(obj){
-
-      var url = 'mods/' + obj.map + '/index';
-
-      if(_.has(CODE.htmlMaps, obj.id)) {
-        delete CODE.htmlMaps[obj.id];
-        CODE.update();
-      }
-      else {
-        var promise = _.isUndefined(obj.html) ? $http.get(url + '.html') : $q.when({data: obj.html});
-        promise.then(function (res) {
-          obj.html = res.data;
-          CODE.htmlMaps[obj.id] = obj;
-          CODE.update();
-        }, function(){
-          obj.html = '';
-        });
-      }
-
-      if(_.has(CODE.cssMaps, obj.id)) {
-        delete CODE.cssMaps[obj.id];
-        CODE.update();
-      }
-      else {
-        var promise = _.isUndefined(obj.css) ? $http.get(url + '.css') : $q.when({data: obj.css});
-        promise.then(function (res) {
-          obj.css = res.data;
-          CODE.cssMaps[obj.id] = obj;
-          CODE.update();
-        }, function(){
-          obj.css = '';
-        });
-      }
-
-      if(_.has(CODE.jsMaps, obj.id)) {
-        delete CODE.jsMaps[obj.id];
-        CODE.update();
-      }
-      else {
-        var promise = _.isUndefined(obj.js) ? $http.get(url + '.js') : $q.when({data: obj.js});
-        promise.then(function (res) {
-          obj.js = res.data;
-          CODE.jsMaps[obj.id] = obj;
-          CODE.update();
-        }, function(){
-          obj.js = '';
-        });
-      }
-      
-
-     
-    };
-
 
 
     $scope.aceLoaded = function (_editor) {
