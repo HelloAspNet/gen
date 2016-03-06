@@ -1,0 +1,20 @@
+<!--品购模块-begin-->
+{{each MOD_CONFIG.LIST as item $i}}
+<div class="kmod kmod{{ $helpers.kToIndex($i) }}">
+    {{each MOD_CONFIG.BRAND_LIST as brand}}
+    {{if brand.hashId == $helpers.kToIndex($i) }}
+    <!--锚点-begin-->
+    <a class="kmod-target" id="kmod_hash_{{ brand.id }}" name="kmod_hash_{{ brand.id }}"></a>
+    <!--锚点-end-->
+    {{/if}}
+    {{/each}}
+    <div class="kmod-bd">
+        <!--链接-begin-->
+        {{each item.links as link}}
+        <a class="kmod-plink kmod-plink{{ $helpers.kToIndex($index) }}" href="javascript:;"></a>
+        {{/each}}
+        <!--链接-end-->
+    </div>
+</div>
+{{/each}}
+<!--品购模块-end-->

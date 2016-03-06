@@ -1,22 +1,52 @@
 {
   "controls": [
     { "id": "Wrapper", "name": "Wrapper", "isChecked": true, "isHidden": true },
-    { "id": "ACT", "name": "ACT", "group": "G_1", "isHidden": true },
     { "id": "B2C", "name": "B2C", "group": "G_1", "isHidden": true },
     { "id": "Min", "name": "Min", "isChecked": true },
     { "id": "Format", "name": "Format", "isChecked": true }
   ],
-  "layouts": [
-    { "id": "PG", "name": "品购", "dir": "mods/pingou/layout" },
-    { "id": "Other", "name": "其他" }
+
+
+  "MAPS": {
+    "ACT": { "name": "ACT", "dir": "mods/act" },
+    "PG":  { "name": "品购", "dir": "mods/pingou/layout" },
+    "PG_Header":  { "name": "页头", "dir": "mods/pingou/header", "style": { "height": "499px" } },
+    "PG_Body": { "name": "主体", "dir": "mods/pingou/body" },
+    "PG_Nav": { "name": "导航", "dir": "mods/pingou/nav" },
+    "PG_Footer": { "name": "页脚", "dir": "mods/pingou/footer" },
+    "PG_Module":  { "name": "普通模块", "dir": "mods/pingou/module" },
+    "PG_Coupon":  { "name": "品购红包", "dir": "mods/pingou/coupon" },
+    "PG_Nav_Coupon":  { "name": "品购导航红包", "dir": "mods/pingou/nav_coupon" },
+
+    "Other": { "name": "其他" }
+
+  },
+
+  "IMG_DIR": "http://a.vpimg3.com/upload/actpics/uidesign/2016/3m/0304spring/warm-",
+  "NAV_LIST": [
+    {"id": "l1", "type": "left"},
+    {"id": "r1", "type": "right"}
   ],
-  "mods": [
-    { "id" : "PG_Header", "name": "页头", "dir": "mods/pingou/header" },
-    { "id" : "PG_Body", "name": "主体", "dir": "mods/pingou/body" },
-    { "id" : "PG_Nav", "name": "导航", "dir": "mods/pingou/nav" },
-    { "id" : "PG_Footer", "name": "页脚", "dir": "mods/pingou/footer" },
-    { "id" : "PG_PLinks", "name": "品购产品链接", "dir": "mods/pingou/plinks" },
-    { "id" : "PG_BLinks", "name": "品购档期链接", "dir": "mods/pingou/blinks" },
-    { "id" : "PG_Coupon", "name": "品购红包", "dir": "mods/pingou/coupon" }
-  ]
+  "BRAND_LIST": [
+    {"id": "h1", "hashId": ""},
+    {"id": "h2", "hashId": "2"}
+  ],
+  "LIST": [],
+  "DATA": {
+    "Brand": {
+      "VIP_NH": ["670259", "686604"],
+      "VIP_SH": ["670259", "686604"],
+      "VIP_CD": ["670259", "686604"],
+      "VIP_BJ": ["670259", "686604"],
+      "VIP_HZ": ["670259", "686604"]
+    },
+    "Product": {
+      "VIP_NH": ["670259-92551450", "670259-92551457", "670259-92551449"],
+      "VIP_SH": ["670259-92551450", "670259-92551457", "670259-92551449"],
+      "VIP_CD": ["670259-92551450", "670259-92551457", "670259-92551449"],
+      "VIP_BJ": ["670259-92551450", "670259-92551457", "670259-92551449"],
+      "VIP_HZ": ["670259-92551450", "670259-92551457", "670259-92551449"]
+    }
+  }
+
 }

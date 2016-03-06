@@ -14,28 +14,16 @@
 .kmod-nav.kstate-fixed {
   position: fixed;
 }
-.kmod-nav1 {
-  width: 120px;
-  height: 550px;
+{{each MOD_CONFIG.NAV_LIST as nav}}
+.kmod-nav-{{ nav.id }} {
+  width: 120px; height: 550px;
   margin-left: -140px;
-  background: url('/*${@IMAGE_URL}*/nav-a.png') no-repeat center 80px;
+  background: url('{{ MOD_CONFIG.IMG_DIR }}nav.png') no-repeat center 80px;
 }
-.kmod-nav1 .kmod-nav-hd {
-  height: 170px;
-}
-.kmod-nav1 .kmod-nav-bd {
-  margin: 0px;
-}
-.kmod-nav1 .kmod-nav-ft {
-  height: 40px;
-}
-.kmod-nav1 .kmod-nav-ft .kmod-hash {
-  height: 35px;
-}
-.kmod-nav1 .kmod-hash {
-  display: block;
-  width: 100%;
-  height: 115px;
-}
+.kmod-nav-{{ nav.id }} .kmod-nav-hd { height: 170px; }
+.kmod-nav-{{ nav.id }} .kmod-nav-bd { margin: 0px; }
+.kmod-nav-{{ nav.id }} .kmod-nav-ft { height: 40px; }
+.kmod-nav-{{ nav.id }} .kmod-nav-ft .kmod-hash { height: 35px; }
+.kmod-nav-{{ nav.id }} .kmod-hash { display: block; width: 100%; height: 115px; }
+{{/each}}
 /* 导航-end */
-/*# sourceMappingURL=index.css.map */

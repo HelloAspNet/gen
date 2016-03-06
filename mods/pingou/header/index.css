@@ -1,10 +1,12 @@
 .kmod-header {
   height: 500px;
-  background-image: url('/*${@IMAGE_URL}*//*${@STATE}*/-header.jpg');
+  background: url('{{ MOD_CONFIG.IMG_DIR }}header.jpg') no-repeat;
+  {{each MOD_CONFIG_MAPS.PG_Header.style}}
+  {{$index}}: {{$value}};
+  {{/each}}
 }
 .kmod-logo {
   width: 115px;
   height: 115px;
-  background: url('/*${@IMAGE_URL}*//*${@STATE}*/-logo.png') no-repeat;
+  background: url('{{ MOD_CONFIG.IMG_DIR }}logo.png') no-repeat;
 }
-/*# sourceMappingURL=index.css.map */

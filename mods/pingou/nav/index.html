@@ -1,24 +1,22 @@
 <!--模块导航-begin-->
 <div class="kmod kmod-nav-wrap">
     <div class="kmod-bd">
-        {{each navigators}}
-        <!--导航{{$index | kToIndex}}-begin-->
-        <div class="kmod-nav kmod-nav1">
+        {{each MOD_CONFIG.NAV_LIST as nav }}
+        <!--导航{{ nav.id }}-begin-->
+        <div class="kmod-nav kmod-nav-{{ nav.id }}">
             <div class="kmod-nav-hd">
-                {{# MOD_MAPS.PG_NAV_COUPON.html }}
+                {{# MOD_CONFIG_MAPS.PG_Nav_Coupon.html }}
             </div>
             <div class="kmod-nav-bd">
-                {{if brands}}
-                {{each brands as $v $i}}
-                <a class="kmod-hash kmod-hash{{$i | kToIndex}}" href="#kmod_hash{{$i | kToIndex}}" data-id="kmod_hash{{$i | kToIndex}}" target="_self"></a>
+                {{each MOD_CONFIG.BRAND_LIST as brand}}
+                <a class="kmod-hash kmod-hash-{{ brand.id }}" href="#kmod_hash_{{ brand.id }}" data-id="kmod_hash_{{ brand.id }}" target="_self"></a>
                 {{/each}}
-                {{/if}}
             </div>
             <div class="kmod-nav-ft">
                 <a class="kmod-hash" href="#" target="_self"></a>
             </div>
         </div>
-        <!--导航{{$index | kToIndex}}-end-->
+        <!--导航{{ nav.id }}-end-->
         {{/each}}
     </div>
 </div>

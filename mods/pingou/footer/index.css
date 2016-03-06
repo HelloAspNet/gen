@@ -1,7 +1,7 @@
 .kmod-footer {
   height: 250px;
   margin: 80px 0 40px;
-  background-image: url('/*${@IMAGE_URL}*//*${@STATE}*/footer.png');
+  background-image: url('{{ MOD_CONFIG.IMG_DIR }}footer.png');
 }
 .kmod-footer .kmod-btn {
   float: left;
@@ -9,4 +9,3 @@
   height: 57px;
   margin: 190px 0 0 334px;
 }
-/*# sourceMappingURL=index.css.map */

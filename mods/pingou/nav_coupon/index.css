@@ -1,20 +1,22 @@
 /* 导航红包-begin */
-.kmod-nav-coupon {
+{{each MOD_CONFIG.NAV_LIST as nav}}
+.kmod-nav-{{ nav.id }}-coupon {
   position: relative;
   height: 173px;
 }
-.kmod-nav-coupon-btn {
+.kmod-nav-{{ nav.id }}-coupon-btn {
   position: absolute;
   top: 143px;
   left: 7px;
   width: 106px;
   height: 25px;
+  background: url("{{ MOD_CONFIG.IMG_DIR }}nav-{{ nav.name }}-a.png") no-repeat center;
 }
-.kstate-coupon-get .kmod-nav1 {
-  background-image: url("/*${IMAGE_URL}*/nav-b.png");
+.kstate-coupon-get .kmod-nav-{{ nav.id }}-btn {
+  background-image: url("{{ MOD_CONFIG.IMG_DIR }}nav-{{ nav.name }}-b.png");
 }
-.kstate-coupon-success .kmod-nav1 {
-  background-image: url("/*${IMAGE_URL}*/nav-c.png");
+.kstate-coupon-success .kmod-nav-{{ nav.id }}-btn {
+  background-image: url("{{ MOD_CONFIG.IMG_DIR }}nav-{{ nav.name }}-c.png");
 }
+{{/each}}
 /* 导航红包-end */
-/*# sourceMappingURL=index.css.map */

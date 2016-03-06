@@ -3,7 +3,7 @@
   position: relative;
   width: 482px;
   height: 144px;
-  background: url("/*${IMAGE_URL}*/coupon-a.png") no-repeat center;
+  background: url("{{ MOD_CONFIG.IMG_DIR }}coupon-a.png") no-repeat center;
 }
 .kmod-coupon-btn {
   position: absolute;
@@ -14,10 +14,9 @@
   left: 231px;
 }
 .kstate-coupon-get .kmod-coupon {
-  background-image: url("/*${IMAGE_URL}*/coupon-b.png");
+  background-image: url("{{ MOD_CONFIG.IMG_DIR }}coupon-b.png");
 }
 .kstate-coupon-success .kmod-coupon {
-  background-image: url("/*${IMAGE_URL}*/coupon-c.png");
+  background-image: url("{{ MOD_CONFIG.IMG_DIR }}coupon-c.png");
 }
 /* 红包-end */
-/*# sourceMappingURL=index.css.map */

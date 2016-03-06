@@ -1,32 +1,11 @@
 <!--模块主体-begin-->
 <div class="kmod-body">
 
-    {{# MOD_MAPS.PG_COUPON.html }}
+    {{# MOD_CONFIG_MAPS.PG_Nav.html }}
 
-    <!--品购模块-begin-->
-    {{each modules}}
-    <div class="kmod kmod{{$index | kToIndex}}">
-        {{if brands && ($index < brands.length)}}
-        <!--锚点-begin-->
-        <a class="kmod-target" id="kmod_hash{{$index | kToIndex}}" name="kmod_hash{{$index | kToIndex}}"></a>
-        <!--锚点-end-->
-        {{/if}}
-        <div class="kmod-bd">
-            {{if coupons && ($index < coupons.length)}}
-            <!--红包-begin-->
-            <div class="kmod-coupon"><a href="javascript:;" class="kmod-coupon-btn"></a></div>
-            <!--红包-end-->
-            {{/if}}
-            {{if products}}
-            <!--链接-begin-->
-            {{each products as $v $i}}
-            <a class="kmod-plink kmod-plink{{$i | kToIndex}}" href="javascript:;"></a>
-            {{/each}}
-            <!--链接-end-->
-            {{/if}}
-        </div>
-    </div>
-    {{/each}}
-    <!--品购模块-end-->
+    {{# MOD_CONFIG_MAPS.PG_Coupon.html }}
+
+    {{# MOD_CONFIG_MAPS.PG_Module.html }}
+
 </div>
 <!--模块主体-end-->

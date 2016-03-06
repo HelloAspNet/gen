@@ -1,25 +1,38 @@
 <style>
-    {{# MOD_MAPS.PG_HEADER.css}}
+.kstate-debug a{background-color:rgba(0,0,0,.3)}
+.kstate-debug a.kstate-hover,.kstate-debug a:hover{background-color:rgba(0,0,0,.4)}
+.kstate-fixed{position:fixed}
+.kmods{overflow:hidden;background:#efefef}
+.kmod{background:center top no-repeat}
+.kmod-bd{position:relative;width:1000px;margin:0 auto}
+.kmod-bd:after,.kmod-bd:before{display:table;content:""}
+.kmod-bd:after{clear:both}
+.kmod-blink,.kmod-link,.kmod-plink{float:left}
+.kmod-target{display:block;position:relative;visibility:hidden}
 
-    {{# MOD_MAPS.PG_BODY.css}}
-
-    {{# MOD_MAPS.PG_FOOTER.css}}
+{{# MOD_CONFIG_MAPS.PG_Header.css }}
+{{# MOD_CONFIG_MAPS.PG_Body.css }}
+{{# MOD_CONFIG_MAPS.PG_Footer.css }}
 </style>
 <!--模块总容器-begin-->
 <div class="kmods kstate-debug">
 
-    {{# MOD_MAPS.PG_HEADER.html}}
+    {{# MOD_CONFIG_MAPS.PG_Header.html }}
 
-    {{# MOD_MAPS.PG_BODY.html}}
+    {{# MOD_CONFIG_MAPS.PG_Body.html }}
 
-    {{# MOD_MAPS.PG_FOOTER.html}}
+    {{# MOD_CONFIG_MAPS.PG_Footer.html }}
 
 </div>
 <!--模块容器-end-->
 <script>
-    {{# MOD_MAPS.PG_HEADER.js}}
+(function(){
 
-    {{# MOD_MAPS.PG_BODY.js}}
+{{# MOD_CONFIG_MAPS.PG_Header.js }}
 
-    {{# MOD_MAPS.PG_FOOTER.js}}
+{{# MOD_CONFIG_MAPS.PG_Body.js }}
+
+{{# MOD_CONFIG_MAPS.PG_Footer.js }}
+
+})();
 </script>
