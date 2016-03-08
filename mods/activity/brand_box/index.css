@@ -1,0 +1,60 @@
+  /*内容展示失败时的提示信息*/
+.sp-page-loading{width: 100%;min-width: 960px;background: url('http://a.vpimg3.com/upload/actpics/act/sp/branches/pc_sp/act-20150806/img/page-loading.gif') no-repeat center #fff;padding: 60px 0;height: 196px;}
+.sp-page-loading-fail{width: 100%;min-width: 960px;background: url('http://a.vpimg3.com/upload/actpics/act/sp/branches/pc_sp/act-20150806/img/page-loading-fail.png') no-repeat center #fff;padding: 60px 0;height: 196px;display: none;position: relative;}
+.sp-page-loading-fail .btn-refrash, .sp-page-loading-fail .link-home{position: absolute;top: 149px;height: 34px;text-indent: -9999px;}
+.sp-page-loading-fail .btn-refrash:hover, .sp-page-loading-fail .link-home:hover{background: rgba(0, 0, 0, 0.05);}
+.sp-page-loading-fail .btn-refrash{left: 50%;width: 137px;margin-left: -141px;}
+.sp-page-loading-fail .link-home{right: 50%;width: 112px;margin-right: -127px;}
+
+/*档期小盒子*/
+.b226-list-wrap { width: 960px; margin: 0 auto; }
+.b226-list { position: relative; width: 980px; background: url(http://a.vpimg3.com/upload/actpics/uidesign/2016/2m/0208kidfen/placehoder.png) no-repeat left bottom; }
+.b226-zw { width: 226px; height: 375px; float: left; margin: 0 18px 18px 0;}
+.b226 { width: 226px; overflow: hidden; float: left; margin: 19px 19px 0 0; background-color: #fff; box-shadow: 0 0 3px #aaa;}
+.b226-photo { height: 288px; overflow: hidden; position: relative; }
+.b226-mask, .b226-pms { text-align: center; background: rgba(0, 0, 0, 0.7); filter: progid:DXImageTransform.Microsoft.Gradient(GradientType=0, StartColorStr='#b2000000', EndColorStr='#b2000000'); }
+html:root .b226-mask, html:root .b226-pms { filter: progid:DXImageTransform.Microsoft.Gradient(enabled:false); }
+.b226-mask { width: 100%; height: 100%; position: absolute; top: 100%; left: 0; z-index: 2; }
+.b226:hover .b226-mask,.b226-hover .b226-mask { top: 0; }
+.b226-sale-time { font-size: 24px; line-height: 1; text-align: center; color: #f3c950; padding-top: 15px; margin-top: 40px; height: 63px; background: url(http://a.vpimg4.com/upload/actpics/uidesign/2015/8m/0821kid/sale-time.png?v1) no-repeat center top; }
+.b226-sale-tips { font-size: 18px; color: #acacac; padding-top: 3px; }
+.b226-pms { color: #fff; text-align: center; line-height: 2; width: 216px; padding: 0 5px; text-overflow: ellipsis; white-space: nowrap; overflow: hidden; position: absolute; left: 0; bottom: 0; z-index: 3; }
+.b226.fav .b226-pms{display: none;}
+.b226-text { padding: 0 15px; height: 86px; }
+.b226-attr { height: 47px; overflow: hidden; }
+.b226-discount { font-size: 12px; color: #acacac; padding-top: 5px; float: right; }
+.b226-discount span { font-size: 26px; color: #f10582; margin-right: 3px; }
+.b226-name { line-height: 15px; height: 30px; overflow: hidden; padding: 10px 3px 0 0; }
+.b226-name a { color: #333; }
+.b226-nfav{color: #adadad;}
+.b226-btn { color: #f10582; text-align: center; line-height: 24px; height: 24px; border: solid 1px #fbb4d9; }
+.b226:hover .b226-btn { color: #fff; background-color: #f10582; border-color: #f10582; }
+.b226-btn a { color: #f10582; display: block; }
+.b226:hover .b226-btn a { color: #fff; }
+.b226-btn-arrow { font-family: "\5B8B\4F53", sans-serif; }
+.b226-name { height: 15px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; /*warm*/ }
+.b226-upnew-ico { position: absolute; right: 0px; bottom: 20px; z-index: 5; }
+/* b226 */
+
+.fav {}
+.fav-tips { font-size: 14px; color: #fff; width: 100%; padding-bottom: 20px; background: url(http://a.vpimg3.com/upload/actpics/act/sp/branches/pc_sp/act-20150820/img/icon.gif) no-repeat center 17px; position: absolute; left: 0; bottom: 0; }
+.fav-done .fav-tips { display: none; }
+.fav-count { color: #acacac; line-height: 15px; }
+.fav .b226-btn { cursor: pointer; }
+.fav-txt { display: inline-block; padding-left: 20px; background: url(http://a.vpimg4.com/upload/actpics/uidesign/2015/8m/0821kid/fav.png) no-repeat; }
+.fav:hover .fav-txt { background-position: 0 -24px; }
+.fav-done .b226-btn { cursor: default; }
+.fav-done .fav-txt { background-position: 0 -48px; }
+.fav-done:hover .fav-txt { background-position: 0 -72px; }
+/* fav */
+
+.hb .fav-tips { display: none; }
+.hb-icon { color: #FEDF4F; text-align: center; width: 34px; height: 21px; padding-top: 20px; background: url(http://a.vpimg4.com/upload/actpics/uidesign/2015/9m/0920kid/hb-icon.png) no-repeat; position: absolute; top: 10px; right: 10px; }
+.hb .b226-sale-tips { display: none; }
+.hb-tips { color: #acacac; padding: 30px 0 20px 0; background: url(http://a.vpimg4.com/upload/actpics/uidesign/2015/9m/0920kid/arrow.gif) no-repeat center bottom; margin-bottom: 10px;}
+.hb-tips dt { font-size: 14px; }
+.hb-tips dd { font-size: 16px; }
+.hb-btn { color: #fff; font-size: 20px; line-height: 38px; text-align: center; width: 109px; height: 38px; margin: 0 auto; padding-right: 40px; background: url(http://a.vpimg4.com/upload/actpics/uidesign/2015/8m/0821kid/hb.png) no-repeat; cursor: pointer; }
+.hb-done .hb-icon { color: #fff; background-position: left bottom; }
+.hb-done .hb-btn { background-position: left bottom; cursor: default; }
+/* hb */

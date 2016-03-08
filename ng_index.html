@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en" ng-app="app">
-<html lang="en" ng-app="app">
 <head>
     <meta charset="UTF-8">
     <title></title>
@@ -16,12 +15,27 @@
             <span ng-bind="obj.name"></span>
         </label>
     </div>
+    <legend>品购</legend>
     <div class="mods">
-        <label ng-repeat="(key, value) in MOD_CONFIG.MAPS" ng-click="updateCode()" ng-if="!value.isHidden">
-            <input class="control" type="checkbox" ng-model="value.isChecked"/>
-            <span ng-bind="value.name"></span>
+        <label ng-repeat="(id, mod) in MOD_CONFIG.MAPS" ng-click="updateCode(mod)" ng-if="!mod.isHidden && (id.substring(0, 3) === 'PG_')">
+            <input class="control" type="checkbox" ng-model="mod.isChecked"/>
+            <span ng-bind="mod.name"></span>
         </label>
     </div>
+    <legend>活动</legend>
+    <div class="mods">
+        <label ng-repeat="(id, mod) in MOD_CONFIG.MAPS" ng-click="updateCode(mod)" ng-if="!mod.isHidden && (id.substring(0, 3) === 'HD_')">
+            <input class="control" type="checkbox" ng-model="mod.isChecked"/>
+            <span ng-bind="mod.name"></span>
+        </label>
+    </div>
+    <!--<legend>Code</legend>-->
+    <!--<div class="mods">-->
+        <!--<label ng-repeat="(id, mod) in MOD_CONFIG.MAPS" ng-click="updateCode(mod)" ng-if="!mod.isHidden && (id.substring(0, 5) === 'Code_')">-->
+            <!--<input class="control" type="checkbox" ng-model="mod.isChecked"/>-->
+            <!--<span ng-bind="mod.name"></span>-->
+        <!--</label>-->
+    <!--</div>-->
 </fieldset>
 <fieldset class="code-preview">
     <legend>Preview</legend>

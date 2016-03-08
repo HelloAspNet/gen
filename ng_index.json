@@ -8,17 +8,21 @@
 
 
   "MAPS": {
-    "ACT": { "name": "ACT", "dir": "mods/act" },
-    "PG":  { "name": "品购", "dir": "mods/pingou/layout" },
-    "PG_Header":  { "name": "页头", "dir": "mods/pingou/header", "style": { "height": "499px" } },
-    "PG_Body": { "name": "主体", "dir": "mods/pingou/body" },
-    "PG_Nav": { "name": "导航", "dir": "mods/pingou/nav" },
-    "PG_Footer": { "name": "页脚", "dir": "mods/pingou/footer" },
-    "PG_Module":  { "name": "普通模块", "dir": "mods/pingou/module" },
-    "PG_Coupon":  { "name": "品购红包", "dir": "mods/pingou/coupon" },
-    "PG_Nav_Coupon":  { "name": "品购导航红包", "dir": "mods/pingou/nav_coupon" },
+    "PG_ACT_Layout": { "name": "ACT布局", "dir": "mods/pingou/act_layout", "radio": "layout" },
+    "PG_B2C_Layout": { "name": "B2C布局", "dir": "mods/pingou/b2c_layout", "radio": "layout" },
+    "PG_Layout":  { "name": "默认布局", "dir": "mods/pingou/layout", "radio": "layout" },
+    "PG_Header":  { "name": "页头", "dir": "mods/pingou/header", "isHidden": true, "style": { "height": "499px" } },
+    "PG_Body": { "name": "主体", "dir": "mods/pingou/body", "isHidden": true },
+    "PG_Nav": { "name": "导航", "dir": "mods/pingou/nav", "isHidden": true },
+    "PG_Footer": { "name": "页脚", "dir": "mods/pingou/footer", "isHidden": true },
+    "PG_Module":  { "name": "普通模块", "dir": "mods/pingou/module", "isHidden": true },
+    "PG_Coupon":  { "name": "红包", "dir": "mods/pingou/coupon", "isHidden": true },
+    "PG_Nav_Coupon":  { "name": "导航红包", "dir": "mods/pingou/nav_coupon", "isHidden": true },
 
-    "Other": { "name": "其他" }
+    "HD_Layout": { "name": "默认布局", "dir": "mods/activity/layout", "radio": "layout" },
+
+
+    "Code_DAP_Cache": { "name": "DAP Cache Code", "dir": "mods/code/dap_cache", "radio": "layout" }
 
   },
 

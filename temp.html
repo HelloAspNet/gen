@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="libs/ionic/release/css/ionic.min.css"/>
+    <link rel="stylesheet" href="index.css"/>
+</head>
+<body ng-controller="MainCtrl">
+<fieldset class="code-preview">
+    <legend>Preview</legend>
+
+    <div ui-ace="{theme:'chrome', mode: 'html'}" ng-model="CODE"></div>
+</fieldset>
+<script src="libs/underscore/underscore.js"></script>
+<script src="libs/artTemplate/dist/template.js"></script>
+<script src="libs/ionic/release/js/ionic.bundle.js"></script>
+<script src="libs/ace-builds/src-min-noconflict/ace.js"></script>
+<script src="libs/angular-ui-ace/ui-ace.js"></script>
+<script>
+    angular.module('app', ['ui.ace'])
+            .controller('MainCtrl', ['$scope', '$http', '$rootScope', '$q', function ($scope, $http, $rootScope, $q) {
+
+            }]);
+</script>
+</body>
+</html>

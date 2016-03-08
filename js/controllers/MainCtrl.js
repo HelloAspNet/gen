@@ -5,8 +5,6 @@ angular.module('app', ['ui.ace'])
   .controller('MainCtrl', ['$scope', '$http', '$rootScope', '$q', function ($scope, $http, $rootScope, $q) {
 
 
-
-
     template.helper('kToIndex', function (i, format) {
       i += 1;
       if (!format) return i;
@@ -42,38 +40,34 @@ angular.module('app', ['ui.ace'])
     });
 
 
-
-
     $http.get('./ng_index.json').success(function (res) {
 
       var MOD_CONFIG = {
         MAPS: {},
         IMG_DIR: 'imgs/',
         NAV_LIST: [
-          { id: 'l1', type: 'left' },
-          { id: 'r1', type: 'right' }
+          {id: 'l1', type: 'left'},
+          {id: 'r1', type: 'right'}
         ],
         BRAND_LIST: [
-          { id: 'h1', hashId: '' },
-          { id: 'h2', hashId: '2' }
+          {id: 'h1', hashId: ''},
+          {id: 'h2', hashId: '2'}
         ],
-        LIST: [
-
-        ],
+        LIST: [],
         DATA: {
-          BRAND:  {
-            VIP_NH: [ "670259", "686604" ],
-            VIP_SH: [ "670259", "686604" ],
-            VIP_CD: [ "670259", "686604" ],
-            VIP_BJ: [ "670259", "686604" ],
-            VIP_HZ: [ "670259", "686604" ]
-          } ,
-          PRODUCT:  {
-            VIP_NH: [ "670259-92551450", "670259-92551457", "670259-92551449"],
-            VIP_SH: [ "670259-92551450", "670259-92551457", "670259-92551449"],
-            VIP_CD: [ "670259-92551450", "670259-92551457", "670259-92551449"],
-            VIP_BJ: [ "670259-92551450", "670259-92551457", "670259-92551449"],
-            VIP_HZ: [ "670259-92551450", "670259-92551457", "670259-92551449"]
+          BRAND: {
+            VIP_NH: ["670259", "686604"],
+            VIP_SH: ["670259", "686604"],
+            VIP_CD: ["670259", "686604"],
+            VIP_BJ: ["670259", "686604"],
+            VIP_HZ: ["670259", "686604"]
+          },
+          PRODUCT: {
+            VIP_NH: ["670259-92551450", "670259-92551457", "670259-92551449"],
+            VIP_SH: ["670259-92551450", "670259-92551457", "670259-92551449"],
+            VIP_CD: ["670259-92551450", "670259-92551457", "670259-92551449"],
+            VIP_BJ: ["670259-92551450", "670259-92551457", "670259-92551449"],
+            VIP_HZ: ["670259-92551450", "670259-92551457", "670259-92551449"]
           }
         }
       };
@@ -81,7 +75,7 @@ angular.module('app', ['ui.ace'])
       MOD_CONFIG = _.defaults(res, MOD_CONFIG);
 
       // 处理data数据
-      _.each(MOD_CONFIG.DATA, function(val, key, data){
+      _.each(MOD_CONFIG.DATA, function (val, key, data) {
         data['_' + key] = val;
         data[key] = angular.toJson(val);
       });
@@ -94,7 +88,6 @@ angular.module('app', ['ui.ace'])
 
       _.forEach(MOD_CONFIG.MAPS, function (mod, id) {
         console.log(mod)
-
 
 
         if (mod.dir) {
@@ -111,7 +104,6 @@ angular.module('app', ['ui.ace'])
           promises.push(reqs);
         }
       });
-
 
 
       $q.all(promises).then(function () {
@@ -140,7 +132,13 @@ angular.module('app', ['ui.ace'])
     });
 
 
-    $rootScope.updateCode = function () {
+    $rootScope.updateCode = function (module) {
+
+      _.forEach($rootScope.MOD_CONFIG_MAPS, function (mod) {
+        if (module.radio && module !== mod && module.radio === mod.radio) {
+          mod.isChecked = false;
+        }
+      });
 
       var values = _.values($rootScope.MOD_CONFIG_MAPS);
 
@@ -159,7 +157,7 @@ angular.module('app', ['ui.ace'])
       var re = /\{\{#.+?}}/;
 
       // 渲染嵌套模版
-      while(re.test(code)){
+      while (re.test(code)) {
 
         var render = template.compile(code);
 
