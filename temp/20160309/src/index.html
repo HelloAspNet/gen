@@ -1,3 +1,33 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>精典泰迪品牌钜献</title>
+    <!-- 检测移动端则跳转到对应的移动页面 -->
+    <script type="text/javascript">
+        var actMobileUrl = '';
+        if(actMobileUrl.length > 0){
+            try {
+                if (/Android|Windows Phone|webOS|iPhone|Phone|iPod|Nokia|SymbianOS|BlackBerry|Adr/i.test(navigator.userAgent) && !/MI PAD|Mi-Pad/i.test(navigator.userAgent)) {
+                    window.location.href = actMobileUrl;
+                }
+            } catch (e) {}
+        }
+    </script>
+    <meta name="baidu-site-verification" content="rnyMiv2JC1" />
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <link href="//s2.vipstatic.com/css/public/te/2/comm.css?12015100903" rel="stylesheet" type="text/css">
+    <script src="//s2.vipstatic.com/js/public/jquery.js?12015100903" type="text/javascript"></script>
+    <script src="//s2.vipstatic.com/js/public/core3.js?12015100903" type="text/javascript"></script>
+    <script type="text/javascript">var g_actCmsPgSwicth = {};</script></head>
+<body id="body_black">
+<a name="top"></a>
+<!-- head 开始 -->
+<script src="//www.vip.com/get_common.php?type=header&jq=0&core=0&actver=20160227145"></script>
+<!-- head 结束 -->
+
+
 <script>
     var K_DEL_BRANDS, K_NUM_FAKE_BRANDS, K_BLANK_DATA_FLOOR_USE_CACHE;
 
@@ -5,9 +35,12 @@
     K_SUBMALL_NAME = '';
     K_NUM_FAKE_BRANDS = 0;
     K_BLANK_DATA_FLOOR_USE_CACHE = true;
-//    K_DEFAULT_DAP_DATA_PATH = 'http://a.vpimg4.com/upload/actpics/uidesign/2016/3m/0308kidacu/cache/dap-reply-cache-201603082000.v4.js';
-    K_DEFAULT_DAP_DATA_PATH = 'dap-html.js';
+    //    K_DEFAULT_DAP_DATA_PATH = 'http://a.vpimg4.com/upload/actpics/uidesign/2016/3m/0308kidacu/cache/dap-reply-cache-201603082000.v4.js';
+    K_DEFAULT_DAP_DATA_PATH = 'http://yd.vip.com/temp/20160309/src/dap-html.js';
 </script>
+
+<!--<script src="http://yd.vip.com/temp/20160309/src/dap-html.js"></script>-->
+<script src="http://yd.vip.com/temp/20160309/src/dap-data.js"></script>
 <style type="text/css">
     /*内容展示失败时的提示信息*/
     .sp-page-loading{width: 100%;min-width: 960px;background: url('http://a.vpimg3.com/upload/actpics/act/sp/branches/pc_sp/act-20150806/img/page-loading.gif') no-repeat center #fff;padding: 60px 0;height: 196px;}
@@ -213,19 +246,24 @@
 </script>
 
 <script type="text/javascript">
-    var wh = $.Cookie.get('vip_wh') || 'VIP_NH';
-    var whs = wh.toLocaleUpperCase();
+    function showContainer(){
+        var wh = $.Cookie.get('vip_wh') || 'VIP_NH';
+        var whs = wh.toLocaleUpperCase();
 
-    $('[data-' + whs + '="1"]').each(function() {
-        $(this).closest('.container').show();
-    });
-    $(".container:visible").each(function(){
-        var _this = $(this);
-        var saleTime = _this.find(".b226").data('salestart') * 1000;
-        if ($.now() < saleTime) {
-            _this.find(".b226-btn a").html('马上收藏 <span class="b226-btn-arrow">></span>');
-        }
-    });
+        $('[data-' + whs + '="1"]').each(function() {
+            $(this).closest('.container').show();
+        });
+        $(".container:visible").each(function(){
+            var _this = $(this);
+            var saleTime = _this.find(".b226").data('salestart') * 1000;
+            if ($.now() < saleTime) {
+                _this.find(".b226-btn a").html('马上收藏 <span class="b226-btn-arrow">></span>');
+            }
+        });
+    }
+
+    $.Listeners.sub('dapReady').onsuccess(showContainer);
+
 </script>
 
 <script>
@@ -652,33 +690,11 @@
             }
 
 
-            function isValidReply(oDapReply) {
-                if ( !(oDapReply && oDapReply.code === 200 && oDapReply.result )  ) {
-                    return false;
-                }
-
-                var floors, index, floor;
-
-                floors = oDapReply.result.floors;
-
-                //至少有一个楼层
-                if ( !(floors && '1' in floors) ) {
-                    return false;
-                }
-
-                //任何数据楼层无数据，该dap响应都视为无效
-                for ( index in floors ) {
-                    floor = floors[index];
-                    if ( floor.type === 'data' ) {
-                        if ( !(floor.mixedData && floor.mixedData.length) ) {
-                            return false;
-                        }
-                    }
-                }
-
-                return true;
-            }
-
+            $.ajax(setting).done(DAPCache.fix(function (oDapReply) {
+                renderdap(oDapReply);
+            })).fail(DAPCache.fix(function (oDapReply) {
+                renderdap(oDapReply);
+            }));
 
             function renderdap(oDapReply) {
                 if (oDapReply && oDapReply['code'] == 200) {
@@ -699,17 +715,46 @@
             }
 
 
-            $.ajax(setting).done(function (oDapReply) {
-                //假如是无效的响应或者某个数据楼层的数据为空，则使用缓存的dap响应
-                if ( !isValidReply(oDapReply) ) {
-                    oDapReply = K_DAP_DATA_DEFAULT;
-                }
-                renderdap(oDapReply);
-            }).fail(function (oDapReply) {
-                oDapReply = K_DAP_DATA_DEFAULT;
-                renderdap(oDapReply);
-                // _this._error();
-            });
+
+
+//
+//            function isValidReply(oDapReply) {
+//                if ( !(oDapReply && oDapReply.code === 200 && oDapReply.result )  ) {
+//                    return false;
+//                }
+//
+//                var floors, index, floor;
+//
+//                floors = oDapReply.result.floors;
+//
+//                //至少有一个楼层
+//                if ( !(floors && '1' in floors) ) {
+//                    return false;
+//                }
+//
+//                //任何数据楼层无数据，该dap响应都视为无效
+//                for ( index in floors ) {
+//                    floor = floors[index];
+//                    if ( floor.type === 'data' ) {
+//                        if ( !(floor.mixedData && floor.mixedData.length) ) {
+//                            return false;
+//                        }
+//                    }
+//                }
+//
+//                return true;
+//            }
+//            $.ajax(setting).done(function (oDapReply) {
+//                //假如是无效的响应或者某个数据楼层的数据为空，则使用缓存的dap响应
+//                if ( !isValidReply(oDapReply) ) {
+//                    oDapReply = K_DAP_DATA_DEFAULT;
+//                }
+//                renderdap(oDapReply);
+//            }).fail(function (oDapReply) {
+//                oDapReply = K_DAP_DATA_DEFAULT;
+//                renderdap(oDapReply);
+//                // _this._error();
+//            });
 
 
 
@@ -773,6 +818,96 @@
         }
     };
 
+    var DAPCache = {
+        expires: '2016/03/10 00:59:00',
+        getExpires: function(){
+            if(!this.expires) throw new Error('避免本地缓存过多数据，过期时间必须设置。');
+            return new Date(this.expires);
+        },
+        getId: function(){
+            return DAP._options.cmsId;
+        },
+        // 获取默认数据
+        getDefaultData: function(){
+            try { return K_DAP_DATA_DEFAULT; }
+            catch(e){ VIPSHOP.log('dap默认数据不存在'); }
+        },
+        /**
+         * 修复dap数据
+         * @param callback
+         * @returns {Function}
+         */
+        fix: function (callback) {
+            var _this = this;
+            return function (res) {
+
+                if (_this.checkData(res)) {
+                    _this.setData(res);
+                }
+                var data = _this.getData();
+
+                var defaultData = _this.getDefaultData();
+                if (!data || (defaultData && (data.requestTime < defaultData.requestTime))) {
+                    data = defaultData;
+                }
+                return callback(data);
+            };
+        },
+        /**
+         * 缓存dap数据到本地
+         * @param data
+         */
+        setData: function (data) {
+            jQuery.Storage.set('k_dap_' + this.getId(), data, this.getExpires());
+        },
+        /**
+         * 获取本地dap缓存数据
+         * @returns {*|Object|String|Array|Boolean}
+         */
+        getData: function () {
+            return jQuery.Storage.get('k_dap_' + this.getId());
+        },
+        /**
+         * 校验Dap数据有效性
+         * @param data dap数据
+         * @returns {boolean} 数据有效性
+         */
+        checkData: function (data) {
+            if (!data || !data.result || !data.result.floors) return false;
+
+            /**
+             * 因为这个data.result.floors有下面几个特征：
+             *    不是数组
+             *    没有length属性
+             *    下标从1开始
+             *    是个对象
+             *
+             * 所以用下面这个方法来确定里面有没有楼层
+             *
+             */
+            if (!('1' in data.result.floors)) return false;
+
+            /**
+             * 满足下面任一条件判定为数据缺失:
+             *    html楼层且mixedData为空
+             *    data楼层且mixedData长度为0
+             */
+            var floors = data.result.floors;
+            var floor;
+            for (var k in floors) {
+                floor = floors[k];
+                if (
+                        (floor.type === 'html' && floor.mixedData === '')
+                        || (floor.type === 'data' && floor.mixedData.length === 0)
+                ) {
+                    return false;
+                }
+            }
+
+            // 满足上面所有条件视为通过验证
+            return true;
+        }
+    };
 
     //收藏
     var Favorite = {
@@ -1671,16 +1806,12 @@
         }
     });
 
-
-
-
     $.Loader.advScript({
         name: 'default_dap_data',
         url: K_DEFAULT_DAP_DATA_PATH
     },{
         name: 'xxx',
         def: function() {
-
 
             $(function () {
 
@@ -1886,7 +2017,7 @@
 
                 //初始化
                 DAP.init({
-                    cmsId: 19706,
+                    cmsId: 19709,
                     box: '#dap',
 
                     //允许定制总体渲染方案
@@ -2119,3 +2250,35 @@
         requires: ['default_dap_data']
     });
 </script>
+
+
+
+<!-- 加入购物袋代码 start -->
+<!-- onclick="isLogin('/shop/cart.php?merchandise_num=1&size=1038274'); return false;" -->
+<!-- 加入购物袋代码 end -->
+
+<!-- footer 开始 -->
+<script src="//www.vip.com/get_common.php?type=footer&loadcss=0&actver=20160227145"></script>
+<noscript><img src="//mar.vip.com/n" height="1" width="1" border="0" alt="" /></noscript>
+<!-- footer 结束 -->
+
+<!-- VTM代码 -->
+<script type="text/javascript">
+    VIPSHOP = window.VIPSHOP || {};
+    $.extend(VIPSHOP, {"actName":"\u7cbe\u5178\u6cf0\u8fea\u54c1\u724c\u949c\u732e","actBeginTime":"1456416000","actEndTime":"1458921600"}); //encode格式为 {}的json格式，起码要输出花括号容错
+
+    var VTM = (function(VTM){
+        VTM.Act = {
+            name : VIPSHOP.actName,
+            beginTime : VIPSHOP.actBeginTime,
+            endTime : VIPSHOP.actEndTime
+        };
+        VTM.pageId = "224";
+        return VTM;
+    })(window.VTM || {});
+
+    var VTM_SRC="http://ms.vipstatic.com/vtm/vtm_config_res/prod/vtm.js";
+    $.Loader.advScript({ name : "vtm", url : VTM_SRC });
+</script>
+</body>
+</html>

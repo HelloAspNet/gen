@@ -1,109 +1,113 @@
-var a = {
-  "code": 200,
-  "msg": "success",
-  "result": {
-    "info": {
-      "id": "511",
-      "name": "308-母婴-开售半品购",
-      "sortId": "115",
-      "sortRule": 99,
-      "umid": "2016-03-08b",
-      "time_sign": "2016-03-08b",
-      "dap_user_type": "newCustomer",
-      "endTime": 1457438400,
-      "startTime": 1457402400
+"use strict";
+
+var K_DAP_DATA_DEFAULT = {
+    "code": 200,
+    "msg": "success",
+    "result": {
+        "info": {
+            "id": "511",
+            "name": "308-母婴-开售半品购",
+            "sortId": "115",
+            "sortRule": 99,
+            "umid": "2016-03-08b",
+            "time_sign": "2016-03-08b",
+            "dap_user_type": "newCustomer",
+            "endTime": 1457438400,
+            "startTime": 1457402400
+        },
+        "floors": {
+            "1": {
+                "type": "html",
+                "mixedData": "\n<!--头部-begin-->\n<style>\n    .floor-top{height: 680px; background: url(\"images/warm-top.jpg\") no-repeat center 0;}\n</style>\n<div class=\"floor-top\">\n    <div class=\"kmod-bd\"></div>\n</div>\n<!--头部-end-->\n        ",
+                "actType": 2,
+                "ext": {
+                    "cmsId": 19699,
+                    "floor_code": "top",
+                    "is_fs": "1",
+                    "is_nav": 0
+                }
+            },
+            "2": {
+                "type": "html",
+                "mixedData": "\n<!--宣传区-begin-->\n<style>\n    .floor-advice{height: 100px; background: url(\"images/warm-advice.png\") no-repeat center 0;}\n</style>\n<div class=\"floor-advice\">\n    <div class=\"kmod-bd\"></div>\n</div>\n<!--宣传区-end-->\n        ",
+                "actType": 2,
+                "ext": {
+                    "cmsId": 19438,
+                    "floor_code": "advice",
+                    "is_fs": "1",
+                    "is_nav": 0
+                }
+            },
+            "3": {
+                "type": "html",
+                "mixedData": "\n<!--热门分类-begin-->\n<style>\n    .floor-category{height: 570px; background: url(\"images/warm-category.png\") no-repeat center 0;}\n    .floor-category .kmod-bd{padding-top: 70px;}\n    .floor-category .kmod-link1{width: 370px; height: 500px; margin-top: 0px; margin-left: 0px;}\n    .floor-category .kmod-link2,\n    .floor-category .kmod-link3,\n    .floor-category .kmod-link4{width: 200px; height: 300px; margin-top: 0px; margin-left: 10px;}\n    .floor-category .kmod-link5,\n    .floor-category .kmod-link6,\n    .floor-category .kmod-link7,\n    .floor-category .kmod-link8{width: 153px; height: 190px; margin-top: 10px; margin-left: 2px;}\n    .floor-category .kmod-link5{margin-left: 10px;}\n</style>\n<div class=\"floor-category\">\n    <div class=\"kmod-bd\">\n        <a class=\"kmod-link kmod-link1\" href=\"#\"></a>\n        <a class=\"kmod-link kmod-link2\" href=\"#\"></a>\n        <a class=\"kmod-link kmod-link3\" href=\"#\"></a>\n        <a class=\"kmod-link kmod-link4\" href=\"#\"></a>\n        <a class=\"kmod-link kmod-link5\" href=\"#\"></a>\n        <a class=\"kmod-link kmod-link6\" href=\"#\"></a>\n        <a class=\"kmod-link kmod-link7\" href=\"#\"></a>\n        <a class=\"kmod-link kmod-link8\" href=\"#\"></a>\n    </div>\n</div>\n<!--热门分类-end-->\n        ",
+                "actType": 2,
+                "ext": {
+                    "cmsId": 19698,
+                    "floor_code": "category",
+                    "is_fs": "1",
+                    "is_nav": 0
+                }
+            },
+            "4": {
+                "type": "html",
+                "mixedData": "\n<!--年龄分区-begin-->\n<style>\n    .floor-age{height: 580px; background: url(\"images/warm-age.png\") no-repeat center 0;}\n    .floor-age .kmod-bd{padding-top: 170px;}\n    .floor-age .kmod-link1{width: 290px; height: 352px; margin-left: 41px;}\n    .floor-age .kmod-link2{width: 299px; height: 352px; margin-left: 14px;}\n    .floor-age .kmod-link3{width: 299px; height: 352px; margin-left: 18px;}\n</style>\n<div class=\"floor-age\">\n    <div class=\"kmod-bd\">\n        <a class=\"kmod-link kmod-link1\" href=\"#\"></a>\n        <a class=\"kmod-link kmod-link2\" href=\"#\"></a>\n        <a class=\"kmod-link kmod-link3\" href=\"#\"></a>\n    </div>\n</div>\n<!--年龄分区-end-->\n        ",
+                "actType": 2,
+                "ext": {
+                    "brand_limit": -1,
+                    "floor_code": "age",
+                    "is_fs": "1",
+                    "is_nav": 1
+                }
+            },
+            "5": {
+                "type": "html",
+                "mixedData": "\n<!--198减50-begin-->\n<div id=\"floor-discount1\" class=\"b226-list-wrap\">\n    <div class=\"b226-list clearfix\">\n        <div class=\"container\" data-widget-id=\"6290\" data-widget-title=\"brand\" data-editable=\"widget-container\" data-widget-cat=\"shop-cat\" data-widget-child-id=\"679727\" style=\"display:none;\">\n            <div class=\"b226 J_sn_10013995 actjs-widget-node\" id=\"J_id_679727\" data-bid=\"679727\"\n                 data-sn=\"10013995\" data-salestart=\"1456538400\" data-bname=\"迪士尼DISNEY小童服饰专场\"\n                 data-vip_bj=\"1\" data-vip_cd=\"1\" data-vip_hz=\"1\"\n                 data-vip_nh=\"1\" data-vip_sh=\"1\" data-editable=\"widget\">\n                <div class=\"b226-photo\">\n                    <a href=\"http://list.vip.com/679727.html\" title=\"迪士尼DISNEY小童服饰专场\" target=\"_blank\"><img class=\"lazy\" data-original=\"http://d.vpimg1.com/upcb/2016/02/22/60/24528632.jpg\" src=\"http://s2.vipstatic.com/img/te/vip_loading.gif\" alt=\"迪士尼DISNEY小童服饰专场\" width=\"226\" height=\"288\"></a>\n                </div>\n                <div class=\"b226-text\">\n                    <div class=\"b226-attr\">\n                        <div class=\"b226-discount\"><span>3</span>折起</div>\n                        <div class=\"b226-name\"><a href=\"http://list.vip.com/679727.html\" title=\"\" target=\"_blank\">迪士尼DISNEY小童服饰专场</a></div>\n                        <div class=\"b226-nfav\"></div>\n                    </div>\n                    <div class=\"b226-btn\">\n                        <a href=\"http://list.vip.com/679727.html\" target=\"_blank\">立即抢购<span class=\"b226-btn-arrow\">&gt;</span>\n                        </a>\n                    </div>\n                </div>\n            </div>\n        </div>\n\n        <div class=\"container\" data-widget-id=\"6290\" data-widget-title=\"brand\" data-editable=\"widget-container\" data-widget-cat=\"shop-cat\" data-widget-child-id=\"679683\" style=\"display:none;\">\n            <div class=\"b226 J_sn_10005193 actjs-widget-node\" id=\"J_id_679683\" data-bid=\"679683\"\n                 data-sn=\"10005193\" data-salestart=\"1456538400\" data-bname=\"绿盒子GREENBOX旗下爱制造童装专场\"\n                 data-vip_bj=\"1\" data-vip_cd=\"1\" data-vip_hz=\"1\"\n                 data-vip_nh=\"1\" data-vip_sh=\"1\" data-editable=\"widget\">\n                <div class=\"b226-photo\">\n                    <a href=\"http://list.vip.com/679683.html\" title=\"绿盒子GREENBOX旗下爱制造童装专场\" target=\"_blank\"><img class=\"lazy\" data-original=\"http://c.vpimg1.com/upcb/2016/02/24/141/34115434.jpg\" src=\"http://s2.vipstatic.com/img/te/vip_loading.gif\" alt=\"绿盒子GREENBOX旗下爱制造童装专场\" width=\"226\" height=\"288\"></a>\n                </div>\n                <div class=\"b226-text\">\n                    <div class=\"b226-attr\">\n                        <div class=\"b226-discount\"><span>1</span>折起</div>\n                        <div class=\"b226-name\"><a href=\"http://list.vip.com/679683.html\" title=\"\" target=\"_blank\">绿盒子GREENBOX旗下爱制造童装专场</a></div>\n                        <div class=\"b226-nfav\"></div>\n                    </div>\n                    <div class=\"b226-btn\">\n                        <a href=\"http://list.vip.com/679683.html\" target=\"_blank\">立即抢购<span class=\"b226-btn-arrow\">&gt;</span>\n                        </a>\n                    </div>\n                </div>\n            </div>\n        </div>\n\n        <div class=\"container\" data-widget-id=\"6290\" data-widget-title=\"brand\" data-editable=\"widget-container\" data-widget-cat=\"shop-cat\" data-widget-child-id=\"679682\" style=\"display:none;\">\n            <div class=\"b226 J_sn_10000363 actjs-widget-node\" id=\"J_id_679682\" data-bid=\"679682\"\n                 data-sn=\"10000363\" data-salestart=\"1456538400\" data-bname=\"绿盒子GREENBOX迪士尼系列童装专场\"\n                 data-vip_bj=\"1\" data-vip_cd=\"1\" data-vip_hz=\"1\"\n                 data-vip_nh=\"1\" data-vip_sh=\"1\" data-editable=\"widget\">\n                <div class=\"b226-photo\">\n                    <a href=\"http://list.vip.com/679682.html\" title=\"绿盒子GREENBOX迪士尼系列童装专场\" target=\"_blank\"><img class=\"lazy\" data-original=\"http://d.vpimg1.com/upcb/2016/02/24/81/49058894.jpg\" src=\"http://s2.vipstatic.com/img/te/vip_loading.gif\" alt=\"绿盒子GREENBOX迪士尼系列童装专场\" width=\"226\" height=\"288\"></a>\n                </div>\n                <div class=\"b226-text\">\n                    <div class=\"b226-attr\">\n                        <div class=\"b226-discount\"><span>1.1</span>折起</div>\n                        <div class=\"b226-name\"><a href=\"http://list.vip.com/679682.html\" title=\"\" target=\"_blank\">绿盒子GREENBOX迪士尼系列童装专场</a></div>\n                        <div class=\"b226-nfav\"></div>\n                    </div>\n                    <div class=\"b226-btn\">\n                        <a href=\"http://list.vip.com/679682.html\" target=\"_blank\">立即抢购<span class=\"b226-btn-arrow\">&gt;</span>\n                        </a>\n                    </div>\n                </div>\n            </div>\n        </div>\n\n        <div class=\"container\" data-widget-id=\"6290\" data-widget-title=\"brand\" data-editable=\"widget-container\" data-widget-cat=\"shop-cat\" data-widget-child-id=\"679767\" style=\"display:none;\">\n            <div class=\"b226 J_sn_10010265 actjs-widget-node\" id=\"J_id_679767\" data-bid=\"679767\"\n                 data-sn=\"10010265\" data-salestart=\"1456538400\" data-bname=\"衣品天成EPTISON男女童秋冬专场\"\n                 data-vip_bj=\"1\" data-vip_cd=\"1\" data-vip_hz=\"1\"\n                 data-vip_nh=\"1\" data-vip_sh=\"1\" data-editable=\"widget\">\n                <div class=\"b226-photo\">\n                    <a href=\"http://list.vip.com/679767.html\" title=\"衣品天成EPTISON男女童秋冬专场\" target=\"_blank\"><img class=\"lazy\" data-original=\"http://c.vpimg1.com/upcb/2016/02/22/103/11068263.jpg\" src=\"http://s2.vipstatic.com/img/te/vip_loading.gif\" alt=\"衣品天成EPTISON男女童秋冬专场\" width=\"226\" height=\"288\"></a>\n                </div>\n                <div class=\"b226-text\">\n                    <div class=\"b226-attr\">\n                        <div class=\"b226-discount\"><span>2.2</span>折起</div>\n                        <div class=\"b226-name\"><a href=\"http://list.vip.com/679767.html\" title=\"\" target=\"_blank\">衣品天成EPTISON男女童秋冬专场</a></div>\n                        <div class=\"b226-nfav\"></div>\n                    </div>\n                    <div class=\"b226-btn\">\n                        <a href=\"http://list.vip.com/679767.html\" target=\"_blank\">立即抢购<span class=\"b226-btn-arrow\">&gt;</span>\n                        </a>\n                    </div>\n                </div>\n            </div>\n        </div>\n\n        <div class=\"container\" data-widget-id=\"6290\" data-widget-title=\"brand\" data-editable=\"widget-container\" data-widget-cat=\"shop-cat\" data-widget-child-id=\"679684\" style=\"display:none;\">\n            <div class=\"b226 J_sn_10010349 actjs-widget-node\" id=\"J_id_679684\" data-bid=\"679684\"\n                 data-sn=\"10010349\" data-salestart=\"1456538400\" data-bname=\"HOO男女童装冬季清仓专场\"\n                 data-vip_bj=\"1\" data-vip_cd=\"1\" data-vip_hz=\"1\"\n                 data-vip_nh=\"1\" data-vip_sh=\"1\" data-editable=\"widget\">\n                <div class=\"b226-photo\">\n                    <a href=\"http://list.vip.com/679684.html\" title=\"HOO男女童装冬季清仓专场\" target=\"_blank\"><img class=\"lazy\" data-original=\"http://c.vpimg1.com/upcb/2016/02/26/158/54366613.jpg\" src=\"http://s2.vipstatic.com/img/te/vip_loading.gif\" alt=\"HOO男女童装冬季清仓专场\" width=\"226\" height=\"288\"></a>\n                </div>\n                <div class=\"b226-text\">\n                    <div class=\"b226-attr\">\n                        <div class=\"b226-discount\"><span>1.6</span>折起</div>\n                        <div class=\"b226-name\"><a href=\"http://list.vip.com/679684.html\" title=\"\" target=\"_blank\">HOO男女童装冬季清仓专场</a></div>\n                        <div class=\"b226-nfav\"></div>\n                    </div>\n                    <div class=\"b226-btn\">\n                        <a href=\"http://list.vip.com/679684.html\" target=\"_blank\">立即抢购<span class=\"b226-btn-arrow\">&gt;</span>\n                        </a>\n                    </div>\n                </div>\n            </div>\n        </div>\n    </div>\n</div>\n<!--198减50-end-->\n        ",
+                "actType": 2,
+                "ext": {
+                    "brand_limit": -1,
+                    "floor_code": "discount1",
+                    "is_fs": "1",
+                    "is_nav": 1
+                }
+            },
+            "6": {
+                "type": "html",
+                "mixedData": "\n<!--298减100-begin-->\n<div id=\"floor-discount2\" class=\"b226-list-wrap\">\n    <div class=\"b226-list clearfix\">\n        <div class=\"container\" data-widget-id=\"6290\" data-widget-title=\"brand\" data-editable=\"widget-container\" data-widget-cat=\"shop-cat\" data-widget-child-id=\"679727\" style=\"display:none;\">\n            <div class=\"b226 J_sn_10013995 actjs-widget-node\" id=\"J_id_679727\" data-bid=\"679727\"\n                 data-sn=\"10013995\" data-salestart=\"1456538400\" data-bname=\"迪士尼DISNEY小童服饰专场\"\n                 data-vip_bj=\"1\" data-vip_cd=\"1\" data-vip_hz=\"1\"\n                 data-vip_nh=\"1\" data-vip_sh=\"1\" data-editable=\"widget\">\n                <div class=\"b226-photo\">\n                    <a href=\"http://list.vip.com/679727.html\" title=\"迪士尼DISNEY小童服饰专场\" target=\"_blank\"><img class=\"lazy\" data-original=\"http://d.vpimg1.com/upcb/2016/02/22/60/24528632.jpg\" src=\"http://s2.vipstatic.com/img/te/vip_loading.gif\" alt=\"迪士尼DISNEY小童服饰专场\" width=\"226\" height=\"288\"></a>\n                </div>\n                <div class=\"b226-text\">\n                    <div class=\"b226-attr\">\n                        <div class=\"b226-discount\"><span>3</span>折起</div>\n                        <div class=\"b226-name\"><a href=\"http://list.vip.com/679727.html\" title=\"\" target=\"_blank\">迪士尼DISNEY小童服饰专场</a></div>\n                        <div class=\"b226-nfav\"></div>\n                    </div>\n                    <div class=\"b226-btn\">\n                        <a href=\"http://list.vip.com/679727.html\" target=\"_blank\">立即抢购<span class=\"b226-btn-arrow\">&gt;</span>\n                        </a>\n                    </div>\n                </div>\n            </div>\n        </div>\n\n        <div class=\"container\" data-widget-id=\"6290\" data-widget-title=\"brand\" data-editable=\"widget-container\" data-widget-cat=\"shop-cat\" data-widget-child-id=\"679683\" style=\"display:none;\">\n            <div class=\"b226 J_sn_10005193 actjs-widget-node\" id=\"J_id_679683\" data-bid=\"679683\"\n                 data-sn=\"10005193\" data-salestart=\"1456538400\" data-bname=\"绿盒子GREENBOX旗下爱制造童装专场\"\n                 data-vip_bj=\"1\" data-vip_cd=\"1\" data-vip_hz=\"1\"\n                 data-vip_nh=\"1\" data-vip_sh=\"1\" data-editable=\"widget\">\n                <div class=\"b226-photo\">\n                    <a href=\"http://list.vip.com/679683.html\" title=\"绿盒子GREENBOX旗下爱制造童装专场\" target=\"_blank\"><img class=\"lazy\" data-original=\"http://c.vpimg1.com/upcb/2016/02/24/141/34115434.jpg\" src=\"http://s2.vipstatic.com/img/te/vip_loading.gif\" alt=\"绿盒子GREENBOX旗下爱制造童装专场\" width=\"226\" height=\"288\"></a>\n                </div>\n                <div class=\"b226-text\">\n                    <div class=\"b226-attr\">\n                        <div class=\"b226-discount\"><span>1</span>折起</div>\n                        <div class=\"b226-name\"><a href=\"http://list.vip.com/679683.html\" title=\"\" target=\"_blank\">绿盒子GREENBOX旗下爱制造童装专场</a></div>\n                        <div class=\"b226-nfav\"></div>\n                    </div>\n                    <div class=\"b226-btn\">\n                        <a href=\"http://list.vip.com/679683.html\" target=\"_blank\">立即抢购<span class=\"b226-btn-arrow\">&gt;</span>\n                        </a>\n                    </div>\n                </div>\n            </div>\n        </div>\n\n        <div class=\"container\" data-widget-id=\"6290\" data-widget-title=\"brand\" data-editable=\"widget-container\" data-widget-cat=\"shop-cat\" data-widget-child-id=\"679682\" style=\"display:none;\">\n            <div class=\"b226 J_sn_10000363 actjs-widget-node\" id=\"J_id_679682\" data-bid=\"679682\"\n                 data-sn=\"10000363\" data-salestart=\"1456538400\" data-bname=\"绿盒子GREENBOX迪士尼系列童装专场\"\n                 data-vip_bj=\"1\" data-vip_cd=\"1\" data-vip_hz=\"1\"\n                 data-vip_nh=\"1\" data-vip_sh=\"1\" data-editable=\"widget\">\n                <div class=\"b226-photo\">\n                    <a href=\"http://list.vip.com/679682.html\" title=\"绿盒子GREENBOX迪士尼系列童装专场\" target=\"_blank\"><img class=\"lazy\" data-original=\"http://d.vpimg1.com/upcb/2016/02/24/81/49058894.jpg\" src=\"http://s2.vipstatic.com/img/te/vip_loading.gif\" alt=\"绿盒子GREENBOX迪士尼系列童装专场\" width=\"226\" height=\"288\"></a>\n                </div>\n                <div class=\"b226-text\">\n                    <div class=\"b226-attr\">\n                        <div class=\"b226-discount\"><span>1.1</span>折起</div>\n                        <div class=\"b226-name\"><a href=\"http://list.vip.com/679682.html\" title=\"\" target=\"_blank\">绿盒子GREENBOX迪士尼系列童装专场</a></div>\n                        <div class=\"b226-nfav\"></div>\n                    </div>\n                    <div class=\"b226-btn\">\n                        <a href=\"http://list.vip.com/679682.html\" target=\"_blank\">立即抢购<span class=\"b226-btn-arrow\">&gt;</span>\n                        </a>\n                    </div>\n                </div>\n            </div>\n        </div>\n\n        <div class=\"container\" data-widget-id=\"6290\" data-widget-title=\"brand\" data-editable=\"widget-container\" data-widget-cat=\"shop-cat\" data-widget-child-id=\"679767\" style=\"display:none;\">\n            <div class=\"b226 J_sn_10010265 actjs-widget-node\" id=\"J_id_679767\" data-bid=\"679767\"\n                 data-sn=\"10010265\" data-salestart=\"1456538400\" data-bname=\"衣品天成EPTISON男女童秋冬专场\"\n                 data-vip_bj=\"1\" data-vip_cd=\"1\" data-vip_hz=\"1\"\n                 data-vip_nh=\"1\" data-vip_sh=\"1\" data-editable=\"widget\">\n                <div class=\"b226-photo\">\n                    <a href=\"http://list.vip.com/679767.html\" title=\"衣品天成EPTISON男女童秋冬专场\" target=\"_blank\"><img class=\"lazy\" data-original=\"http://c.vpimg1.com/upcb/2016/02/22/103/11068263.jpg\" src=\"http://s2.vipstatic.com/img/te/vip_loading.gif\" alt=\"衣品天成EPTISON男女童秋冬专场\" width=\"226\" height=\"288\"></a>\n                </div>\n                <div class=\"b226-text\">\n                    <div class=\"b226-attr\">\n                        <div class=\"b226-discount\"><span>2.2</span>折起</div>\n                        <div class=\"b226-name\"><a href=\"http://list.vip.com/679767.html\" title=\"\" target=\"_blank\">衣品天成EPTISON男女童秋冬专场</a></div>\n                        <div class=\"b226-nfav\"></div>\n                    </div>\n                    <div class=\"b226-btn\">\n                        <a href=\"http://list.vip.com/679767.html\" target=\"_blank\">立即抢购<span class=\"b226-btn-arrow\">&gt;</span>\n                        </a>\n                    </div>\n                </div>\n            </div>\n        </div>\n\n        <div class=\"container\" data-widget-id=\"6290\" data-widget-title=\"brand\" data-editable=\"widget-container\" data-widget-cat=\"shop-cat\" data-widget-child-id=\"679684\" style=\"display:none;\">\n            <div class=\"b226 J_sn_10010349 actjs-widget-node\" id=\"J_id_679684\" data-bid=\"679684\"\n                 data-sn=\"10010349\" data-salestart=\"1456538400\" data-bname=\"HOO男女童装冬季清仓专场\"\n                 data-vip_bj=\"1\" data-vip_cd=\"1\" data-vip_hz=\"1\"\n                 data-vip_nh=\"1\" data-vip_sh=\"1\" data-editable=\"widget\">\n                <div class=\"b226-photo\">\n                    <a href=\"http://list.vip.com/679684.html\" title=\"HOO男女童装冬季清仓专场\" target=\"_blank\"><img class=\"lazy\" data-original=\"http://c.vpimg1.com/upcb/2016/02/26/158/54366613.jpg\" src=\"http://s2.vipstatic.com/img/te/vip_loading.gif\" alt=\"HOO男女童装冬季清仓专场\" width=\"226\" height=\"288\"></a>\n                </div>\n                <div class=\"b226-text\">\n                    <div class=\"b226-attr\">\n                        <div class=\"b226-discount\"><span>1.6</span>折起</div>\n                        <div class=\"b226-name\"><a href=\"http://list.vip.com/679684.html\" title=\"\" target=\"_blank\">HOO男女童装冬季清仓专场</a></div>\n                        <div class=\"b226-nfav\"></div>\n                    </div>\n                    <div class=\"b226-btn\">\n                        <a href=\"http://list.vip.com/679684.html\" target=\"_blank\">立即抢购<span class=\"b226-btn-arrow\">&gt;</span>\n                        </a>\n                    </div>\n                </div>\n            </div>\n        </div>\n    </div>\n</div>\n<!--298减100-end-->\n        ",
+                "actType": 2,
+                "ext": {
+                    "brand_limit": -1,
+                    "floor_code": "discount2",
+                    "is_fs": "1",
+                    "is_nav": 1
+                }
+            },
+            "7": {
+                "type": "html",
+                "mixedData": "\n<!--单品牌-begin-->\n<div id=\"floor-discount3\" class=\"b226-list-wrap\">\n    <div class=\"b226-list clearfix\">\n        <div class=\"container\" data-widget-id=\"6290\" data-widget-title=\"brand\" data-editable=\"widget-container\" data-widget-cat=\"shop-cat\" data-widget-child-id=\"679727\" style=\"display:none;\">\n            <div class=\"b226 J_sn_10013995 actjs-widget-node\" id=\"J_id_679727\" data-bid=\"679727\"\n                 data-sn=\"10013995\" data-salestart=\"1456538400\" data-bname=\"迪士尼DISNEY小童服饰专场\"\n                 data-vip_bj=\"1\" data-vip_cd=\"1\" data-vip_hz=\"1\"\n                 data-vip_nh=\"1\" data-vip_sh=\"1\" data-editable=\"widget\">\n                <div class=\"b226-photo\">\n                    <a href=\"http://list.vip.com/679727.html\" title=\"迪士尼DISNEY小童服饰专场\" target=\"_blank\"><img class=\"lazy\" data-original=\"http://d.vpimg1.com/upcb/2016/02/22/60/24528632.jpg\" src=\"http://s2.vipstatic.com/img/te/vip_loading.gif\" alt=\"迪士尼DISNEY小童服饰专场\" width=\"226\" height=\"288\"></a>\n                </div>\n                <div class=\"b226-text\">\n                    <div class=\"b226-attr\">\n                        <div class=\"b226-discount\"><span>3</span>折起</div>\n                        <div class=\"b226-name\"><a href=\"http://list.vip.com/679727.html\" title=\"\" target=\"_blank\">迪士尼DISNEY小童服饰专场</a></div>\n                        <div class=\"b226-nfav\"></div>\n                    </div>\n                    <div class=\"b226-btn\">\n                        <a href=\"http://list.vip.com/679727.html\" target=\"_blank\">立即抢购<span class=\"b226-btn-arrow\">&gt;</span>\n                        </a>\n                    </div>\n                </div>\n            </div>\n        </div>\n\n        <div class=\"container\" data-widget-id=\"6290\" data-widget-title=\"brand\" data-editable=\"widget-container\" data-widget-cat=\"shop-cat\" data-widget-child-id=\"679683\" style=\"display:none;\">\n            <div class=\"b226 J_sn_10005193 actjs-widget-node\" id=\"J_id_679683\" data-bid=\"679683\"\n                 data-sn=\"10005193\" data-salestart=\"1456538400\" data-bname=\"绿盒子GREENBOX旗下爱制造童装专场\"\n                 data-vip_bj=\"1\" data-vip_cd=\"1\" data-vip_hz=\"1\"\n                 data-vip_nh=\"1\" data-vip_sh=\"1\" data-editable=\"widget\">\n                <div class=\"b226-photo\">\n                    <a href=\"http://list.vip.com/679683.html\" title=\"绿盒子GREENBOX旗下爱制造童装专场\" target=\"_blank\"><img class=\"lazy\" data-original=\"http://c.vpimg1.com/upcb/2016/02/24/141/34115434.jpg\" src=\"http://s2.vipstatic.com/img/te/vip_loading.gif\" alt=\"绿盒子GREENBOX旗下爱制造童装专场\" width=\"226\" height=\"288\"></a>\n                </div>\n                <div class=\"b226-text\">\n                    <div class=\"b226-attr\">\n                        <div class=\"b226-discount\"><span>1</span>折起</div>\n                        <div class=\"b226-name\"><a href=\"http://list.vip.com/679683.html\" title=\"\" target=\"_blank\">绿盒子GREENBOX旗下爱制造童装专场</a></div>\n                        <div class=\"b226-nfav\"></div>\n                    </div>\n                    <div class=\"b226-btn\">\n                        <a href=\"http://list.vip.com/679683.html\" target=\"_blank\">立即抢购<span class=\"b226-btn-arrow\">&gt;</span>\n                        </a>\n                    </div>\n                </div>\n            </div>\n        </div>\n\n        <div class=\"container\" data-widget-id=\"6290\" data-widget-title=\"brand\" data-editable=\"widget-container\" data-widget-cat=\"shop-cat\" data-widget-child-id=\"679682\" style=\"display:none;\">\n            <div class=\"b226 J_sn_10000363 actjs-widget-node\" id=\"J_id_679682\" data-bid=\"679682\"\n                 data-sn=\"10000363\" data-salestart=\"1456538400\" data-bname=\"绿盒子GREENBOX迪士尼系列童装专场\"\n                 data-vip_bj=\"1\" data-vip_cd=\"1\" data-vip_hz=\"1\"\n                 data-vip_nh=\"1\" data-vip_sh=\"1\" data-editable=\"widget\">\n                <div class=\"b226-photo\">\n                    <a href=\"http://list.vip.com/679682.html\" title=\"绿盒子GREENBOX迪士尼系列童装专场\" target=\"_blank\"><img class=\"lazy\" data-original=\"http://d.vpimg1.com/upcb/2016/02/24/81/49058894.jpg\" src=\"http://s2.vipstatic.com/img/te/vip_loading.gif\" alt=\"绿盒子GREENBOX迪士尼系列童装专场\" width=\"226\" height=\"288\"></a>\n                </div>\n                <div class=\"b226-text\">\n                    <div class=\"b226-attr\">\n                        <div class=\"b226-discount\"><span>1.1</span>折起</div>\n                        <div class=\"b226-name\"><a href=\"http://list.vip.com/679682.html\" title=\"\" target=\"_blank\">绿盒子GREENBOX迪士尼系列童装专场</a></div>\n                        <div class=\"b226-nfav\"></div>\n                    </div>\n                    <div class=\"b226-btn\">\n                        <a href=\"http://list.vip.com/679682.html\" target=\"_blank\">立即抢购<span class=\"b226-btn-arrow\">&gt;</span>\n                        </a>\n                    </div>\n                </div>\n            </div>\n        </div>\n\n        <div class=\"container\" data-widget-id=\"6290\" data-widget-title=\"brand\" data-editable=\"widget-container\" data-widget-cat=\"shop-cat\" data-widget-child-id=\"679767\" style=\"display:none;\">\n            <div class=\"b226 J_sn_10010265 actjs-widget-node\" id=\"J_id_679767\" data-bid=\"679767\"\n                 data-sn=\"10010265\" data-salestart=\"1456538400\" data-bname=\"衣品天成EPTISON男女童秋冬专场\"\n                 data-vip_bj=\"1\" data-vip_cd=\"1\" data-vip_hz=\"1\"\n                 data-vip_nh=\"1\" data-vip_sh=\"1\" data-editable=\"widget\">\n                <div class=\"b226-photo\">\n                    <a href=\"http://list.vip.com/679767.html\" title=\"衣品天成EPTISON男女童秋冬专场\" target=\"_blank\"><img class=\"lazy\" data-original=\"http://c.vpimg1.com/upcb/2016/02/22/103/11068263.jpg\" src=\"http://s2.vipstatic.com/img/te/vip_loading.gif\" alt=\"衣品天成EPTISON男女童秋冬专场\" width=\"226\" height=\"288\"></a>\n                </div>\n                <div class=\"b226-text\">\n                    <div class=\"b226-attr\">\n                        <div class=\"b226-discount\"><span>2.2</span>折起</div>\n                        <div class=\"b226-name\"><a href=\"http://list.vip.com/679767.html\" title=\"\" target=\"_blank\">衣品天成EPTISON男女童秋冬专场</a></div>\n                        <div class=\"b226-nfav\"></div>\n                    </div>\n                    <div class=\"b226-btn\">\n                        <a href=\"http://list.vip.com/679767.html\" target=\"_blank\">立即抢购<span class=\"b226-btn-arrow\">&gt;</span>\n                        </a>\n                    </div>\n                </div>\n            </div>\n        </div>\n\n        <div class=\"container\" data-widget-id=\"6290\" data-widget-title=\"brand\" data-editable=\"widget-container\" data-widget-cat=\"shop-cat\" data-widget-child-id=\"679684\" style=\"display:none;\">\n            <div class=\"b226 J_sn_10010349 actjs-widget-node\" id=\"J_id_679684\" data-bid=\"679684\"\n                 data-sn=\"10010349\" data-salestart=\"1456538400\" data-bname=\"HOO男女童装冬季清仓专场\"\n                 data-vip_bj=\"1\" data-vip_cd=\"1\" data-vip_hz=\"1\"\n                 data-vip_nh=\"1\" data-vip_sh=\"1\" data-editable=\"widget\">\n                <div class=\"b226-photo\">\n                    <a href=\"http://list.vip.com/679684.html\" title=\"HOO男女童装冬季清仓专场\" target=\"_blank\"><img class=\"lazy\" data-original=\"http://c.vpimg1.com/upcb/2016/02/26/158/54366613.jpg\" src=\"http://s2.vipstatic.com/img/te/vip_loading.gif\" alt=\"HOO男女童装冬季清仓专场\" width=\"226\" height=\"288\"></a>\n                </div>\n                <div class=\"b226-text\">\n                    <div class=\"b226-attr\">\n                        <div class=\"b226-discount\"><span>1.6</span>折起</div>\n                        <div class=\"b226-name\"><a href=\"http://list.vip.com/679684.html\" title=\"\" target=\"_blank\">HOO男女童装冬季清仓专场</a></div>\n                        <div class=\"b226-nfav\"></div>\n                    </div>\n                    <div class=\"b226-btn\">\n                        <a href=\"http://list.vip.com/679684.html\" target=\"_blank\">立即抢购<span class=\"b226-btn-arrow\">&gt;</span>\n                        </a>\n                    </div>\n                </div>\n            </div>\n        </div>\n\n    </div>\n</div>\n<!--单品牌-end-->\n        ",
+                "actType": 2,
+                "ext": {
+                    "brand_limit": -1,
+                    "floor_code": "discount3",
+                    "is_fs": "1",
+                    "is_nav": 1
+                }
+            },
+            "8": {
+                "type": "html",
+                "mixedData": "\n<!--底部-begin-->\n<style>\n    .floor-bottom{height: 580px; background: url(\"images/warm-bottom.png\") no-repeat center 0;}\n</style>\n<div class=\"floor-bottom\">\n    <div class=\"kmod-bd\"></div>\n</div>\n<!--底部-end-->\n        ",
+                "actType": 2,
+                "ext": {
+                    "brand_limit": -1,
+                    "floor_code": "bottom",
+                    "is_fs": "1",
+                    "is_nav": 1
+                }
+            }
+        },
+        "group": ""
     },
-    "floors": {
-      "1": {
-        "type": "html",
-        "mixedData": "top",
-        "actType": 2,
-        "ext": {
-          "cmsId": 19699,
-          "floor_code": "top",
-          "is_fs": "1",
-          "is_nav": 0
-        }
-      },
-      "2": {
-        "type": "html",
-        "mixedData": "advice",
-        "actType": 2,
-        "ext": {
-          "cmsId": 19438,
-          "floor_code": "advice",
-          "is_fs": "1",
-          "is_nav": 0
-        }
-      },
-      "3": {
-        "type": "html",
-        "mixedData": "category",
-        "actType": 2,
-        "ext": {
-          "cmsId": 19698,
-          "floor_code": "category",
-          "is_fs": "1",
-          "is_nav": 0
-        }
-      },
-      "4": {
-        "type": "html",
-        "mixedData": "age",
-        "actType": 2,
-        "ext": {
-          "brand_limit": -1,
-          "floor_code": "age",
-          "is_fs": "1",
-          "is_nav": 1
-        }
-      },
-      "5": {
-        "type": "html",
-        "mixedData": "discount1",
-        "actType": 2,
-        "ext": {
-          "brand_limit": -1,
-          "floor_code": "discount1",
-          "is_fs": "1",
-          "is_nav": 1
-        }
-      },
-      "6": {
-        "type": "html",
-        "mixedData": "discount2",
-        "actType": 2,
-        "ext": {
-          "brand_limit": -1,
-          "floor_code": "discount2",
-          "is_fs": "1",
-          "is_nav": 1
-        }
-      },
-      "7": {
-        "type": "html",
-        "mixedData": "discount3",
-        "actType": 2,
-        "ext": {
-          "brand_limit": -1,
-          "floor_code": "discount3",
-          "is_fs": "1",
-          "is_nav": 1
-        }
-      },
-      "8": {
-        "type": "html",
-        "mixedData": "bottom",
-        "actType": 2,
-        "ext": {
-          "brand_limit": -1,
-          "floor_code": "bottom",
-          "is_fs": "1",
-          "is_nav": 1
-        }
-      }
-    },
-    "group": ""
-  },
-  "requestTime": 1457435665
+    "requestTime": 1457435665
 };
+
+//# sourceMappingURL=dap-html.js.map
