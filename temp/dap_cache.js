@@ -34,8 +34,8 @@ DAP.load = function () {
 
   $.ajax(setting)
     // 请求成功时
-    // 整合【新数据】和【本地数据】，得到【最终数据】
-    // 把【最终数据】缓存到本地，并用它渲染视图
+    // 检验【新数据】有效性，从而选择使用哪个数据
+    // 把有效的数据缓存到本地，并用它渲染视图
     .done(function (res) {
 
       var data = checkDapData(res) ? res : dataLocal;

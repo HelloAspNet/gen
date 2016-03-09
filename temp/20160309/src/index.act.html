@@ -1,0 +1,349 @@
+<style type="text/css">
+    .b226-list { position: relative; width: 980px; background: url(http://a.vpimg3.com/upload/actpics/uidesign/2016/2m/0219index/placeholdern.png) no-repeat left bottom;margin: 0 auto;}
+    .b226-zw { width: 226px; height: 375px; float: left; margin: 0 18px 18px 0;}
+    .b226 { width: 226px; overflow: hidden; float: left; margin: 19px 19px 0 0; background-color: #fff; box-shadow: 0 0 3px #aaa;}
+    .b226-photo { height: 288px; overflow: hidden; position: relative; }
+    .b226-mask, .b226-pms { text-align: center; background: rgba(0, 0, 0, 0.7); filter: progid:DXImageTransform.Microsoft.Gradient(GradientType=0, StartColorStr='#b2000000', EndColorStr='#b2000000'); }
+    html:root .b226-mask, html:root .b226-pms { filter: progid:DXImageTransform.Microsoft.Gradient(enabled:false); }
+    .b226-mask { width: 100%; height: 100%; position: absolute; top: 100%; left: 0; z-index: 2; }
+    .b226:hover .b226-mask,.b226-hover .b226-mask { top: 0; }
+    .b226-sale-time { font-size: 24px; line-height: 1; text-align: center; color: #00e0d1; padding-top: 15px; margin-top: 40px; height: 63px; background: url(http://a.vpimg4.com/upload/actpics/uidesign/2016/2m/0219index/sale-time1.png) no-repeat center top; }
+    .b226-sale-tips { font-size: 18px; color: #acacac; padding-top: 3px; }
+    .b226-pms { color: #fff; text-align: center; line-height: 2; width: 216px; padding: 0 5px; text-overflow: ellipsis; white-space: nowrap; overflow: hidden; position: absolute; left: 0; bottom: 0; z-index: 3; }
+    .b226.fav .b226-pms{display: none;}
+    .b226-text { padding: 0 15px; height: 86px; }
+    .b226-attr { height: 47px; overflow: hidden; }
+    .b226-discount { font-size: 12px; color: #acacac; padding-top: 5px; float: right; }
+    .b226-discount span { font-size: 26px; color: #00ABA5; margin-right: 3px; }
+    .b226-name { line-height: 15px; height: 30px; overflow: hidden; padding: 10px 3px 0 0; }
+    .b226-name a { color: #333; }
+    .b226-nfav{color: #adadad;}
+    .b226-btn { color: #00b5af; text-align: center; line-height: 24px; height: 24px; border: solid 1px #00B4B0; font-size: 15px;letter-spacing: 1px;}
+    .b226:hover .b226-btn { color: #fff; background-color: #00B4B0; border-color: #00B4B0; }
+    .b226-btn a { color: #00B4B0; display: block; }
+    .b226:hover .b226-btn a { color: #fff; }
+    .b226-btn-arrow { font-family: "\5B8B\4F53", sans-serif; }
+    .b226-name { height: 15px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; /*warm*/ }
+    .b226-upnew-ico { position: absolute; right: 0px; bottom: 20px; z-index: 5; }
+    /* b226 */
+
+    .fav {}
+    .fav-tips { font-size: 14px; color: #fff; width: 100%; padding-bottom: 20px; background: url(http://a.vpimg3.com/upload/actpics/act/sp/branches/pc_sp/act-20150820/img/icon.gif) no-repeat center 17px; position: absolute; left: 0; bottom: 0; }
+    .fav-done .fav-tips { display: none; }
+    .fav-count { color: #acacac; line-height: 15px; }
+    .fav .b226-btn { cursor: pointer; }
+    .fav-txt { display: inline-block; padding-left: 20px; background: url(http://a.vpimg4.com/upload/actpics/uidesign/2016/2m/0219index/fav.png) no-repeat; }
+    .fav:hover .fav-txt { background-position: 0 -24px; }
+    .fav-done .b226-btn { cursor: default; }
+    .fav-done .fav-txt { background-position: 0 -48px; }
+    .fav-done:hover .fav-txt { background-position: 0 -72px; }
+    /* fav */
+
+    .hb .fav-tips { display: none; }
+    .hb-icon { color: #FEDF4F; text-align: center; width: 34px; height: 21px; padding-top: 20px; background: url(http://a.vpimg4.com/upload/actpics/uidesign/2015/9m/0920kid/hb-icon.png) no-repeat; position: absolute; top: 10px; right: 10px; }
+    .hb .b226-sale-tips { display: none; }
+    .hb-tips { color: #acacac; padding: 30px 0 20px 0; background: url(http://a.vpimg4.com/upload/actpics/uidesign/2015/9m/0920kid/arrow.gif) no-repeat center bottom; margin-bottom: 10px;}
+    .hb-tips dt { font-size: 14px; }
+    .hb-tips dd { font-size: 16px; }
+    .hb-btn { color: #fff; font-size: 20px; line-height: 38px; text-align: center; width: 109px; height: 38px; margin: 0 auto; padding-right: 40px; background: url(http://a.vpimg4.com/upload/actpics/uidesign/2015/8m/0821kid/hb.png) no-repeat; cursor: pointer; }
+    .hb-done .hb-icon { color: #fff; background-position: left bottom; }
+    .hb-done .hb-btn { background-position: left bottom; cursor: default; }
+
+    .kid-top {background:url(http://a.vpimg4.com/upload/actpics/uidesign/2016/2m/0226pingou/top.jpg) no-repeat center top;height:624px;}
+    .kid-bottom .bottombg {background: url(http://a.vpimg4.com/upload/actpics/uidesign/2016/2m/0226pingou/bottom.png) no-repeat center;height: 169px;margin: 0 auto;}
+    .kid .kid-bottom {  padding: 80px 0 85px;text-align: center; }
+    .kid .kid-btn {margin-top: 13px;}
+    .kid .kid-btn:hover { opacity: 0.8; }
+    .kid { overflow:hidden;background-color: #def5f5;}
+    .kid-content { width:1000px;_width:1003px; margin:0 auto; overflow:hidden;}
+    .kid-nav {background:url(http://a.vpimg4.com/upload/actpics/uidesign/2016/2m/0226pingou/nav.png) no-repeat;height:227px;width: 156px;position: fixed;top: 50%;right: 50%;margin: -140px -650px;padding-top: 54px;display: none;}
+    .navm {height: 84px;cursor: pointer;}
+    .nav3 {height: 60px;}
+    .kid-title {display: block;margin: 50px auto;}
+    .kid-title1 {margin-top: -130px;}
+</style>
+<style>
+    .kstate-debug a{background-color:rgba(0,0,0,.3)}
+    .kstate-debug a.kstate-hover,.kstate-debug a:hover{background-color:rgba(0,0,0,.4)}
+    .kmod-bd{position:relative;width:1000px;margin:0 auto}
+    .kmod-bd:after,.kmod-bd:before{display:table;content:""}
+    .kmod-bd:after{clear:both}
+    .kmod-link{display: block;}
+
+    .floor-discount1{padding-top: 160px; background: url("images/warm-discount1.png") no-repeat center 0;}
+    .floor-discount2{padding-top: 160px; background: url("images/warm-discount2.png") no-repeat center 0;}
+    .floor-discount3{padding-top: 160px; background: url("images/warm-discount3.png") no-repeat center 0;}
+    .floor-discount1 .kmod-bd,
+    .floor-discount2 .kmod-bd,
+    .floor-discount3 .kmod-bd{width: 980px; padding-left:20px;}
+
+</style>
+
+<div class="kstate-debug1">
+
+    {%20238}
+    {%20239}
+    {%20240}
+    {%20241}
+    {%20242}
+    {%20243}
+    {%20244}
+    {%20245}
+
+
+
+
+
+
+</div>
+
+<script type="text/javascript">
+    var wh = $.Cookie.get('vip_wh') || 'VIP_NH';
+    var whs = wh.toLocaleUpperCase();
+
+    $('[data-' + whs + '="1"]').each(function() {
+        $(this).closest('.container').show();
+    });
+    $(".container:visible").each(function(){
+        var _this = $(this);
+        var saleTime = _this.find(".b226").data('salestart') * 1000;
+        if ($.now() < saleTime) {
+            _this.find(".b226-btn a").html('马上收藏 <span class="b226-btn-arrow">></span>');
+        }
+    });
+    var ACT = {
+        warehouse:$.Cookie.get('vip_wh') || 'VIP_NH',
+        userClass:$.Cookie.get('user_class') || 'a'
+    };
+    //收藏
+    var PMS = {
+        show: function () {
+            $.ajax({
+                url: 'http://pms.vipshop.com/activetips_index.php',
+                dataType: 'jsonp',
+                jsonpCallback: 'getAllPms',
+                cache: true,
+                data: {warehouse: ACT.warehouse, customersrc: ACT.userClass}
+            }).done(function (re) {
+                $('.b226').each(function () {
+                    var $this = $(this),
+                            bid = $this.data('bid'),
+                            pms = re[bid];
+                    if (pms) {
+                        $this.find('.b226-photo').append('<div class="b226-pms">' + pms['msg'] + '</div>');
+                    }
+                });
+            });
+        }
+    };
+    var Favorite = {
+        init: function () {
+            var items = this.items = $('.b226'),
+                    self = this;
+
+            self.get();
+
+            if ($.Cookie.get('VipLID')) {
+                self.show();
+            }
+            $.Listeners.sub('userLogin').onsuccess(function () {
+                self.show();
+            });
+            items.filter('.fav').on('click', '.b226-btn', function (e) {
+                var wrap = $(e.delegateTarget),
+                        sn = wrap.data('sn');
+                if (wrap.hasClass('fav-done')) {
+                    return;
+                }
+                if ($.Cookie.get('VipLID')) {
+                    self.add(sn);
+                } else {
+                    VIPSHOP.login.init({
+                        loginEvent: function () {
+                            VIPSHOP.member.chk();
+                            $.listeners.pub('userLogin').success();
+                            self.add(sn);
+                        }
+                    });
+                }
+            });
+        },
+        show: function () {
+            var items = this.items;
+            if (!items.length) {
+                return;
+            }
+            $.ajax({
+                url: 'http://fav.myopen.vip.com/brand/index',
+                type: 'GET',
+                dataType: 'jsonp'
+            }).done(function (re) {
+                if (re.error || re.data.length == 0) {
+                    return;
+                }
+                $.each(re.data, function (i, sn) {
+                    var item = items.filter('.J_sn_' + sn);
+                    if (item.length) {
+                        item.addClass('fav-done').find('.fav-txt').html('已订阅提醒');
+                    }
+                });
+            })
+        },
+        add: function (sn) {
+            var items = this.items;
+            $.ajax({
+                url: 'http://fav.myopen.vip.com/brand/add',
+                type: 'GET',
+                dataType: 'jsonp',
+                data: {
+                    brand_id: sn,
+                    source_id: 1
+                }
+            }).done(function (re) {
+                if (re.error == false || re.errorCode == 6) {
+                    var item = items.filter('.J_sn_' + sn);
+                    item.addClass('fav-done').find('.fav-txt').html('已订阅提醒');
+                }
+            });
+        },
+        get : function () {
+            var sns = '';
+            $.each(this.items, function(index, domBrand) {
+                sns += ',' + $(domBrand).attr('data-sn');
+            });
+
+            $.ajax({
+                url: 'http://fav.myopen.vip.com/brand/fav_count',
+                type: 'GET',
+                dataType: 'jsonp',
+                data: {
+                    brand_sn: sns,
+                    source_id: 1
+                }
+            })
+                    .done(function(re) {
+                        if (re.code == 0) {
+                            for (key in re.data ){
+                                $('[data-sn="'+ key+'"]').find('.b226-nfav').html(re.data[key]+'人收藏');
+                            }
+                        }
+                    })
+
+        }
+    };
+    //红包
+    var Coupon = {
+        utype: VIPSHOP.UINFO.isNewUser() ? 1 : 2,
+        init: function () {
+            var self = this;
+            var items = this.items = $('.b226');
+
+            this.bids = items.map(function () {
+                return this.getAttribute('data-bid');
+            }).toArray().toString();
+
+            self.get(); //获取档期红包
+
+            //显示用户已领取红包的档期
+            if ($.Cookie.get('VipLID')) {
+                self.show();
+            }
+            $.Listeners.sub('userLogin').onsuccess(function () {
+                self.show();
+            });
+
+            //领取红包
+            items.on('click', '.hb-btn', function (e) {
+                var item = $(e.delegateTarget),
+                        btn = $(this);
+                if (item.hasClass('hb-done')) {
+                    return;
+                }
+                if ($.Cookie.get('VipLID')) {
+                    self.add(item);
+                } else {
+                    VIPSHOP.login.init({
+                        loginEvent: function () {
+                            VIPSHOP.member.chk();//登录成功后回调
+                            $.listeners.pub('userLogin').success();
+                            btn.trigger('click');
+                        }
+                    });
+                }
+            });
+        },
+        get: function () {
+            var self = this;
+            $.ajax({
+                url: 'http://act.vip.com/act/index_ajax.php',
+                dataType: 'jsonp',
+                data: {
+                    service: 'NewCoupon.getAllBatch',
+                    bids: self.bids,
+                    mars_cid: $.Cookie.get('mars_cid')
+                    //utype: self.utype
+                }
+            }).done(function (re) {
+                if (re.status == 1) {
+                    $.each(re.data, function (id, value) {
+                        $.each(value, function (cid, val) {
+                            if (val.left) {
+                                var item = $('#J_id_' + id);
+                                var mask = item.find('.b226-mask');
+                                item.addClass('hb').data('cid', cid).addClass('J_cid_' + cid);
+                                item.find('img').after('<span class="hb-icon">￥' + val.fav + '</span>');
+                                if (mask.length) {
+                                    mask.append('<dl class="hb-tips"><dt>商品正在路上</dt><dd>领好红包等开抢</dd></dl><div class="hb-btn">' + val.fav + '元红包</div>');
+                                }
+                            }
+                            return false;
+                        });
+                    });
+                }
+            });
+        },
+        show: function () {
+            var self = this;
+            $.ajax({
+                url: 'http://act.vip.com/act/index_ajax.php',
+                dataType: 'jsonp',
+                data: {
+                    service: 'Coupon.getUserCoupon',
+                    bids: self.bids,
+                    utype: self.utype
+                }
+            }).done(function (re) {
+                if (re.status == 1 && re.data) {
+                    var data = re.data.split(',');
+                    $.each(data, function (i, cid) {
+                        var elem = $('.J_cid_' + cid);
+                        elem.addClass('hb-done');
+                    });
+                }
+            })
+        },
+        add: function (item) {
+            var bid = item.data('bid'),
+                    cid = item.data('cid');
+            $.ajax({
+                url: 'http://act.vip.com/act/index_ajax.php',
+                dataType: 'jsonp',
+                data: {
+                    service: 'Coupon.couponBind',
+                    bid: bid,
+                    cid: cid,
+                    utype: 1
+                }
+            }).done(function (re) {
+                if (re.status == 1) {
+                    item.addClass('hb-done');
+                } else {
+                    alert(re['errorMessage']);
+                }
+            })
+        }
+    };
+    Favorite.init();    //收藏功能
+    PMS.show();
+    Coupon.init();
+</script>

@@ -10,7 +10,7 @@
 <fieldset class="code-preview">
     <legend>Preview</legend>
 
-    <div ui-ace="{theme:'chrome', mode: 'html'}" ng-model="CODE"></div>
+    <div ui-ace="{theme:'chrome', mode: 'javascript'}" ng-model="CODE" ng-readonly="false"></div>
 </fieldset>
 <script src="libs/underscore/underscore.js"></script>
 <script src="libs/artTemplate/dist/template.js"></script>
@@ -20,7 +20,9 @@
 <script>
     angular.module('app', ['ui.ace'])
             .controller('MainCtrl', ['$scope', '$http', '$rootScope', '$q', function ($scope, $http, $rootScope, $q) {
-
+                $http.get('temp/dap_cache.js').success(function(res){
+                    $scope.CODE = res;
+                })
             }]);
 </script>
 </body>
