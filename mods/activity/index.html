@@ -1,0 +1,253 @@
+<script>
+    var K_DEL_BRANDS, K_NUM_FAKE_BRANDS, K_BLANK_DATA_FLOOR_USE_CACHE, K_DEFAULT_DAP_DATA_PATH, K_FORCE_USE_DEFAULT_DATA;
+
+    K_DEL_BRANDS = '';
+    K_SUBMALL_NAME = '';
+    K_NUM_FAKE_BRANDS = 0;
+    K_BLANK_DATA_FLOOR_USE_CACHE = true;
+    K_FORCE_USE_DEFAULT_DATA = false;
+    K_DEFAULT_DAP_DATA_PATH = 'http://a.vpimg4.com/upload/actpics/uidesign/2016/3m/0316kidacu/index-data/dap_t0314_0940.js';
+
+</script>
+
+<style type="text/css">
+    /*内容展示失败时的提示信息*/
+    .sp-page-loading{width: 100%;min-width: 960px;background: url('http://a.vpimg3.com/upload/actpics/act/sp/branches/pc_sp/act-20150806/img/page-loading.gif') no-repeat center #fff;padding: 60px 0;height: 196px;}
+    .sp-page-loading-fail{width: 100%;min-width: 960px;background: url('http://a.vpimg3.com/upload/actpics/act/sp/branches/pc_sp/act-20150806/img/page-loading-fail.png') no-repeat center #fff;padding: 60px 0;height: 196px;display: none;position: relative;}
+    .sp-page-loading-fail .btn-refrash, .sp-page-loading-fail .link-home{position: absolute;top: 149px;height: 34px;text-indent: -9999px;}
+    .sp-page-loading-fail .btn-refrash:hover, .sp-page-loading-fail .link-home:hover{background: rgba(0, 0, 0, 0.05);}
+    .sp-page-loading-fail .btn-refrash{left: 50%;width: 137px;margin-left: -141px;}
+    .sp-page-loading-fail .link-home{right: 50%;width: 112px;margin-right: -127px;}
+
+
+
+
+
+
+
+
+    .kid-top {background:url(http://a.vpimg4.com/upload/actpics/uidesign/2016/2m/0226pingou/top.jpg) no-repeat center top;height:624px;}
+    .kid-bottom .bottombg {background: url(http://a.vpimg4.com/upload/actpics/uidesign/2016/2m/0226pingou/bottom.png) no-repeat center;height: 169px;margin: 0 auto;}
+    .kid .kid-bottom {  padding: 80px 0 85px;text-align: center; }
+    .kid .kid-btn {margin-top: 13px;}
+    .kid .kid-btn:hover { opacity: 0.8; }
+    .kid { overflow:hidden;background-color: #def5f5;}
+    .kid-content { width:1000px;_width:1003px; margin:0 auto; overflow:hidden;}
+    .kid-nav {background:url(http://a.vpimg4.com/upload/actpics/uidesign/2016/2m/0226pingou/nav.png) no-repeat;height:227px;width: 156px;position: fixed;top: 50%;right: 50%;margin: -140px -650px;padding-top: 54px;display: none;}
+    .navm {height: 84px;cursor: pointer;}
+    .nav3 {height: 60px;}
+    .kid-title {display: block;margin: 50px auto;}
+    .kid-title1 {margin-top: -130px;}
+</style>
+
+<style>
+    .dap{background: #FFEEF6;overflow: hidden;}
+    .floor{position: relative;}
+    #footer{position: relative;}
+
+    .kstate-debug .kmod-link{background-color:rgba(0,0,0,.3)}
+    .kstate-debug .kmod-link.kstate-hover,.kstate-debug .kmod-link:hover{background-color:rgba(0,0,0,.4)}
+    .kmod-bd{position:relative;width:1000px;margin:0 auto}
+    .kmod-bd:after,.kmod-bd:before{display:table;content:""}
+    .kmod-bd:after{clear:both}
+    .kmod-link{display: block; float: left;}
+
+
+    /* 数据楼层背景 */
+    .floor-discount-bg-wrap{position: relative;display: none;}
+    .floor-discount-bg-wrap.kstate-fixed{ position: fixed; top: 0; right: 0; bottom: 0;left: 0; z-index: 0; }
+    .floor-discount-bg{ position: absolute; left: 0; right: 0; height: 3630px; background: #FFE0EA url("http://a.vpimg4.com/upload/actpics/uidesign/2016/3m/0316kidacu/index/warm-discount-bg.png") no-repeat center -138px; }
+
+    /* 数据楼层头图-begin */
+    #floor-discount1{margin-top: 0px; padding-top: 170px; background: url("http://a.vpimg4.com/upload/actpics/uidesign/2016/3m/0316kidacu/index/warm2-discount1.png") no-repeat center 28px;}
+    #floor-discount2{margin-top: 40px; padding-top: 170px; background: url("http://a.vpimg4.com/upload/actpics/uidesign/2016/3m/0316kidacu/index/warm3-discount2.png") no-repeat center 22px;}
+    #floor-discount3{margin-top: 40px; padding-top: 170px; background: url("http://a.vpimg4.com/upload/actpics/uidesign/2016/3m/0316kidacu/index/warm2-discount3.png") no-repeat center 30px;}
+    .b226-list-wrap{padding-left: 20px;}
+    /* 数据楼层头图-end */
+
+    /* 导航-begin */
+    .kmod-nav-wrap { height: 0;}
+    .kmod-nav-wrap .kmod-bd{position: static;}
+    .kmod-nav { position: absolute;top: 0; margin: 0 auto; z-index: 200; }
+    .kmod-nav.kstate-fixed { position: fixed; }
+    .kmod-nav-left { width: 132px; margin-left: -186px; padding: 80px 10px 0; background: url('http://a.vpimg4.com/upload/actpics/uidesign/2016/3m/0316kidacu/index/warm1-nav.png') no-repeat 9px 85px;}
+    .kmod-nav-left .kmod-nav-hd { height: 170px; margin: 0 -10px; background: url('http://a.vpimg4.com/upload/actpics/uidesign/2016/3m/0316kidacu/index/warm-nav-hd.png') no-repeat center 101px;}
+    .kmod-nav-left .kmod-nav-bd { overflow: hidden; margin: 0; background: #000;  }
+    .kmod-nav-left .kmod-nav-ft { overflow: hidden; margin: 0;  text-align: center; background: #000; font-size: 16px;}
+    .kmod-nav-left .kmod-nav-ft .kmod-hash { color: #fff; border-top: 1px solid #808080; margin-top: -1px; }
+    .kmod-nav-left .kmod-hash { display: block;  margin: -1px 8px 0; padding: 5px 0;color: #fff; border-top: 1px solid #808080;}
+    .kmod-nav-title{ display: inline; font-size: 16px; background: url("http://a.vpimg4.com/upload/actpics/uidesign/2016/3m/0316kidacu/index/warm-nav-linkbg.png") no-repeat right 6px;padding-right: 10px; }
+    .kmod-nav-slogon{ display: block; font-size: 12px; color: #ffa5c1;}
+    .kmod-nav-left .kmod-nav-bd .kmod-hash.kstate-hover,
+    .kmod-nav-left .kmod-nav-bd .kmod-hash:hover{ color: #f4d839;}
+    .kmod-nav-left .kmod-nav-bd .kmod-hash.kstate-hover .kmod-nav-title,
+    .kmod-nav-left .kmod-nav-bd .kmod-hash:hover .kmod-nav-title{ background-position: right -24px;}
+    .kmod-nav-left .kmod-nav-bd .kmod-hash.kstate-hover .kmod-nav-slogon,
+    .kmod-nav-left .kmod-nav-bd .kmod-hash:hover .kmod-nav-slogon{ color: #f4d839; }
+    .kmod-nav-branches{overflow: hidden;margin: 0; text-align: center; background: #ff105b; color: #fff;}
+    .kmod-nav-branch-title{ background: #d30041;line-height: 2em;font-size: 14px;color: #ffa5c1;}
+    .kmod-nav-branch-link{display: block; float: left; width: 50%; line-height: 3em;color: #fff;}
+    .kmod-nav-branch-link:hover{color: #f4d839; }
+    /* 导航-end */
+
+    .kmod-nav-bottom-wrap{display: none;position: fixed;top: initial;left: 0; right: 0; bottom: 0;background: #000;z-index: 200;}
+    .kmod-nav-bottom-wrap.kstate-fixed{display: block;}
+    .kmod-nav-bottom{position: relative; background: #000;width: 760px; margin: 2px auto;}
+    .kmod-nav-bottom .kmod-nav-bd{ overflow: hidden;}
+    .kmod-nav-bottom .kmod-nav-bd .kmod-hash,
+    .kmod-nav-bottom .kmod-nav-branch-link{float: left; width: 20%;color: #fff;
+        height: 48px;
+        line-height: 48px;
+        border-left: 1px solid #000;
+        margin-top: 1px;
+        margin-left: -1px;
+        text-align: center;
+        background-color: #2F2F2F;}
+    .kmod-nav-bottom .kmod-nav-bd .kmod-hash:hover,
+    .kmod-nav-bottom .kmod-hash.kstate-hover,
+    .kmod-nav-bottom .kmod-nav-branch-link.kstate-hover,
+    .kmod-nav-bottom .kmod-hash:hover,
+    .kmod-nav-bottom .kmod-nav-branch-link:hover{ background-color: #ed1670;}
+    .kmod-nav-bottom .kmod-nav-branch-link{ width: 12.5%;}
+    .kmod-nav-bottom  .kmod-nav-branches{background: #000;}
+</style>
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+    function showContainer(){
+//        var wh = $.Cookie.get('vip_wh') || 'VIP_NH';
+//        var whs = wh.toLocaleUpperCase();
+//
+//        $('[data-' + whs + '="1"]').each(function() {
+//            $(this).closest('.container').show();
+//        });
+//        $(".container:visible").each(function(){
+//            var _this = $(this);
+//            var saleTime = _this.find(".b226").data('salestart') * 1000;
+//            if ($.now() < saleTime) {
+//                _this.find(".b226-btn a").html('马上收藏 <span class="b226-btn-arrow">></span>');
+//            }
+//        });
+
+
+        var warehouse = $.Cookie.get('vip_wh') || 'VIP_NH';
+        warehouse = warehouse.toLowerCase();
+        $('[data-' + warehouse + '="1"]').each(function() {
+            $(this).closest('.container').show();
+        });
+        $(".container:visible").each(function(){
+            var _this = $(this);
+            var saleTime = _this.find(".b226").data('salestart') * 1000,
+                    brandstate =_this.find(".b226").data('state');
+            if ( brandstate === 2 || brandstate === 0 || brandstate === -1) {
+                _this.find(".no-sell").show();
+                _this.find(".kid-sell").hide();
+                _this.find('.b226-sale-time').html(ACT.getFmtTime('MM月dd日 hh:mm', saleTime, true));
+            };
+            if ($.now() < saleTime) {
+                _this.find(".b226-btn a").html('抢先挑好货 <span class="b226-btn-arrow">></span>');
+            }
+        });
+    }
+
+    $.Listeners.sub('dapReady').onsuccess(showContainer);
+</script>
+
+
+
+<div id="floor_discount_bg_wrap" class="floor-discount-bg-wrap"><div id="floor-discount-bg" class="floor-discount-bg"></div></div>
+
+<script>
+    $.Listeners.sub('dapReady').onsuccess(function(res){
+
+        setTimeout(function(){
+            addNavigators(res);
+            addDiscountBg();
+        }, 1000);
+
+        $(window).on({
+            'scroll.kmodNav': function () {
+                $.Listeners.pub('winScroll').success();
+            }
+        });
+    });
+
+    // 添加背景悬浮效果
+    function addDiscountBg(){
+        var $bg = $('#floor_discount_bg_wrap');
+        $bg.show();
+        $('#floor-age').after($bg);
+        var offset = $bg.offset();
+//        offset = { top: 2253 }; // dom还没渲染完就进来了，导致取值出错，暂时写死
+
+        var $doc = $(document);
+
+        $.Listeners.sub('winScroll').onsuccess(function(){
+            var scrollTop = $doc.scrollTop();
+            if(scrollTop < offset.top){
+                return $bg.removeClass('kstate-fixed');
+            }
+
+            if(!$bg.hasClass('kstate-fixed')){
+                $bg.addClass('kstate-fixed');
+            }
+
+        });
+    }
+
+
+</script>
+
+<script>
+    // 缓存动画资源
+    (function(){
+        var imgs = [
+            'http://a.vpimg4.com/upload/actpics/uidesign/2016/3m/0316kidacu/index/warm-header.jpg',
+            'http://a.vpimg4.com/upload/actpics/uidesign/2016/3m/0316kidacu/index-top/warm-top-logo.png',
+            'http://a.vpimg4.com/upload/actpics/uidesign/2016/3m/0316kidacu/index-top/warm-top-title.png',
+            'http://a.vpimg4.com/upload/actpics/uidesign/2016/3m/0316kidacu/index-top/warm-top-model.png',
+
+            'http://a.vpimg4.com/upload/actpics/uidesign/2016/3m/0316kidacu/index-top/warm-top-countdown-tips.png',
+            'http://a.vpimg4.com/upload/actpics/uidesign/2016/3m/0316kidacu/index-top/warm-top-countdown.png',
+
+            'http://a.vpimg4.com/upload/actpics/uidesign/2016/3m/0316kidacu/index-top/warm-top-text1.png',
+            'http://a.vpimg4.com/upload/actpics/uidesign/2016/3m/0316kidacu/index-top/warm-top-text2.png',
+            'http://a.vpimg4.com/upload/actpics/uidesign/2016/3m/0316kidacu/index-top/warm-top-text3.png',
+            'http://a.vpimg4.com/upload/actpics/uidesign/2016/3m/0316kidacu/index-top/warm-top-text4.png',
+            'http://a.vpimg4.com/upload/actpics/uidesign/2016/3m/0316kidacu/index-top/warm-top-text5.png',
+
+            'http://a.vpimg4.com/upload/actpics/uidesign/2016/3m/0316kidacu/index-top/warm-top-grass1.png',
+            'http://a.vpimg4.com/upload/actpics/uidesign/2016/3m/0316kidacu/index-top/warm-top-grass2.png',
+            'http://a.vpimg4.com/upload/actpics/uidesign/2016/3m/0316kidacu/index-top/warm-top-grass3.png',
+            'http://a.vpimg4.com/upload/actpics/uidesign/2016/3m/0316kidacu/index-top/warm-top-grass4.png',
+            'http://a.vpimg4.com/upload/actpics/uidesign/2016/3m/0316kidacu/index-top/warm-top-grass5.png',
+            'http://a.vpimg4.com/upload/actpics/uidesign/2016/3m/0316kidacu/index-top/warm-top-grass6.png',
+
+            'http://a.vpimg4.com/upload/actpics/uidesign/2016/3m/0316kidacu/index-top/warm-top-leaf1.png',
+            'http://a.vpimg4.com/upload/actpics/uidesign/2016/3m/0316kidacu/index-top/warm-top-leaf2.png',
+//        'http://a.vpimg4.com/upload/actpics/uidesign/2016/3m/0316kidacu/index-top/warm-top-leaf3.png',
+//        'http://a.vpimg4.com/upload/actpics/uidesign/2016/3m/0316kidacu/index-top/warm-top-leaf4.png',
+            'http://a.vpimg4.com/upload/actpics/uidesign/2016/3m/0316kidacu/index-top/warm-top-leaf5.png',
+            'http://a.vpimg4.com/upload/actpics/uidesign/2016/3m/0316kidacu/index-top/warm-top-leaf6.png'
+
+        ];
+
+        var promises = [];
+
+        $.each(imgs, function(i, url){
+            var defer = $.Deferred();
+            var img = new Image;
+            img.onload = defer.resolve;
+            img.onerror = defer.reject;
+            img.src = url;
+            promises[i] = defer.promise();
+        });
+    })();
+
+</script>

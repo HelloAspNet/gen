@@ -1,0 +1,299 @@
+.kstate-debug a {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+.kstate-debug a.kstate-hover,
+.kstate-debug a:hover {
+  background-color: rgba(0, 0, 0, 0.4);
+}
+/* 状态-begin */
+.kstate-fixed {
+  position: fixed;
+}
+/* 状态-end */
+.kmods {
+  overflow: hidden;
+  background: #efefef;
+}
+.kmod {
+  background: no-repeat center top;
+}
+.kmod-bd {
+  *zoom: 1;
+  position: relative;
+  width: 1000px;
+  margin: 0 auto;
+}
+.kmod-bd:before,
+.kmod-bd:after {
+  display: table;
+  content: "";
+}
+.kmod-bd:after {
+  clear: both;
+}
+.kmod-link,
+.kmod-plink,
+.kmod-blink {
+  float: left;
+}
+.kmod-target {
+  display: block;
+  position: relative;
+  visibility: hidden;
+}
+.kmod-header {
+  height: 500px;
+}
+.kmod-logo {
+  width: 115px;
+  height: 115px;
+}
+.kmod-footer {
+  height: 250px;
+  margin: 80px 0 40px;
+}
+.kmod-footer .kmod-btn {
+  float: left;
+  width: 311px;
+  height: 57px;
+  margin: 190px 0 0 334px;
+}
+/* 导航-begin */
+.kmod-nav-wrap {
+  height: 0;
+}
+.kmod-nav {
+  position: relative;
+  top: 0;
+  width: 100%;
+  margin: 0 auto;
+  background: #ccc;
+  z-index: 200;
+}
+.kmod-nav.kstate-fixed {
+  position: fixed;
+}
+.kmod-nav1 {
+  width: 120px;
+  height: 550px;
+  margin-left: 1040px;
+  padding-top: 80px;
+  background: url('images/nav-a.png') no-repeat center 80px;
+}
+.kmod-nav1 .kmod-nav-hd {
+  height: 170px;
+}
+.kmod-nav1 .kmod-nav-bd {
+  margin: 0px;
+}
+.kmod-nav1 .kmod-nav-ft {
+  height: 40px;
+}
+.kmod-nav1 .kmod-nav-ft .kmod-hash {
+  height: 35px;
+}
+.kmod-nav1 .kmod-hash {
+  display: block;
+  width: 100%;
+  height: 115px;
+}
+/* 导航-end */
+/* 品购模块-begin */
+.kmod1 {
+  height: 400px;
+}
+.kmod1 .kmod-plink {
+  width: 50%;
+  height: 200px;
+}
+.kmod2 {
+  height: 400px;
+}
+.kmod2 .kmod-plink {
+  width: 50%;
+  height: 200px;
+}
+.kmod3 {
+  height: 400px;
+}
+.kmod3 .kmod-plink {
+  width: 50%;
+  height: 200px;
+}
+.kmod4 {
+  height: 400px;
+}
+.kmod4 .kmod-plink {
+  width: 50%;
+  height: 200px;
+}
+.kmod5 {
+  height: 400px;
+}
+.kmod5 .kmod-plink {
+  width: 50%;
+  height: 200px;
+}
+.kmod6 {
+  height: 400px;
+}
+.kmod6 .kmod-plink {
+  width: 50%;
+  height: 200px;
+}
+.kmod7 {
+  height: 400px;
+}
+.kmod7 .kmod-plink {
+  width: 50%;
+  height: 200px;
+}
+.kmod8 {
+  height: 400px;
+}
+.kmod8 .kmod-plink {
+  width: 50%;
+  height: 200px;
+}
+.kmod9 {
+  height: 400px;
+}
+.kmod9 .kmod-plink {
+  width: 50%;
+  height: 200px;
+}
+.kmod10 {
+  height: 400px;
+}
+.kmod10 .kmod-plink {
+  width: 50%;
+  height: 200px;
+}
+.kmod11 {
+  height: 400px;
+}
+.kmod11 .kmod-plink {
+  width: 50%;
+  height: 200px;
+}
+.kmod12 {
+  height: 400px;
+}
+.kmod12 .kmod-plink {
+  width: 50%;
+  height: 200px;
+}
+/* 品购模块-end */
+/*  半品购调整-begin */
+.warmup_bg .pro_bread {
+  display: none;
+}
+.warmup_bg,
+.list-define-w {
+  overflow: hidden;
+  position: relative;
+}
+.warmup_bg .kmods {
+  margin: 0 -460px;
+}
+.list-define-w .kmods {
+  margin: -380px -460px 0;
+}
+/*  半品购调整-end */
+.kstate-warm .kmod-header {
+  background: url('images/warm-header.jpg') no-repeat center 0;
+}
+.kstate-warm .kmod-logo {
+  background: url('images/warm-logo.png') no-repeat center 0;
+}
+.kstate-warm .kmod-body {
+  background: url('images/warm-body.jpg') repeat;
+}
+.kstate-warm .kmod-footer {
+  background: url('images/warm-footer.png') no-repeat center 0;
+}
+.kstate-warm .kmod1 {
+  background-image: url("images/warm-01.jpg");
+}
+.kstate-warm .kmod2 {
+  background-image: url("images/warm-02.jpg");
+}
+.kstate-warm .kmod3 {
+  background-image: url("images/warm-03.jpg");
+}
+.kstate-warm .kmod4 {
+  background-image: url("images/warm-04.jpg");
+}
+.kstate-warm .kmod5 {
+  background-image: url("images/warm-05.jpg");
+}
+.kstate-warm .kmod6 {
+  background-image: url("images/warm-06.jpg");
+}
+.kstate-warm .kmod7 {
+  background-image: url("images/warm-07.jpg");
+}
+.kstate-warm .kmod8 {
+  background-image: url("images/warm-08.jpg");
+}
+.kstate-warm .kmod9 {
+  background-image: url("images/warm-09.jpg");
+}
+.kstate-warm .kmod10 {
+  background-image: url("images/warm-10.jpg");
+}
+.kstate-warm .kmod11 {
+  background-image: url("images/warm1-11.jpg");
+}
+.kstate-warm .kmod12 {
+  background-image: url("images/warm-12.jpg");
+}
+.kstate-sale .kmod-header {
+  background: url('images/sale-header.jpg') no-repeat center 0;
+}
+.kstate-sale .kmod-logo {
+  background: url('images/sale-logo.png') no-repeat center 0;
+}
+.kstate-sale .kmod-body {
+  background: url('images/sale-body.jpg') repeat;
+}
+.kstate-sale .kmod-footer {
+  background: url('images/sale-footer.png') no-repeat center 0;
+}
+.kstate-sale .kmod1 {
+  background-image: url("images/sale-01.jpg");
+}
+.kstate-sale .kmod2 {
+  background-image: url("images/sale-02.jpg");
+}
+.kstate-sale .kmod3 {
+  background-image: url("images/sale-03.jpg");
+}
+.kstate-sale .kmod4 {
+  background-image: url("images/sale-04.jpg");
+}
+.kstate-sale .kmod5 {
+  background-image: url("images/sale-05.jpg");
+}
+.kstate-sale .kmod6 {
+  background-image: url("images/sale-06.jpg");
+}
+.kstate-sale .kmod7 {
+  background-image: url("images/sale-07.jpg");
+}
+.kstate-sale .kmod8 {
+  background-image: url("images/sale-08.jpg");
+}
+.kstate-sale .kmod9 {
+  background-image: url("images/sale-09.jpg");
+}
+.kstate-sale .kmod10 {
+  background-image: url("images/sale-10.jpg");
+}
+.kstate-sale .kmod11 {
+  background-image: url("images/sale1-11.jpg");
+}
+.kstate-sale .kmod12 {
+  background-image: url("images/sale-12.jpg");
+}
+/*# sourceMappingURL=index.css.map */

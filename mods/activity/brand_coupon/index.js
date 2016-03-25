@@ -41,32 +41,44 @@ var Coupon = {
   },
   get: function () {
     var self = this;
-    $.ajax({
-      url: 'http://act.vip.com/act/index_ajax.php',
-      dataType: 'jsonp',
-      data: {
-        service: 'NewCoupon.getAllBatch',
-        bids: self.bids,
-        utype: self.utype
-      }
-    }).done(function (re) {
-      if (re.status == 1) {
-        $.each(re.data, function (id, value) {
-          $.each(value, function (cid, val) {
-            if (val.left) {
-              var item = $('#J_id_' + id);
-              var mask = item.find('.b226-mask');
-              item.addClass('hb').data('cid', cid).addClass('J_cid_' + cid);
-              item.find('img').after('<span class="hb-icon">￥' + val.fav + '</span>');
-              if (mask.length) {
-                mask.append('<dl class="hb-tips"><dt>商品正在路上</dt><dd>领好红包等开抢</dd></dl><div class="hb-btn">' + val.fav + '元红包</div>');
+
+    // 红包数超过200个时拆分红包请求
+    var bids = self.bids;
+    var bidList = bids.split(/,/);
+    var arr = [];
+    while(bidList.length){
+      arr.push(bidList.splice(0, 200));
+    }
+    $.each(arr, function(i, bList){
+      $.ajax({
+        url: 'http://act.vip.com/act/index_ajax.php',
+        dataType: 'jsonp',
+        data: {
+          service: 'NewCoupon.getAllBatch',
+          bids: bList.join(','),
+          mars_cid: $.Cookie.get('mars_cid')
+          //utype: self.utype
+        }
+      }).done(function (re) {
+        if (re.status == 1) {
+          $.each(re.data, function (id, value) {
+            $.each(value, function (cid, val) {
+              if (val.left) {
+                var item = $('#J_id_' + id);
+                var mask = item.find('.b226-mask');
+                item.addClass('hb').data('cid', cid).addClass('J_cid_' + cid);
+                item.find('img').after('<span class="hb-icon">￥' + val.fav + '</span>');
+                if (mask.length) {
+                  mask.append('<dl class="hb-tips"><dt>商品正在路上</dt><dd>领好红包等开抢</dd></dl><div class="hb-btn">' + val.fav + '元红包</div>');
+                }
               }
-            }
-            return false;
+              return false;
+            });
           });
-        });
-      }
-    });
+        }
+      });
+    })
+
   },
   show: function () {
     var self = this;
@@ -109,5 +121,6 @@ var Coupon = {
     })
   }
 };
+
 
 Coupon.init();

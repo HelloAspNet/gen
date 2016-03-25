@@ -39,6 +39,13 @@ angular.module('app', ['ui.ace'])
       return '￥' + parseFloat(v);
     });
 
+    var Mod = {};
+    Mod.RE_HTML_JS_COMMENT = /<!--[\s\S]*?-->/gm;
+    Mod.RE_CSS_JS_COMMENT = /\/\*[\s\S]*?\*\//gm;
+    Mod.RE_JS_COMMENT = /\/\/.*/g;
+    Mod.RE_BLANK_LINE = /[\r\n]([\r\n\s]*)?[\r\n]/gm;
+    Mod.RE_CSS_FORMAT = /([{;])[\r\n\s]+|[\r\n\s]+([}])/g;
+
 
     $http.get('./ng_index.json').success(function (res) {
 

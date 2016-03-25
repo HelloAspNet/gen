@@ -1,0 +1,12 @@
+/* fav-begin */
+.fav {}
+.fav-tips { font-size: 14px; color: #fff; width: 100%; padding-bottom: 20px; background: url(http://a.vpimg3.com/upload/actpics/act/sp/branches/pc_sp/act-20150820/img/icon.gif) no-repeat center 17px; position: absolute; left: 0; bottom: 0; }
+.fav-done .fav-tips { display: none; }
+.fav-count { color: #acacac; line-height: 15px; }
+.fav .b226-btn { cursor: pointer; }
+.fav-txt { display: inline-block; padding-left: 20px; background: url(http://a.vpimg4.com/upload/actpics/uidesign/2015/8m/0821kid/fav.png) no-repeat; }
+.fav:hover .fav-txt { background-position: 0 -24px; }
+.fav-done .b226-btn { cursor: default; }
+.fav-done .fav-txt { background-position: 0 -48px; }
+.b226:hover .fav-txt { background-position: 0 -72px; }
+/* fav-end */

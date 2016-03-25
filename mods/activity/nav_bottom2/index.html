@@ -1,0 +1,16 @@
+<script type="text/html" id="kmod_nav_bottom_tpl">
+    <div class="kmod-nav-bottom-wrap">
+        <div class="kmod-nav kmod-nav-bottom">
+            <div class="kmod-nav-bd">
+                {{each anchors as anchor }}
+                <a class="kmod-hash" href="#floor-{{anchor.floor.ext.floor_code}}" mars_sead="click_leftbar_{{anchor.floor.ext.floor_code}}" data-id="floor-{{anchor.floor.ext.floor_code}}" target="_self">{{anchor.name}}&nbsp;></a>
+                {{/each}}
+            </div>
+            <div class="kmod-nav-branches">
+                {{each branches as branch  }}
+                <a class="kmod-nav-branch-link" href="{{branch.link}}" mars_sead="click_leftbar_{{branch.floor_code}}" target="_blank">{{branch.name}}</a>
+                {{/each}}
+            </div>
+        </div>
+    </div>
+</script>

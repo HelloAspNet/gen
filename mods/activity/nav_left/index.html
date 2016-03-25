@@ -1,0 +1,22 @@
+<!-- 左导航 -->
+<script type="text/html" id="J_snav_tpl">
+    <div class="k-snav" id="J_snav">
+        <div class="k-snav-head k-snav-bg">
+        </div>
+        <div class="k-snav-body">
+            {{each floors as floor}}
+            {{if floor.ext.is_nav}}
+            <div id="J_snav_item_{{floor.ext.floor_code}}" class="k-snav-item k-snav-ptr k-snav-item-{{floor.ext.floor_code}} k-snav-bg" data-floorname="{{floor.ext.floor_code}}" mars_sead="click_leftbar_{{floor.ext.floor_code}}">{{floor.kext_navinfo && floor.kext_navinfo.title || '楼层标题'}}&nbsp;>
+            </div>
+            {{/if}}
+            {{/each}}
+        </div>
+        <div>
+            {{each branches as branch}}
+            <a href="{{branch.link}}" target="_blank">{{branch.name}}</a>
+            {{/each}}
+        </div>
+        <div class="k-snav-foot k-snav-ptr J_snav_back_top k-snav-bg">TOP>
+        </div>
+    </div>
+</script>

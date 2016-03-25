@@ -1,0 +1,43 @@
+.kstate-debug a{background-color:rgba(0,0,0,.3)}
+.kstate-debug a.kstate-hover,.kstate-debug a:hover{background-color:rgba(0,0,0,.4)}
+.kstate-fixed{position:fixed}
+.kmods{overflow:hidden;background:#efefef}
+.kmod{background:center top no-repeat}
+.kmod-bd{position:relative;width:1000px;margin:0 auto}
+.kmod-bd:after,.kmod-bd:before{display:table;content:""}
+.kmod-bd:after{clear:both}
+.kmod-blink,.kmod-link,.kmod-plink{float:left}
+.kmod-target{display:block;position:relative;visibility:hidden}
+.kmod-header{height:500px;background-image:url(images/warm-header.jpg)}
+.kmod-logo{width:115px;height:115px;background:url(images/warm-logo.png) no-repeat}
+.kmod-body{background:url(images/warm-body.jpg)}
+.kmod-footer{height:250px;margin:80px 0 40px;background-image:url(images/footer.png)}
+.kmod-footer .kmod-btn{float:left;width:311px;height:57px;margin:190px 0 0 334px}
+.kmod1{height:400px;background-image:url(images/warm-01.png)}
+.kmod1 .kmod-plink{width:100%;height:200px}
+.kmod2{height:400px;background-image:url(images/warm-02.png)}
+.kmod2 .kmod-plink{width:100%;height:200px}
+.kmod3{height:400px;background-image:url(images/warm-03.png)}
+.kmod3 .kmod-plink{width:100%;height:200px}
+.kmod4{height:400px;background-image:url(images/warm-04.png)}
+.kmod4 .kmod-plink{width:100%;height:200px}
+.kmod5{height:400px;background-image:url(images/warm-05.png)}
+.kmod5 .kmod-plink{width:100%;height:200px}
+.kmod6{height:400px;background-image:url(images/warm-06.png)}
+.kmod6 .kmod-plink{width:100%;height:200px}
+.kmod7{height:400px;background-image:url(images/warm-07.png)}
+.kmod7 .kmod-plink{width:100%;height:200px}
+.kmod8{height:400px;background-image:url(images/warm-08.png)}
+.kmod8 .kmod-plink{width:100%;height:200px}
+.kmod9{height:400px;background-image:url(images/warm-09.png)}
+.kmod9 .kmod-plink{width:100%;height:200px}
+.kmod10{height:400px;background-image:url(images/warm-10.png)}
+.kmod10 .kmod-plink{width:100%;height:200px}
+.kmod11{height:400px;background-image:url(images/warm-11.png)}
+.kmod11 .kmod-plink{width:100%;height:200px}
+.kmod12{height:400px;background-image:url(images/warm-12.png)}
+.kmod12 .kmod-plink{width:100%;height:200px}
+.kmod13{height:400px;background-image:url(images/warm-13.png)}
+.kmod13 .kmod-plink{width:100%;height:200px}
+.kmod14{height:400px;background-image:url(images/warm-14.png)}
+.kmod14 .kmod-plink{width:100%;height:200px}

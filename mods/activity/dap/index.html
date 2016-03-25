@@ -1,0 +1,76 @@
+<!-- DAP 各楼层内容的容器 -->
+<div id="dap" class="dap">
+    <div id="J-loading-data-box" class="sp-page-loading"></div>
+    <div id="J_repeat-data-box" class="sp-page-loading-fail">
+        <a id="J-refresh-data-btn" href="javascript:;" class="btn-refrash">刷新重试</a>
+        <a href="http://www.vip.com" class="link-home" target="_blank">返回特卖会 ></a>
+    </div>
+</div>
+
+<!-- dap 楼层渲染模板 -->
+<script type="text/html" id="basic-floor-tpl">
+    {{if type === 'html'}}
+    <div id="floor-{{ext.floor_code}}" class="floor floor-{{type}} floor-render-{{kext_render}} {{if ext.is_nav}}floor-navable{{/if}}" data-cmsid="{{ext.cmsId}}" data-floorid="{{ext.floor_code}}">
+        {{#mixedData}}
+    </div>
+    {{else}}
+    {{include 'brands-floor-tpl'}}
+    {{/if}}
+</script>
+
+<!-- 类型为 data 的楼层使用的模板，手工导档期数据也用这个模板 -->
+<script type="text/html" id="brands-floor-tpl">
+    <div id="floor-{{ext.floor_code}}" class="floor floor-{{type}} floor-brands floor-render-{{kext_render}} {{if ext.is_nav}}floor-navable{{/if}}" data-cmsid="{{ext.cmsId}}" data-floorid="{{ext.floor_code}}">
+        {{#kext_before_blist}}
+        <div class="b226-list-wrap">
+            <div class="b226-list clearfix">
+                <div class="k-b226-hold"></div>
+                {{each mixedData as brand}}
+                {{if brand.state === 2 || brand.state === 0 || brand.state === -1 }}
+                <div class="b226 J_sn_{{brand.brand_store_sn}} fav" id="J_id_{{brand.id}}" data-bid="{{brand.id}}" data-sn="{{brand.brand_store_sn}}" data-salestart="{{brand.kext_salestart}}" data-salestop="{{brand.kext_salestop}}" data-bname="{{brand.name}}" mars_sead="click_brand_{{ext.floor_code}}" style="display: {{brand.kext_display}}">
+                    <div class="b226-photo">
+                        <img class="lazy" data-original="{{brand.new_brand_image}}" src="http://s2.vipstatic.com/img/te/vip_loading.gif" alt="{{brand.name}}" width="226" height="288">
+
+                        <div class="b226-discount">{{#brand.discount}}</div>
+                        <div class="b226-mask">
+                            <div class="b226-sale-time">{{brand.display_starttime | MonthDayHour}}</div>
+                            <div class="b226-sale-tips">商品正在路上</div>
+                            <div class="fav-tips">订阅开售提醒</div>
+                        </div>
+                    </div>
+                    <div class="b226-text">
+                        <div class="b226-attr">
+                            <div class="b226-discount">{{#brand.discount}}</div>
+                            <div class="b226-name"><a href="http://list.vip.com/{{brand.id}}.html" title="" target="_blank">{{brand.name}}</a></div>
+                            <div class="b226-nfav"></div>
+                        </div>
+                        <div class="b226-btn J_addfav"><span class="fav-txt" mars_sead="act_1117sales_brands_collect_btn">开售提醒</span></div>
+                    </div>
+                </div>
+                {{else}}
+                <div class="b226 J_sn_{{brand.brand_store_sn}}" id="J_id_{{brand.id}}" data-bid="{{brand.id}}" data-sn="{{brand.brand_store_sn}}" data-salestart="{{brand.kext_salestart}}" data-salestop="{{brand.kext_salestop}}" data-bname="{{brand.name}}" mars_sead="click_brand_{{ext.floor_code}}" style="display: {{brand.kext_display}}">
+                    <div class="b226-photo">
+                        <a href="http://list.vip.com/{{brand.id}}.html" title="{{brand.name}}" target="_blank"><img class="lazy" src="http://s2.vipstatic.com/img/te/vip_loading.gif" data-original="{{brand.new_brand_image}}" alt="{{brand.name}}" width="226" height="288"></a>
+                        {{if brand.bicon}}<img src="{{brand.bicon}}" class="lazy b226-upnew-ico" data-original="{{brand.bicon}}">{{/if}}
+                    </div>
+                    <div class="b226-text">
+                        <div class="b226-attr">
+                            <div class="b226-discount">{{#brand.discount}}</div>
+                            <div class="b226-name"><a href="http://list.vip.com/{{brand.id}}.html" title="" target="_blank">{{brand.name}}</a></div>
+                            <div class="b226-nfav"></div>
+                        </div>
+                        <div class="b226-btn">
+                            <a href="http://list.vip.com/{{brand.id}}.html" target="_blank">
+                                {{if brand.state === 1}}立即抢购{{else}}马上收藏{{/if}}
+                                <span class="b226-btn-arrow">></span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                {{/if}}
+                {{/each}}
+            </div>
+        </div>
+        {{#kext_after_blist}}
+    </div>
+</script>

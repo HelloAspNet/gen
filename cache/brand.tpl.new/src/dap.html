@@ -1,33 +1,3 @@
-<!DOCTYPE HTML>
-<html lang="en">
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <title>精典泰迪品牌钜献</title>
-    <!-- 检测移动端则跳转到对应的移动页面 -->
-    <script type="text/javascript">
-        var actMobileUrl = '';
-        if(actMobileUrl.length > 0){
-            try {
-                if (/Android|Windows Phone|webOS|iPhone|Phone|iPod|Nokia|SymbianOS|BlackBerry|Adr/i.test(navigator.userAgent) && !/MI PAD|Mi-Pad/i.test(navigator.userAgent)) {
-                    window.location.href = actMobileUrl;
-                }
-            } catch (e) {}
-        }
-    </script>
-    <meta name="baidu-site-verification" content="rnyMiv2JC1" />
-    <meta name="keywords" content="" />
-    <meta name="description" content="" />
-    <link href="//s2.vipstatic.com/css/public/te/2/comm.css?12015100903" rel="stylesheet" type="text/css">
-    <script src="//s2.vipstatic.com/js/public/jquery.js?12015100903" type="text/javascript"></script>
-    <script src="//s2.vipstatic.com/js/public/core3.js?12015100903" type="text/javascript"></script>
-    <script type="text/javascript">var g_actCmsPgSwicth = {};</script></head>
-<body id="body_black">
-<a name="top"></a>
-<!-- head 开始 -->
-<script src="//www.vip.com/get_common.php?type=header&jq=0&core=0&actver=20160227145"></script>
-<!-- head 结束 -->
-
-
 <script>
     var K_DEL_BRANDS, K_NUM_FAKE_BRANDS, K_BLANK_DATA_FLOOR_USE_CACHE;
 
@@ -35,10 +5,9 @@
     K_SUBMALL_NAME = '';
     K_NUM_FAKE_BRANDS = 0;
     K_BLANK_DATA_FLOOR_USE_CACHE = true;
-    //    K_DEFAULT_DAP_DATA_PATH = 'http://a.vpimg4.com/upload/actpics/uidesign/2016/3m/0308kidacu/cache/dap-reply-cache-201603082000.v4.js';
-    K_DEFAULT_DAP_DATA_PATH = 'http://yd.vip.com/temp/20160309/src/dap-html.js';
+    K_DEFAULT_DAP_DATA_PATH = 'http://a.vpimg4.com/upload/actpics/uidesign/2016/3m/0308kidacu/cache/dap-reply-cache-201603082000.v4.js';
 </script>
-<style type="text/css">
+<style>
     /*内容展示失败时的提示信息*/
     .sp-page-loading{width: 100%;min-width: 960px;background: url('http://a.vpimg3.com/upload/actpics/act/sp/branches/pc_sp/act-20150806/img/page-loading.gif') no-repeat center #fff;padding: 60px 0;height: 196px;}
     .sp-page-loading-fail{width: 100%;min-width: 960px;background: url('http://a.vpimg3.com/upload/actpics/act/sp/branches/pc_sp/act-20150806/img/page-loading-fail.png') no-repeat center #fff;padding: 60px 0;height: 196px;display: none;position: relative;}
@@ -47,7 +16,9 @@
     .sp-page-loading-fail .btn-refrash{left: 50%;width: 137px;margin-left: -141px;}
     .sp-page-loading-fail .link-home{right: 50%;width: 112px;margin-right: -127px;}
 
-    .b226-list { position: relative; width: 980px; background: url(http://a.vpimg3.com/upload/actpics/uidesign/2016/2m/0219index/placeholdern.png) no-repeat left bottom;margin: 0 auto;}
+    /*档期小盒子*/
+    .b226-list-wrap { width: 960px; margin: 0 auto; }
+    .b226-list { position: relative; width: 980px; background: url(http://a.vpimg3.com/upload/actpics/uidesign/2016/2m/0208kidfen/placehoder.png) no-repeat left bottom; }
     .b226-zw { width: 226px; height: 375px; float: left; margin: 0 18px 18px 0;}
     .b226 { width: 226px; overflow: hidden; float: left; margin: 19px 19px 0 0; background-color: #fff; box-shadow: 0 0 3px #aaa;}
     .b226-photo { height: 288px; overflow: hidden; position: relative; }
@@ -55,20 +26,20 @@
     html:root .b226-mask, html:root .b226-pms { filter: progid:DXImageTransform.Microsoft.Gradient(enabled:false); }
     .b226-mask { width: 100%; height: 100%; position: absolute; top: 100%; left: 0; z-index: 2; }
     .b226:hover .b226-mask,.b226-hover .b226-mask { top: 0; }
-    .b226-sale-time { font-size: 24px; line-height: 1; text-align: center; color: #00e0d1; padding-top: 15px; margin-top: 40px; height: 63px; background: url(http://a.vpimg4.com/upload/actpics/uidesign/2016/2m/0219index/sale-time1.png) no-repeat center top; }
+    .b226-sale-time { font-size: 24px; line-height: 1; text-align: center; color: #f3c950; padding-top: 15px; margin-top: 40px; height: 63px; background: url(http://a.vpimg4.com/upload/actpics/uidesign/2015/8m/0821kid/sale-time.png?v1) no-repeat center top; }
     .b226-sale-tips { font-size: 18px; color: #acacac; padding-top: 3px; }
     .b226-pms { color: #fff; text-align: center; line-height: 2; width: 216px; padding: 0 5px; text-overflow: ellipsis; white-space: nowrap; overflow: hidden; position: absolute; left: 0; bottom: 0; z-index: 3; }
     .b226.fav .b226-pms{display: none;}
     .b226-text { padding: 0 15px; height: 86px; }
     .b226-attr { height: 47px; overflow: hidden; }
     .b226-discount { font-size: 12px; color: #acacac; padding-top: 5px; float: right; }
-    .b226-discount span { font-size: 26px; color: #00ABA5; margin-right: 3px; }
+    .b226-discount span { font-size: 26px; color: #f10582; margin-right: 3px; }
     .b226-name { line-height: 15px; height: 30px; overflow: hidden; padding: 10px 3px 0 0; }
     .b226-name a { color: #333; }
     .b226-nfav{color: #adadad;}
-    .b226-btn { color: #00b5af; text-align: center; line-height: 24px; height: 24px; border: solid 1px #00B4B0; font-size: 15px;letter-spacing: 1px;}
-    .b226:hover .b226-btn { color: #fff; background-color: #00B4B0; border-color: #00B4B0; }
-    .b226-btn a { color: #00B4B0; display: block; }
+    .b226-btn { color: #f10582; text-align: center; line-height: 24px; height: 24px; border: solid 1px #fbb4d9; }
+    .b226:hover .b226-btn { color: #fff; background-color: #f10582; border-color: #f10582; }
+    .b226-btn a { color: #f10582; display: block; }
     .b226:hover .b226-btn a { color: #fff; }
     .b226-btn-arrow { font-family: "\5B8B\4F53", sans-serif; }
     .b226-name { height: 15px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; /*warm*/ }
@@ -80,7 +51,7 @@
     .fav-done .fav-tips { display: none; }
     .fav-count { color: #acacac; line-height: 15px; }
     .fav .b226-btn { cursor: pointer; }
-    .fav-txt { display: inline-block; padding-left: 20px; background: url(http://a.vpimg4.com/upload/actpics/uidesign/2016/2m/0219index/fav.png) no-repeat; }
+    .fav-txt { display: inline-block; padding-left: 20px; background: url(http://a.vpimg4.com/upload/actpics/uidesign/2015/8m/0821kid/fav.png) no-repeat; }
     .fav:hover .fav-txt { background-position: 0 -24px; }
     .fav-done .b226-btn { cursor: default; }
     .fav-done .fav-txt { background-position: 0 -48px; }
@@ -96,44 +67,57 @@
     .hb-btn { color: #fff; font-size: 20px; line-height: 38px; text-align: center; width: 109px; height: 38px; margin: 0 auto; padding-right: 40px; background: url(http://a.vpimg4.com/upload/actpics/uidesign/2015/8m/0821kid/hb.png) no-repeat; cursor: pointer; }
     .hb-done .hb-icon { color: #fff; background-position: left bottom; }
     .hb-done .hb-btn { background-position: left bottom; cursor: default; }
-
-    .kid-top {background:url(http://a.vpimg4.com/upload/actpics/uidesign/2016/2m/0226pingou/top.jpg) no-repeat center top;height:624px;}
-    .kid-bottom .bottombg {background: url(http://a.vpimg4.com/upload/actpics/uidesign/2016/2m/0226pingou/bottom.png) no-repeat center;height: 169px;margin: 0 auto;}
-    .kid .kid-bottom {  padding: 80px 0 85px;text-align: center; }
-    .kid .kid-btn {margin-top: 13px;}
-    .kid .kid-btn:hover { opacity: 0.8; }
-    .kid { overflow:hidden;background-color: #def5f5;}
-    .kid-content { width:1000px;_width:1003px; margin:0 auto; overflow:hidden;}
-    .kid-nav {background:url(http://a.vpimg4.com/upload/actpics/uidesign/2016/2m/0226pingou/nav.png) no-repeat;height:227px;width: 156px;position: fixed;top: 50%;right: 50%;margin: -140px -650px;padding-top: 54px;display: none;}
-    .navm {height: 84px;cursor: pointer;}
-    .nav3 {height: 60px;}
-    .kid-title {display: block;margin: 50px auto;}
-    .kid-title1 {margin-top: -130px;}
+    /* hb */
 </style>
-<style>
-    .kstate-debug .kmod-link{background-color:rgba(0,0,0,.3)}
-    .kstate-debug .kmod-link.kstate-hover,.kstate-debug .kmod-link:hover{background-color:rgba(0,0,0,.4)}
-    .kmod-bd{position:relative;width:1000px;margin:0 auto}
-    .kmod-bd:after,.kmod-bd:before{display:table;content:""}
-    .kmod-bd:after{clear:both}
-    .kmod-link{display: block; float: left;}
 
-    /* 数据楼层头图-begin */
-    #floor-discount1{margin-top: 40px; padding-top: 160px; background: url("images/warm-discount1.png") no-repeat center 0;}
-    #floor-discount2{margin-top: 40px; padding-top: 160px; background: url("images/warm-discount2.png") no-repeat center 0;}
-    #floor-discount3{margin-top: 40px; padding-top: 160px; background: url("images/warm-discount3.png") no-repeat center 0;}
-    .b226-list-wrap{padding-left: 20px;}
-    /* 数据楼层头图-end */
+<style>
+    /*dap楼层*/
+    .dap {  position: relative; background-color: #FEF2F6;}
+    .floor-render-data{ padding: 15px 0 70px 0; position: relative;}
+    .floor-brands{padding: 20px 0 60px 0; background: url(http://a.vpimg4.com/upload/actpics/uidesign/2016/3m/0308kidacu/warm/dec-discount.png) no-repeat center 0; position: relative;}
+    .k-b226-hold{width: 226px; height: 10px; float: left; margin: 19px 19px 0 0;}
+
+    #floor-discount{background-image: url(http://a.vpimg4.com/upload/actpics/uidesign/2016/3m/0308kidacu/warm/dec-discount.png);}/**/
+    #floor-milk{background-image: url(http://a.vpimg4.com/upload/actpics/uidesign/2016/3m/0308kidacu/warm/dec-milk.png);}/**/
+    #floor-product{background-image: url(http://a.vpimg4.com/upload/actpics/uidesign/2016/3m/0308kidacu/warm/dec-product.v2.png);}/**/
+    #floor-toy{background-image: url(http://a.vpimg4.com/upload/actpics/uidesign/2016/3m/0308kidacu/warm/dec-toy.png);}/**/
+    #floor-child{background-image: url(http://a.vpimg4.com/upload/actpics/uidesign/2016/3m/0308kidacu/warm/dec-child.png);}/*童装童鞋*/
+    #floor-baby{background-image: url(http://a.vpimg4.com/upload/actpics/uidesign/2016/3m/0308kidacu/warm/dec-baby.png);}/*婴幼服饰*/
+    #floor-tomorrow{background-image: url(http://a.vpimg4.com/upload/actpics/uidesign/2016/3m/0308kidacu/warm/dec-tomorrow.png); }
+
+
+
+    .k-snav{position: fixed; top: 0; right: 50%; margin-right: 590px; width: 110px; color: #FFF; text-align: center; line-height: 31px;}
+    .k-snav-bg{background: url(http://a.vpimg4.com/upload/actpics/uidesign/2016/3m/0308kidacu/warm/bg-snav.v2.png) no-repeat center top;}
+    .k-snav-bg:hover, .k-snav-item.cur{color: #fff369;}
+    .k-snav-head{background-position: center top; height: 135px;}
+    .k-snav-foot{background-position: center bottom; height: 31px;}
+
+    .k-snav-ptr{cursor: pointer;}
+    .k-snav-item{height: 31px; background-position: center -135px;}
+
+
+    .k-bnav-ptr{cursor: pointer;}
+    .k-bnav-bg{}
+    .k-bnav-bg.cur{}
+    .k-bnav{position: fixed; bottom: 0; left: 0; width: 100%; height: 56px; z-index: 200; background-color: #000; color: #FFF; text-align: center;}
+    .k-bnav-inner{width: 770px; height: 100%; padding: 0 75px 0 115px; margin: 0 auto; margin-left: auto; margin-right: auto; position: relative;}
+    .k-bnav-head{position: absolute; width: 101px; height: 86px; left: 14px; bottom: 0; background: url(http://a.vpimg4.com/upload/actpics/uidesign/2016/3m/0308kidacu/warm/bnav-ico.png) no-repeat center top;}
+    .k-bnav-foot{position: absolute; width: 56px; height: 100%; right: 19px; top: 0;}
+    .k-bnav-item{height: 100%; float: left; }
+    .k-bnav-bg:hover, .k-bnav-item.cur{color: #fff369;}
+    .k-bnav-title{display: block; height: 48px; line-height: 48px; border-right: 1px solid #000; margin-top: 4px; text-align: center; background-color: #2f2f2f;}
 </style>
 
 <!-- DAP 各楼层内容的容器 -->
-<div id="dap" class="dap kstate-debug">
-    <div id="J-loading-data-box" class="sp-page-loading"></div>
+<div id="dap" class="dap">
+    <div id="J-loading-data-box" class="sp-page-loading actjs-highlight"></div>
     <div id="J_repeat-data-box" class="sp-page-loading-fail">
         <a id="J-refresh-data-btn" href="javascript:;" class="btn-refrash">刷新重试</a>
         <a href="http://www.vip.com" class="link-home" target="_blank">返回特卖会 ></a>
     </div>
 </div>
+
 
 <!-- dap 楼层渲染模板 -->
 <script type="text/html" id="basic-floor-tpl">
@@ -145,6 +129,7 @@
     {{include 'brands-floor-tpl'}}
     {{/if}}
 </script>
+
 
 <!-- 类型为 data 的楼层使用的模板，手工导档期数据也用这个模板 -->
 <script type="text/html" id="brands-floor-tpl">
@@ -221,6 +206,7 @@
     </div>
 </script>
 
+
 <!-- 底导航 -->
 <script type="text/html" id="J_bnav_tpl">
     <div class="k-bnav" id="J_bnav">
@@ -242,26 +228,6 @@
     </div>
 </script>
 
-<script type="text/javascript">
-    function showContainer(){
-        var wh = $.Cookie.get('vip_wh') || 'VIP_NH';
-        var whs = wh.toLocaleUpperCase();
-
-        $('[data-' + whs + '="1"]').each(function() {
-            $(this).closest('.container').show();
-        });
-        $(".container:visible").each(function(){
-            var _this = $(this);
-            var saleTime = _this.find(".b226").data('salestart') * 1000;
-            if ($.now() < saleTime) {
-                _this.find(".b226-btn a").html('马上收藏 <span class="b226-btn-arrow">></span>');
-            }
-        });
-    }
-
-    $.Listeners.sub('dapReady').onsuccess(showContainer);
-
-</script>
 
 <script>
 
@@ -687,9 +653,33 @@
             }
 
 
-            $.ajax(setting).always(DAPCache.fix(function (oDapReply) {
-                renderdap(oDapReply);
-            }));
+            function isValidReply(oDapReply) {
+                if ( !(oDapReply && oDapReply.code === 200 && oDapReply.result )  ) {
+                    return false;
+                }
+
+                var floors, index, floor;
+
+                floors = oDapReply.result.floors;
+
+                //至少有一个楼层
+                if ( !(floors && '1' in floors) ) {
+                    return false;
+                }
+
+                //任何数据楼层无数据，该dap响应都视为无效
+                for ( index in floors ) {
+                    floor = floors[index];
+                    if ( floor.type === 'data' ) {
+                        if ( !(floor.mixedData && floor.mixedData.length) ) {
+                            return false;
+                        }
+                    }
+                }
+
+                return true;
+            }
+
 
             function renderdap(oDapReply) {
                 if (oDapReply && oDapReply['code'] == 200) {
@@ -710,46 +700,17 @@
             }
 
 
-
-
-//
-//            function isValidReply(oDapReply) {
-//                if ( !(oDapReply && oDapReply.code === 200 && oDapReply.result )  ) {
-//                    return false;
-//                }
-//
-//                var floors, index, floor;
-//
-//                floors = oDapReply.result.floors;
-//
-//                //至少有一个楼层
-//                if ( !(floors && '1' in floors) ) {
-//                    return false;
-//                }
-//
-//                //任何数据楼层无数据，该dap响应都视为无效
-//                for ( index in floors ) {
-//                    floor = floors[index];
-//                    if ( floor.type === 'data' ) {
-//                        if ( !(floor.mixedData && floor.mixedData.length) ) {
-//                            return false;
-//                        }
-//                    }
-//                }
-//
-//                return true;
-//            }
-//            $.ajax(setting).done(function (oDapReply) {
-//                //假如是无效的响应或者某个数据楼层的数据为空，则使用缓存的dap响应
-//                if ( !isValidReply(oDapReply) ) {
-//                    oDapReply = K_DAP_DATA_DEFAULT;
-//                }
-//                renderdap(oDapReply);
-//            }).fail(function (oDapReply) {
-//                oDapReply = K_DAP_DATA_DEFAULT;
-//                renderdap(oDapReply);
-//                // _this._error();
-//            });
+            $.ajax(setting).done(function (oDapReply) {
+                //假如是无效的响应或者某个数据楼层的数据为空，则使用缓存的dap响应
+                if ( !isValidReply(oDapReply) ) {
+                    oDapReply = K_DAP_DATA_DEFAULT;
+                }
+                renderdap(oDapReply);
+            }).fail(function (oDapReply) {
+                oDapReply = K_DAP_DATA_DEFAULT;
+                renderdap(oDapReply);
+                // _this._error();
+            });
 
 
 
@@ -813,96 +774,6 @@
         }
     };
 
-    var DAPCache = {
-        expires: '2016/03/10 00:59:00',
-        getExpires: function(){
-            if(!this.expires) throw new Error('避免本地缓存过多数据，过期时间必须设置。');
-            return new Date(this.expires);
-        },
-        getId: function(){
-            return DAP._options.cmsId;
-        },
-        // 获取默认数据
-        getDefaultData: function(){
-            try { return K_DAP_DATA_DEFAULT; }
-            catch(e){ VIPSHOP.log('dap默认数据不存在'); }
-        },
-        /**
-         * 修复dap数据
-         * @param callback
-         * @returns {Function}
-         */
-        fix: function (callback) {
-            var _this = this;
-            return function (res) {
-
-                if (_this.checkData(res)) {
-                    _this.setData(res);
-                }
-                var data = _this.getData();
-
-                var defaultData = _this.getDefaultData();
-                if (!data || (defaultData && (data.requestTime < defaultData.requestTime))) {
-                    data = defaultData;
-                }
-                return callback(data);
-            };
-        },
-        /**
-         * 缓存dap数据到本地
-         * @param data
-         */
-        setData: function (data) {
-            jQuery.Storage.set('k_dap_' + this.getId(), data, this.getExpires());
-        },
-        /**
-         * 获取本地dap缓存数据
-         * @returns {*|Object|String|Array|Boolean}
-         */
-        getData: function () {
-            return jQuery.Storage.get('k_dap_' + this.getId());
-        },
-        /**
-         * 校验Dap数据有效性
-         * @param data dap数据
-         * @returns {boolean} 数据有效性
-         */
-        checkData: function (data) {
-            if (!data || !data.result || !data.result.floors) return false;
-
-            /**
-             * 因为这个data.result.floors有下面几个特征：
-             *    不是数组
-             *    没有length属性
-             *    下标从1开始
-             *    是个对象
-             *
-             * 所以用下面这个方法来确定里面有没有楼层
-             *
-             */
-            if (!('1' in data.result.floors)) return false;
-
-            /**
-             * 满足下面任一条件判定为数据缺失:
-             *    html楼层且mixedData为空
-             *    data楼层且mixedData长度为0
-             */
-            var floors = data.result.floors;
-            var floor;
-            for (var k in floors) {
-                floor = floors[k];
-                if (
-                        (floor.type === 'html' && floor.mixedData === '')
-                        || (floor.type === 'data' && floor.mixedData.length === 0)
-                ) {
-                    return false;
-                }
-            }
-
-            // 满足上面所有条件视为通过验证
-            return true;
-        }
-    };
 
     //收藏
     var Favorite = {
@@ -1801,12 +1672,16 @@
         }
     });
 
+
+
+
     $.Loader.advScript({
         name: 'default_dap_data',
         url: K_DEFAULT_DAP_DATA_PATH
     },{
         name: 'xxx',
         def: function() {
+
 
             $(function () {
 
@@ -2012,31 +1887,11 @@
 
                 //初始化
                 DAP.init({
-                    cmsId: 19709,
+                    cmsId: 19706,
                     box: '#dap',
 
                     //允许定制总体渲染方案
-                    render: function (oDapReply) {
-                        if (!(oDapReply && oDapReply.code === 200)) {
-                            (this._options.error || this._default.error || $.noop)();
-                            return;
-                        }
-
-                        //遍历所有楼层, 找到合适的渲染器，从渲染器获取html代码，拼接并写入到dom
-                        var i, l, oFloor, aFloor, oRender, aHtml, box;
-                        aHtml = [];
-                        aFloor = (oDapReply && oDapReply.result.floors) || [];
-
-                        for (i = 0 , l = aFloor.length; i < l; i++) {
-                            oFloor = aFloor[i];
-                            oRender = this.getRender(oFloor);
-                            oRender.setFloor(oFloor);
-                            aHtml.push(oRender.html() || '');
-                        }
-
-                        box = (this._options.box || this._default.box);
-                        $(box).html(aHtml.join(''));
-                    },
+                    render: null,
 
                     //允许定制错误提示方案
                     error: function (oDapReply) {
@@ -2238,42 +2093,8 @@
 
                     }
                 });
-
-
             });
         },
         requires: ['default_dap_data']
     });
 </script>
-
-
-
-<!-- 加入购物袋代码 start -->
-<!-- onclick="isLogin('/shop/cart.php?merchandise_num=1&size=1038274'); return false;" -->
-<!-- 加入购物袋代码 end -->
-
-<!-- footer 开始 -->
-<script src="//www.vip.com/get_common.php?type=footer&loadcss=0&actver=20160227145"></script>
-<noscript><img src="//mar.vip.com/n" height="1" width="1" border="0" alt="" /></noscript>
-<!-- footer 结束 -->
-
-<!-- VTM代码 -->
-<script type="text/javascript">
-    VIPSHOP = window.VIPSHOP || {};
-    $.extend(VIPSHOP, {"actName":"\u7cbe\u5178\u6cf0\u8fea\u54c1\u724c\u949c\u732e","actBeginTime":"1456416000","actEndTime":"1458921600"}); //encode格式为 {}的json格式，起码要输出花括号容错
-
-    var VTM = (function(VTM){
-        VTM.Act = {
-            name : VIPSHOP.actName,
-            beginTime : VIPSHOP.actBeginTime,
-            endTime : VIPSHOP.actEndTime
-        };
-        VTM.pageId = "224";
-        return VTM;
-    })(window.VTM || {});
-
-    var VTM_SRC="http://ms.vipstatic.com/vtm/vtm_config_res/prod/vtm.js";
-    $.Loader.advScript({ name : "vtm", url : VTM_SRC });
-</script>
-</body>
-</html>

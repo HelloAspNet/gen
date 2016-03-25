@@ -1,0 +1,28 @@
+<script type="text/html" id="kmod_nav_left_tpl">
+    <div class="kmod kmod-nav-wrap">
+        <div class="kmod-bd">
+            <div class="kmod-nav kmod-nav-left">
+                <div class="kmod-nav-hd">
+                </div>
+                <div class="kmod-nav-bd">
+                    {{each anchors as anchor }}
+                    <a class="kmod-hash" href="#floor-{{anchor.floor.ext.floor_code}}" mars_sead="click_leftbar_{{anchor.floor.ext.floor_code}}" data-id="floor-{{anchor.floor.ext.floor_code}}" target="_self">
+                        <span class="kmod-nav-title">{{anchor.name}}</span>
+                        <span class="kmod-nav-slogon">{{anchor.slogon}}</span>
+                    </a>
+                    {{/each}}
+                </div>
+                <div class="kmod-nav-branches">
+                    <div class="kmod-nav-branch-title">分会场</div>
+                    {{each branches as branch  }}
+                    <a class="kmod-nav-branch-link" href="{{branch.link}}" mars_sead="click_leftbar_{{branch.floor_code}}" target="_blank">{{branch.name}}</a>
+                    {{/each}}
+                </div>
+                <div class="kmod-nav-ft">
+                    <a class="kmod-hash" href="http://blog.vip.com/index.php?r=/Blog/HTML_content/id//3991" target="_blank">活动规则</a>
+                    <a class="kmod-hash" href="#" target="_self">TOP</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</script>
