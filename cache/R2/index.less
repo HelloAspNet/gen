@@ -1,0 +1,365 @@
+@import "../../node_modules/less-plugin-est/src/all";
+@IMAGE_URL: 'images/';
+//@IMAGE_URL: 'http://a.vpimg3.com/upload/actpics/uidesign/2016/2m/0218haohaizi/';
+@WARM_NAME: 'warm';
+@SALE_NAME: 'sale';
+
+@nav-z-index: 20;
+*{margin:0;padding:0;border:0}
+.kstate-debug {
+  a {
+    background-color: rgba(0, 0, 0, .3);
+    &.kstate-hover, &:hover{ background-color: rgba(0, 0, 0, .4); }
+  }
+}
+/* 状态-begin */
+.kstate-hover{ }
+.kstate-fixed{ position: fixed; }
+/* 状态-end */
+
+.kmods { overflow: hidden; /*background: #efefef;*/ }
+.kmod { background: no-repeat center top; }
+.kmod-bd { .clearfix(); position: relative; width: 1000px; margin: 0 auto; }
+.kmod-link, .kmod-plink, .kmod-blink { float: left; }
+.kmod-link, .kmod-plink, .kmod-blink { position: absolute; float: left; }
+.kmod-plink .kmod-tips{ position: absolute; top: 50%; left: 50%; display: none;
+  //background: url(http://a.vpimg2.com/upload/actpics/pingou/2015/5m/21/andi/buy_ico.png) no-repeat 0 0;
+}
+.kstate-warm .kmod-plink:hover .kmod-tips{
+  display: block; width: 86px; height: 47px; margin: -23px 0 0 -43px;
+  background: url(http://a.vpimg4.com/upload/actpics/uidesign/2015/10m/1024sport/floor3_btn.png) no-repeat 0 0;
+}
+.kstate-sale .kmod-plink{
+  &:hover .kmod-tips{
+    display: block; width: 82px; height: 76px; margin: -38px 0 0 -41px;
+    background: url(http://a.vpimg2.com/upload/actpics/pingou/2015/5m/21/andi/buy_ico.png) no-repeat 0 0;
+  }
+  &.kstate-sold-chance .kmod-tips, &.kstate-sold-chance:hover .kmod-tips{
+    display: block; width: 75px; height: 75px; margin: -37px 0 0 -37px;
+    background: url(http://a.vpimg2.com/upload/actpics/pingou/2015/5m/21/andi/chance_yellow.png) no-repeat 0 0;
+  }
+  &.kstate-sold-out .kmod-tips, &.kstate-sold-out:hover .kmod-tips{
+    display: block; width: 75px; height: 75px; margin: -37px 0 0 -37px;
+    background: url(http://a.vpimg2.com/upload/actpics/pingou/2015/5m/21/andi/off_sell_icon_circle.png) no-repeat 0 0;
+  }
+}
+.kmod-hash { }
+.kmod-target { display: block; position: relative; visibility: hidden; }
+
+
+.kmod-header { height: 500px;}
+.kmod-logo{ width: 115px; height: 115px; }
+.kmod-body { }
+.kmod-footer {height: 250px; margin: 0;
+  .kmod-btn { float: left; width: 311px; height: 57px; margin: 190px 0 0 334px;
+    &:hover{.opacity(80);}
+  }
+}
+
+
+
+/* 导航-begin */
+.kmod-nav-wrap{ height: 0; }
+.kmod-nav{
+  position: relative;
+  top: 0;
+  width: 100%;
+  //height: @nav-height;
+  margin: 0 auto;
+  background: #ccc;
+  //.opacity(0);
+  z-index: @nav-z-index;
+  &.kstate-fixed{
+    position: fixed;
+  }
+}
+
+.kmod-nav1{
+  width: 120px; height: 550px; margin-left: 1040px; padding-top: 80px; background: url('@{IMAGE_URL}nav.png') no-repeat center 80px;
+.kmod-nav-hd{ height: 170px; }
+.kmod-nav-bd{ margin: 0px; }
+.kmod-nav-ft{ height: 40px; .kmod-hash{ height: 35px; } }
+.kmod-hash{ display: block; width: 100%; height: 115px; }
+//.kmod-hash1{ display: block; width: 100%; height: 60px; }.kmod-hash2{ display: block; width: 100%; height: 60px; }
+}
+
+
+/* 导航-end */
+
+
+
+/* 品购模块-begin */
+
+.kmod1 {
+  height: 542px;
+  
+  .kmod-plink{ width: 100% / 2;height: 540px; }
+  
+  
+}
+
+.kmod2 {
+  height: 430px;
+  
+  .kmod-plink{ width: 100% / 2;height: 428px; }
+  
+  
+}
+
+.kmod3 {
+  height: 482px;
+  
+  .kmod-plink{ width: 100% / 2;height: 480px; }
+  
+  
+}
+
+.kmod4 {
+  height: 358px;
+  
+  .kmod-plink{ width: 100% / 2;height: 356px; }
+  
+  
+}
+
+.kmod5 {
+  height: 431px;
+  
+  .kmod-plink{ width: 100% / 2;height: 429px; }
+  
+  
+}
+
+.kmod6 {
+  height: 691px;
+  
+  .kmod-plink{ width: 100% / 2;height: 689px; }
+  
+  
+}
+
+.kmod7 {
+  height: 344px;
+  
+  .kmod-plink{ width: 100% / 2;height: 342px; }
+  
+  
+}
+
+.kmod8 {
+  height: 400px;
+  
+  .kmod-plink{ width: 100% / 2;height: 398px; }
+  
+  
+}
+
+.kmod9 {
+  height: 565px;
+  
+  .kmod-plink{ width: 100% / 2;height: 563px; }
+  
+  
+}
+
+.kmod10 {
+  height: 223px;
+  
+  .kmod-plink{ width: 100% / 2;height: 221px; }
+  
+  
+}
+
+.kmod11 {
+  height: 583px;
+  
+  .kmod-plink{ width: 100% / 2;height: 581px; }
+  
+  
+}
+
+.kmod12 {
+  height: 498px;
+  
+  .kmod-plink{ width: 100% / 2;height: 496px; }
+  
+  
+}
+
+.kmod13 {
+  height: 389px;
+  
+  .kmod-plink{ width: 100% / 2;height: 387px; }
+  
+  
+}
+
+.kmod14 {
+  height: 385px;
+  
+  .kmod-plink{ width: 100% / 2;height: 383px; }
+  
+  
+}
+
+.kmod15 {
+  height: 269px;
+  
+  .kmod-plink{ width: 100% / 2;height: 267px; }
+  
+  
+}
+
+.kmod16 {
+  height: 703px;
+  
+  .kmod-plink{ width: 100% / 2;height: 701px; }
+  
+  
+}
+
+.kmod17 {
+  height: 634px;
+  
+  .kmod-plink{ width: 100% / 2;height: 632px; }
+  
+  
+}
+
+.kmod18 {
+  height: 450px;
+  
+  .kmod-plink{ width: 100% / 2;height: 448px; }
+  
+  
+}
+
+.kmod19 {
+  height: 701px;
+  
+  .kmod-plink{ width: 100% / 2;height: 699px; }
+  
+  
+}
+
+.kmod20 {
+  height: 681px;
+  
+  .kmod-plink{ width: 100% / 2;height: 679px; }
+  
+  
+}
+
+.kmod21 {
+  height: 230px;
+  
+  .kmod-plink{ width: 100% / 2;height: 228px; }
+  
+  
+}
+
+.kmod22 {
+  height: 416px;
+  
+  .kmod-plink{ width: 100% / 2;height: 414px; }
+  
+  
+}
+
+.kmod23 {
+  height: 878px;
+  
+  .kmod-plink{ width: 100% / 2;height: 876px; }
+  
+  
+}
+
+.kmod24 {
+  height: 491px;
+  
+  .kmod-plink{ width: 100% / 2;height: 489px; }
+  
+  
+}
+
+/* 品购模块-end */
+
+
+
+
+
+
+.kstate-warm{
+  .kmod-header{ background: url('@{IMAGE_URL}@{WARM_NAME}-header.jpg') no-repeat center 0; }
+  .kmod-logo{ background: url('@{IMAGE_URL}@{WARM_NAME}-logo.png') no-repeat center 0; }
+  .kmod-body { background: url('@{IMAGE_URL}@{WARM_NAME}-body.jpg') repeat; }
+  .kmod-footer { background: url('@{IMAGE_URL}@{WARM_NAME}-footer.jpg') no-repeat center 0; }
+  .kmod-footer .kmod-btn { background: url('@{IMAGE_URL}@{WARM_NAME}-footer-btn.png') no-repeat center 0; }
+  
+  .kmod1 { background-image: url("@{IMAGE_URL}@{WARM_NAME}-1.jpg"); }
+  .kmod2 { background-image: url("@{IMAGE_URL}@{WARM_NAME}-2.jpg"); }
+  .kmod3 { background-image: url("@{IMAGE_URL}@{WARM_NAME}-3.jpg"); }
+  .kmod4 { background-image: url("@{IMAGE_URL}@{WARM_NAME}-4.jpg"); }
+  .kmod5 { background-image: url("@{IMAGE_URL}@{WARM_NAME}-5.jpg"); }
+  .kmod6 { background-image: url("@{IMAGE_URL}@{WARM_NAME}-6.jpg"); }
+  .kmod7 { background-image: url("@{IMAGE_URL}@{WARM_NAME}-7.jpg"); }
+  .kmod8 { background-image: url("@{IMAGE_URL}@{WARM_NAME}-8.jpg"); }
+  .kmod9 { background-image: url("@{IMAGE_URL}@{WARM_NAME}-9.jpg"); }
+  .kmod10 { background-image: url("@{IMAGE_URL}@{WARM_NAME}-10.jpg"); }
+  .kmod11 { background-image: url("@{IMAGE_URL}@{WARM_NAME}-11.jpg"); }
+  .kmod12 { background-image: url("@{IMAGE_URL}@{WARM_NAME}-12.jpg"); }
+  .kmod13 { background-image: url("@{IMAGE_URL}@{WARM_NAME}-13.jpg"); }
+  .kmod14 { background-image: url("@{IMAGE_URL}@{WARM_NAME}-14.jpg"); }
+  .kmod15 { background-image: url("@{IMAGE_URL}@{WARM_NAME}-15.jpg"); }
+  .kmod16 { background-image: url("@{IMAGE_URL}@{WARM_NAME}-16.jpg"); }
+  .kmod17 { background-image: url("@{IMAGE_URL}@{WARM_NAME}-17.jpg"); }
+  .kmod18 { background-image: url("@{IMAGE_URL}@{WARM_NAME}-18.jpg"); }
+  .kmod19 { background-image: url("@{IMAGE_URL}@{WARM_NAME}-19.jpg"); }
+  .kmod20 { background-image: url("@{IMAGE_URL}@{WARM_NAME}-20.jpg"); }
+  .kmod21 { background-image: url("@{IMAGE_URL}@{WARM_NAME}-21.jpg"); }
+  .kmod22 { background-image: url("@{IMAGE_URL}@{WARM_NAME}-22.jpg"); }
+  .kmod23 { background-image: url("@{IMAGE_URL}@{WARM_NAME}-23.jpg"); }
+  .kmod24 { background-image: url("@{IMAGE_URL}@{WARM_NAME}-24.jpg"); }
+}
+.kstate-sale{
+  .kmod-header{ background: url('@{IMAGE_URL}@{SALE_NAME}-header.jpg') no-repeat center 0; }
+  .kmod-logo{ background: url('@{IMAGE_URL}@{SALE_NAME}-logo.png') no-repeat center 0; }
+  .kmod-body { background: url('@{IMAGE_URL}@{SALE_NAME}-body.jpg') repeat; }
+  .kmod-footer { background: url('@{IMAGE_URL}@{SALE_NAME}-footer.png') no-repeat center 0; }
+  
+  .kmod1 { background-image: url("@{IMAGE_URL}@{SALE_NAME}-1.jpg"); }
+  .kmod2 { background-image: url("@{IMAGE_URL}@{SALE_NAME}-2.jpg"); }
+  .kmod3 { background-image: url("@{IMAGE_URL}@{SALE_NAME}-3.jpg"); }
+  .kmod4 { background-image: url("@{IMAGE_URL}@{SALE_NAME}-4.jpg"); }
+  .kmod5 { background-image: url("@{IMAGE_URL}@{SALE_NAME}-5.jpg"); }
+  .kmod6 { background-image: url("@{IMAGE_URL}@{SALE_NAME}-6.jpg"); }
+  .kmod7 { background-image: url("@{IMAGE_URL}@{SALE_NAME}-7.jpg"); }
+  .kmod8 { background-image: url("@{IMAGE_URL}@{SALE_NAME}-8.jpg"); }
+  .kmod9 { background-image: url("@{IMAGE_URL}@{SALE_NAME}-9.jpg"); }
+  .kmod10 { background-image: url("@{IMAGE_URL}@{SALE_NAME}-10.jpg"); }
+  .kmod11 { background-image: url("@{IMAGE_URL}@{SALE_NAME}-11.jpg"); }
+  .kmod12 { background-image: url("@{IMAGE_URL}@{SALE_NAME}-12.jpg"); }
+  .kmod13 { background-image: url("@{IMAGE_URL}@{SALE_NAME}-13.jpg"); }
+  .kmod14 { background-image: url("@{IMAGE_URL}@{SALE_NAME}-14.jpg"); }
+  .kmod15 { background-image: url("@{IMAGE_URL}@{SALE_NAME}-15.jpg"); }
+  .kmod16 { background-image: url("@{IMAGE_URL}@{SALE_NAME}-16.jpg"); }
+  .kmod17 { background-image: url("@{IMAGE_URL}@{SALE_NAME}-17.jpg"); }
+  .kmod18 { background-image: url("@{IMAGE_URL}@{SALE_NAME}-18.jpg"); }
+  .kmod19 { background-image: url("@{IMAGE_URL}@{SALE_NAME}-19.jpg"); }
+  .kmod20 { background-image: url("@{IMAGE_URL}@{SALE_NAME}-20.jpg"); }
+  .kmod21 { background-image: url("@{IMAGE_URL}@{SALE_NAME}-21.jpg"); }
+  .kmod22 { background-image: url("@{IMAGE_URL}@{SALE_NAME}-22.jpg"); }
+  .kmod23 { background-image: url("@{IMAGE_URL}@{SALE_NAME}-23.jpg"); }
+  .kmod24 { background-image: url("@{IMAGE_URL}@{SALE_NAME}-24.jpg"); }
+}
+
+
+
+
+
+/*  半品购调整-begin */
+.warmup_bg .pro_bread{display: none;}
+.warmup_bg, .list-define-w{overflow: hidden;position: relative;}
+.warmup_bg .kmods{margin: 0 -460px;}
+.list-define-w .kmods{margin: -380px -460px 0;}
+/*  半品购调整-end */
