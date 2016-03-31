@@ -1,0 +1,34 @@
+{
+  "name": "tuku",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "c": "babel -d app/ src",
+    "start": "npm run c && nodemon app/bin/www",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "co": "^4.6.0",
+    "debug": "^2.2.0",
+    "jade": "~1.11.0",
+    "koa": "^2.0.0-alpha.3",
+    "koa-bodyparser": "^2.0.1",
+    "koa-convert": "^1.2.0",
+    "koa-json": "^1.1.1",
+    "koa-logger": "^1.3.0",
+    "koa-onerror": "^1.2.1",
+    "koa-router": "^7.0.0",
+    "koa-static": "^1.5.2",
+    "koa-views": "^3.1.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.8.1",
+    "babel-core": "^6.0.20",
+    "babel-polyfill": "^6.0.16",
+    "babel-preset-es2015": "^6.0.15",
+    "babel-preset-stage-0": "^6.0.15"
+  }
+}
