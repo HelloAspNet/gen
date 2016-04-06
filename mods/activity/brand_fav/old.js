@@ -37,15 +37,11 @@ var Favorite = {
       return;
     }
     $.ajax({
-      // url: 'http://fav.myopen.vip.com/brand/index',
-      url: 'http://fav.vip.com/api/fav/brand/sn/list',
+      url: 'http://fav.myopen.vip.com/brand/index',
       type: 'GET',
-      dataType: 'jsonp',
-      data: {
-        business: 'BABY'
-      }
+      dataType: 'jsonp'
     }).done(function (re) {
-      if ( re.data.length == 0 ) {
+      if (re.error || re.data.length == 0) {
         return;
       }
       $.each(re.data, function (i, sn) {
@@ -59,60 +55,42 @@ var Favorite = {
   add: function (sn) {
     var items = this.items;
     $.ajax({
-      // url: 'http://fav.myopen.vip.com/brand/add',
-      url: 'http://fav.vip.com/api/fav/brand/add',
+      url: 'http://fav.myopen.vip.com/brand/add',
       type: 'GET',
       dataType: 'jsonp',
       data: {
-        brand_sn: sn,
-        business: 'BABY',
-        source: 'PC'
+        brand_id: sn,
+        source_id: 1
       }
     }).done(function (re) {
-      if ( re.code === 200 && re.data === 1 ) {
+      if (re.error == false || re.errorCode == 6) {
         var item = items.filter('.J_sn_' + sn);
         item.addClass('fav-done').find('.fav-txt').html('已订阅提醒');
       }
     });
   },
-  get : function () {
-    var aSNum, aBatch, groupsize, sns, req;
-
-    req = function(sns) {
-
-      $.ajax({
-        // url: 'http://fav.myopen.vip.com/brand/fav_count',
-        url: 'http://fav.vip.com/api/stats/brand/sn/count',
-        type: 'GET',
-        dataType: 'jsonp',
-        data: {
-          // brand_sn: sns,
-          brand_sn_list: sns,
-          business: 'BABY'
-          // source_id: 1
-        }
-      })
-        .done(function(re) {
-          if ( re.code == 200 ) {
-            for (key in re.data ){
-              $('[data-sn="'+ key+'"]').find('.b226-nfav').html(re.data[key]+'人收藏');
-            }
-          }
-        })
-    };
-
-    groupsize = 100;
-    sns = '';
-
-    aSNum = $.map(this.items, function(brand, index) {
-      return $(brand).attr('data-sn');
+  get: function () {
+    var sns = '';
+    $.each(this.items, function (index, domBrand) {
+      sns += ',' + $(domBrand).attr('data-sn');
     });
 
-
-    while( (aBatch = aSNum.splice(0, groupsize)).length ) {
-      sns = aBatch.join(',');
-      req(sns);
-    }
+    $.ajax({
+      url: 'http://fav.myopen.vip.com/brand/fav_count',
+      type: 'GET',
+      dataType: 'jsonp',
+      data: {
+        brand_sn: sns,
+        source_id: 1
+      }
+    })
+      .done(function (re) {
+        if (re.code == 0) {
+          for (key in re.data) {
+            $('[data-sn="' + key + '"]').find('.b226-nfav').html(re.data[key] + '人收藏');
+          }
+        }
+      })
 
   }
 };
