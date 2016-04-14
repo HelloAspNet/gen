@@ -3,11 +3,7 @@ import config from './config/sequelize.json';
 import fs from 'fs';
 import path from 'path';
 
-const conf = config[process.env.NAME || 'development']
-
-const client = new Sequelize(conf.database, conf.username, conf.password, conf.options);
-
-console.log(conf)
+const client = new Sequelize(config.database, config.username, config.password, config.option);
 
 const models = {};
 
@@ -22,19 +18,7 @@ fs
     models[model.name] = model;
   });
 
-
-client.sync();
-  //.then(function() {
-//  return User.create({
-//    username: 'janedoe',
-//    birthday: new Date(1980, 6, 20)
-//  });
-//}).then(function(jane) {
-//  console.log(jane.get({
-//    plain: true
-//  }));
-//});
-//console.log(models);
+console.log(models);
 
 export default models;
 export { client };

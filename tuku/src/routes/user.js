@@ -1,27 +1,52 @@
 import Router from 'koa-router';
+import db from '../db'
 const router = new Router();
 
-const users = [
-  {a:1},
-  {b:2}
-];
+const params = {};
 
 router
   .param('id', async (val, ctx, next) => {
 
-    ctx.user = users[val];
-    if (!ctx.user) return ctx.status = 404;
+    params.id = val;
+    //
+    //const users = await db.User.findAll();
+    //const user = users.filter((user) => {
+    //  console.log(user)
+    //  return val === user.id;
+    //});
+    //console.log(user)
+    //ctx.user = users[val];
+    //if (!ctx.user) return ctx.status = 404;
     await next();
   })
-  .get('/', (ctx, next) => {
-    ctx.body = {
-      route: 'user',
-      url: ctx.url
-    };
+  .get('/', async (ctx, next) => {
+    const user = await db.User.findAll();
+    ctx.body = user;
+    //ctx.body = {
+    //  route: 'user',
+    //  url: ctx.url,
+    //  env: process.env
+    //};
   })
-  .get('/:id', (ctx, next) => {
+  //.get('/add/:name', (ctx, next) => {
+  //  ctx.body = {
+  //    route: 'user',
+  //    url: ctx.url
+  //  };
+  //})
+  .get('/get/:id', async (ctx, next) => {
 
-    ctx.body = ctx.user;
+    const user = await db.User.findById(params.id)
+
+    ctx.body = user;
+    //ctx.body = ctx.user;
+  })
+  .get('/add', async (ctx, next) => {
+
+    const user = await db.User.create({name: 'test_ddd'});
+
+    ctx.body = user;
+    //ctx.body = ctx.user;
   });
 
 export default router;

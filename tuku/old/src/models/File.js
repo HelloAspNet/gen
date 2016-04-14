@@ -1,10 +1,7 @@
 export default function(sequelize, DataTypes) {
-  const User = sequelize.define('User', {
-
+  const File = sequelize.define('File', {
     name: DataTypes.STRING
   });
 
-
-
-  return User;
+  return File;
 }

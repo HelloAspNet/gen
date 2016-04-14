@@ -1,10 +1,7 @@
 export default function(sequelize, DataTypes) {
-  const User = sequelize.define('User', {
-
+  const Tag = sequelize.define('Tag', {
     name: DataTypes.STRING
   });
 
-
-
-  return User;
+  return Tag;
 }
